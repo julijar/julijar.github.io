@@ -31,17 +31,14 @@
 </head>
 <body>
 <!--Copyright (c) 2019 Rasmus Andersson <https://rsms.me/raster/>
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -60,9 +57,21 @@ class="footer">
  font-weight: 400;
  "
    >I'm looking for my next digital product role. 
-  Let's connect! &nbsp;<a href = "mailto: rukanskaite@gmail.com" target=_blank
-   style="padding: 1rem;"><i class="fas fa-envelope"></i></a> 
-
+  Let's connect! &nbsp;
+  
+  <a href = "mailto: rukanskaite@gmail.com"
+  target=_blank
+  style="padding-right: 1rem;"><i class="fas fa-envelope"></i></a>
+  
+  <a  href = "https://twitter.com/Rukanskaite"
+  target=_blank
+  style="padding-right: 1rem;">
+  <i class="fab fa-twitter"></i></a>
+  
+  <a  href = "https://www.linkedin.com/in/julija-rukanskaite"
+  target=_blank
+  >
+  <i class="fab fa-linkedin-in"></i></a>
   </h4>
 </div>
 
@@ -83,57 +92,66 @@ About
   </r-cell>
 
 
-<r-cell  span=2-2 span-s=row  >
-<div class="ball"></div>
+  <r-cell  span=3-3 span-s=row  >
+    <div class="ball"></div>
+    </r-cell>
+    
+
+<r-cell  span=4-4 span-s=row  >
+
+  <h1 style="font-weight: 200; line-height: 1.2; " class="xlarge float-right">
+
+    Hi!
+  </h1>
+    
 </r-cell>
 
-  <r-cell span=2-8 span-s=row  
+  <r-cell span=5-7 span-s=row  
 data-aos="fade-up"
      data-aos-duration="3000"
  
 >
 
 
-<h1 class="large" style="font-weight: 200; line-height: 1.3;">
-
-Hi!
+<h2  style="font-weight: 300; line-height: 1.2;">
 </br>
 </br>
 </br>
-
-
+</br>
+</br>
+</br>
   I'm an <span style="font-weight: 400;"> Interaction / UX designer </span> 
   based in Malmö, Sweden. I spent the past years building NextGen social media at 
   <a class="link-arrow" style="font-weight: 400;"
    href=" 
 https://designtaxi.com/news/412990/Lips-Social-Network-Flips-The-Finger-At-Instagram-By-Not-Censoring-Sexuality/"
- target=_blank >Lips<sup style="color:green; ">↗</sup></a> and studying Interaction design at 
+ target=_blank >Lips<sup style="color:green;  font-weight: 200;">↗</sup></a> and studying Interaction design at 
   <a  href="  
   https://mau.se/en/about-us/faculties-and-departments/faculty-of-culture-and-society/school-of-arts-and-communication/"
- target=_blank class="link-arrow" style="font-weight: 400;">K3<sup style="color:green; ">↗</sup></a>.   
-</h1>
+ target=_blank class="link-arrow" style="font-weight: 400;">K3<sup style="color:green; font-weight: 200; ">↗</sup></a>.   
+</h2>
 </r-cell>
 
-<r-cell span=2-2 span-s=row  
+<r-cell span=5-7 span-s=row  
 data-aos="fade-up"
      data-aos-duration="3000"
 
 >
-  <h3 style="font-weight: 400; line-height: 1.4;
+  <h2 style="font-weight: 300; line-height: 1.3;
   ">
 
 I value creative, strategic, and ethical design. My processes are driven by research and co-creation. 
-  </h3>
+  </h2>
   </r-cell>
 
 
-  <r-cell span=3-4 span-s=row  
+  <r-cell span=5-7 span-s=row  
 data-aos="fade-up"
      data-aos-duration="3000"
   >
  
-  <h3 style="font-weight: 400; line-height: 1.4;">  I enjoy experimenting with technology — Machine Learning, IoT, Blockchain, to name a few.
-</h3>
+  <h2 style="font-weight: 300; line-height: 1.3;">  I enjoy experimenting with technology — Machine Learning, IoT, Blockchain, to name a few.
+</h2>
 </r-cell>
 
 
@@ -144,24 +162,8 @@ data-aos="fade-up"
   >
 </br>
 </br>
-<hr>
 
 
-<h3 style="text-align: center;">
-<a href = "mailto: rukanskaite@gmail.com"
-target=_blank
-style="padding-right: 2.5rem;"><i class="fas fa-envelope"></i></a>
-
-<a  href = "https://twitter.com/Rukanskaite"
-target=_blank
-style="padding-right: 2.5rem;">
-<i class="fab fa-twitter"></i></a>
-
-<a  href = "https://www.linkedin.com/in/julija-rukanskaite"
-target=_blank
->
-<i class="fab fa-linkedin-in"></i></a>
-</h3>
 </r-cell>
 
 
@@ -451,30 +453,22 @@ let css = `
 html {
   --pointer-move-line-color: #03f; 
 }
-
   body {
    /* color: #060505; */
    background-color: white;
  color: #131313;
 }
-
-
-
 h1, h2, h1.large, h1.xlarge 
  {
-  font-weight: 200;
-
+  font-weight: 300;
   
-
 }  
-
-
      
 .ball {
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background-image: radial-gradient( circle 588px at 31.7% 40.2%,  rgba(225,200,239,1) 21.4%, rgba(163,225,233,1) 57.1% );
+            background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
             animation: bounce 0.8s;
             animation-direction: alternate;
             animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
@@ -511,8 +505,6 @@ h1, h2, h1.large, h1.xlarge
                 transform: translate3d(0, 200px, 0);
             }
         }
-
-
 #background-div {
   width: 50%;
   height: 50%;
@@ -535,7 +527,6 @@ animation-name: spin;
   animation-iteration-count: infinite;
   animation-timing-function: linear; 
 }
-
 @keyframes spin {
     from {
         transform:rotate(0deg);
@@ -544,7 +535,6 @@ animation-name: spin;
         transform:rotate(360deg);
     }
 }
-
 .link-arrow {
     text-decoration: none;
   
@@ -558,11 +548,9 @@ animation-name: spin;
     text-decoration:none;
     color: green;
   }
-
   a {
   text-decoration: none;
   }
-
   a.btn{
   background: none;
   color:  green ;
@@ -577,27 +565,19 @@ animation-name: spin;
   transition: all 0.4s;
   width: 100%; 
   text-align: left;
-
 }
-
-
 a.btn-1:hover{
-
  color:   green;
  font-weight: 400;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
   
 }
-
 @media screen and (min-width: 800px) {
-
 .float-right {
   text-align: right;
 }   
-
 .desktop-padding
 {
  width: 80%; 
@@ -609,7 +589,6 @@ a.btn-1:hover{
 a.btn{
   width: 75%;
   }
-
 /*  img {
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */    
    -webkit-filter: grayscale(100%);
@@ -618,32 +597,22 @@ a.btn{
    filter: grayscale(100%);
    filter: gray; /* IE 6-9 */
 }
-
 img:hover {
    -webkit-filter: none;
    -moz-filter: none;
    -ms-filter: none;
    filter: none;
 } */
-
 }
-
-
-
-
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-
 background-color: #FFFFFF;
    color: #121619;
 background-opacity: 1;
 z-index: 1;
   }
-
-
-
   .footer {
    position: fixed;
    text-align: center;
@@ -657,9 +626,7 @@ z-index: 1;
    line-height: 1rem;
    padding-top: 0.4rem;
    padding-bottom: 0.5rem;
-
 }
-
 .marquee-container{
         width: inherit;
         margin: none;
@@ -668,7 +635,6 @@ z-index: 1;
         padding: 1rem, 2rem;
         
     }
-
     .Marquee {
     
       width: inherit;
@@ -693,7 +659,6 @@ z-index: 1;
       overflow: hidden;
         margin: 1rem auto;
     }
-
     .Marquee-content {
       display: -webkit-box;
       display: -moz-box;
@@ -707,7 +672,6 @@ z-index: 1;
       -ms-animation: marquee 12s linear infinite running;
       animation: marquee 12s linear infinite running;
     }
-
     .Marquee-content:hover {
       -webkit-animation-play-state: paused;
       -moz-animation-play-state: paused;
@@ -715,7 +679,6 @@ z-index: 1;
       -ms-animation-play-state: paused;
       animation-play-state: paused;
     }
-
     .Marquee-tag {
       width: 15rem;
       margin: 0 0.5em;
@@ -745,7 +708,6 @@ z-index: 1;
       -ms-transition: all 0.2s ease;
       transition: all 0.2s ease;
     }
-
     @-moz-keyframes marquee {
       0% {
         -webkit-transform: translateX(0);
@@ -810,22 +772,16 @@ z-index: 1;
         transform: translate(-50%);
       }
     }
-
 html.inverted {
   --pointer-move-line-color: #f3a;
-
   /*--background-color: #101214;
   --foreground-color-rgb: 250,255,240;*/
-
   /*--background-color: #131310;
   --foreground-color-rgb: 210,230,255;*/
-
   /*--background-color: #111;
   --foreground-color-rgb: 255,255,255;*/
-
   --background-color: #111;
   --foreground-color-rgb: 255,254,245;
-
   --foreground-color-a: 0.8;
   --base-grid-color1: rgba(240,155,255, 0.1);
   --base-grid-color2: rgba(240,155,255, 0.05);
