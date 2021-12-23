@@ -719,7 +719,7 @@ a {
           text-decoration: underline rgba(0, 0, 0, 0.3);
   white-space: nowrap;
 }
-a:hover { color: var(--green); }
+a:hover { color: var(--#0ba360); }
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
 .h1 > a, .h2 > a, .h3 > a, .h4 > a, .h5 > a, .h6 > a {
   text-decoration: none;
@@ -1115,16 +1115,16 @@ img.right.bottom { -o-object-position: right bottom; object-position: right bott
 /* colors */
 :root {
   --red:    rgb(238, 39, 17);
-  --green:   rgb(24, 113, 233);
-  --green:  rgb(18, 192, 91);
+  --#0ba360:   rgb(24, 113, 233);
+  --#0ba360:  rgb(18, 192, 91);
   --yellow: rgb(249, 191, 15);
 }
 .red    { color: var(--red); }
 .bg-red    { background-color: var(--red); }
-.green   { color: var(--green); }
-.bg-green   { background-color: var(--green); }
-.green  { color: var(--green); }
-.bg-green  { background-color: var(--green); }
+.#0ba360   { color: var(--#0ba360); }
+.bg-#0ba360   { background-color: var(--#0ba360); }
+.#0ba360  { color: var(--#0ba360); }
+.bg-#0ba360  { background-color: var(--#0ba360); }
 .yellow { color: var(--yellow); }
 .bg-yellow { background-color: var(--yellow); }
 
