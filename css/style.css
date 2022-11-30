@@ -1,24 +1,97 @@
+body {
+  color: #06101D;
+  background-color: #FAFAFA;
+}
 
+br
+{
+  width: 100%;
+  left: 0;
+}
+
+h3, h4, h5 {
+
+  line-height: 1.5;
+font-weight: 400;
+
+}
+
+h2, h1, h1.large, h1.xlarge {
+font-family: halyard-text, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+
+a.uppercase-link
+{
+  font-weight: 500;
+  font-size: small;
+  letter-spacing: 0.2;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.uppercase-link:hover {
+  color: #006400;
+}
 
 .sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-  background-color: #FFFFFF;
-     color: #121619;
-  background-opacity: 0.5;
+    line-height: 1.8;
+  background-color: #FAFAFA;
+  color: #06101D;
   z-index: 1;
+  padding: 1%;
 
-  padding:5px  0px 5px 0px ; 
-  background-color:rgba(255, 255, 255, 0.808);
     }
 
+
+
+    @media screen and (min-width: 800px) {
+    .sticky-desktop {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    background-color: none;
+       color: #06101D;
+    z-index: 2;
+    padding:5px  0px 5px 0px ; 
+
+      }
+   }
+
+
     .sticky-sectionheader {
-        background-color: white;
+        background-color: #FAFAFA;
         
   padding:10px  0px 10px 0px ; 
     }
 
+
+    a.link {
+      text-decoration: none;
+      color: #006400;
+    }
+    .link:hover {
+      text-decoration: none;
+    }
+    .link-arrow {
+        text-decoration: none;
+        color: #006400;
+        
+      }
+      .link-arrow:hover{
+        text-decoration: none;
+        color: #006400;
+        
+      }
+      .link:hover {
+        text-decoration:none;
+        color: #006400;
+      }
 
 
     .sticky-footer {
@@ -27,26 +100,35 @@
         bottom: 0;
         left: 0;
         box-sizing: border-box;
-        background-color: rgba(24, 24, 24, 0.87);
-        color: #FFFFFF;
+        background-color: rgb(36, 36, 36);
+        color: #ededed;
         z-index: 2;
         padding-bottom: 10px;
-        padding-top: 2px;
+        padding-top: 5px;
+        text-align: center;
+        font-family: halyard-text, sans-serif;
+        font-weight: 400;
+        font-style: normal;
         }
  
  a.button {
     text-decoration: none;
-    color: #121619dd;
-    border: 1px solid #1216194c;
+    color: white;
+    background-color: #06101D;
+       border: 1px solid  #006400;
+       font-family: halyard-text, sans-serif;
+       font-weight: 300;
+font-style: normal;
+padding: 10 px;
  }
 
 
     .button {
-        border: 1px solid #00ff15ef;
-        color:  #121619dd;
+    
+        color:  #06101D;
         line-height: 60px;
        font-size: medium;
-       font-weight: 400;
+        
        padding-left: 2%;
        padding-right: 2%;
        padding-top: 1%;
@@ -85,3 +167,107 @@
  } */
 
 
+
+ .carousel {
+   margin: 0 auto;
+   overflow: hidden;
+   text-align: center;
+ }
+ 
+ .slides {
+   width: 100%;
+   display: flex;
+   overflow-x: scroll;
+   scrollbar-width: none;
+   scroll-snap-type: x mandatory;
+   scroll-behavior: smooth;
+ }
+ 
+ .slides::-webkit-scrollbar {
+   display: none;
+ }
+ 
+ .slides-item {
+   align-items: center;
+   border-radius: 4px;
+   display: flex;
+   flex-shrink: 0;
+   font-size: 100px;
+   height: 500px;
+   justify-content: center;
+   margin: 0 1rem;
+   position: relative;
+   scroll-snap-align: start;
+   transform: scale(1);
+   transform-origin: center center;
+   transition: transform .5s;
+   width: 100%;
+ }
+ 
+ .carousel__nav {
+   padding: 1.25rem .5rem;
+ }
+ 
+ .slider-nav {
+   align-items: center;
+   background-color: #ddd;
+   border-radius: 50%;
+   color: #000;
+   display: inline-flex;
+   height: 1.5rem;
+   justify-content: center;
+   padding: .5rem;
+   position: relative;
+   text-decoration: none;
+   width: 1.5rem;
+ }
+ 
+ .slider-nav:hover,
+ .slider-nav:active {
+   background-color: #000;
+   color: #fff;
+ }
+ 
+ .slide-1 {
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ .slide-2 {
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ .slide-3 {
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ .slide-4 {
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ .slide-5 {
+   background-color: #ffc;
+ }
+ 
+ .carousel__skip-link {
+   height: 1px;
+   overflow: hidden;
+   position: absolute;
+   top: auto;
+   width: 1px;
+ }
+ 
+ .carousel__skip-link:focus {
+   align-items: center;
+   background-color: #000;
+   color: #fff;
+   display: flex;
+   font-size: 30px;
+   height: 680px;
+   justify-content: center;
+   opacity: .8;
+   text-decoration: none;
+   width: 100%;
+   z-index: 1;
+ }
+ 
+ 

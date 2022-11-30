@@ -56,7 +56,6 @@ Variables
   --foreground-color-rgb: 0,0,0;
   --foreground-color-a: 1;
   --foreground-color: rgba(var(--foreground-color-rgb), var(--foreground-color-a));
-  --background-color: white;
 }
 @supports (font-variation-settings: normal) {
   :root {
