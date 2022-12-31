@@ -1,6 +1,6 @@
 body {
   color: #06101D;
-  background-color: #FAFAFA;
+
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -43,7 +43,7 @@ a.uppercase-link:hover {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-image: linear-gradient(to bottom , #FAFAFA,#fafafa95, #fafafa00);
+    background-image: linear-gradient(to bottom , #ffffff,#fafafa95, #fafafa00);
 
   color: #06101D;
   z-index: 1;
