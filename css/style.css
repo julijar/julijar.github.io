@@ -3,7 +3,9 @@ body {
 
   overflow-x: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
+
 
 br
 {
@@ -12,7 +14,6 @@ br
 }
 
 h3, h4, h5 {
-
   line-height: 1.5;
 font-weight: 400;
 
@@ -26,6 +27,15 @@ line-height: 1.2;
 letter-spacing: 0.005;
 
 }
+
+h2.body {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.9;
+  letter-spacing: 0.005;
+  
+  }
 
 
 a.uppercase-link
@@ -95,7 +105,18 @@ sup {
     a.link-arrow {
         text-decoration: none;
         color: #06101D;
-        
+    }
+    
+        a.link-arrow-light {
+          text-decoration: none;
+          color: #3c3c3c;
+        }
+
+          a.link-arrow-light:hover {
+            text-decoration: none;
+            color: #00d435;
+  
+
       }
      a.link-arrow:hover{
         text-decoration: none;
@@ -114,8 +135,8 @@ sup {
         bottom: 0;
         left: 0;
         box-sizing: border-box;
-        background-color: rgb(36, 36, 36);
-        color: #ededed;
+        background-color: #ffffffe7;
+        color: #FAFAFA;
         z-index: 2;
         padding-bottom: 10px;
         padding-top: 5px;
@@ -123,6 +144,7 @@ sup {
         font-family: halyard-text, sans-serif;
         font-weight: 400;
         font-style: normal;
+
         }
  
 
