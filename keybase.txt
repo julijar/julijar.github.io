@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/julijar
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.julija.works
+  * I am julijar (https://keybase.io/julijar) on keybase.
+  * I have a public key ASBvzAdlYjTUQlh3bSLlPVIBXuo3W8eclSUj7tfWT-86Sgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01206fcc07656234d44258776d22e53d52015eea375bc79c952523eed7d64fef3a4a0a",
+      "host": "keybase.io",
+      "kid": "01206fcc07656234d44258776d22e53d52015eea375bc79c952523eed7d64fef3a4a0a",
+      "uid": "456309e82ab66a2bd0cbea726f397119",
+      "username": "julijar"
+    },
+    "merkle_root": {
+      "ctime": 1682367937,
+      "hash": "2eea825869d24012e1125293a7b06706cb1a79cb5321f0f782cdf7d00182650bd05216dc331a9dab8712361eacfe49c6f02f399f275814288e333e16cabf5473",
+      "hash_meta": "e1eba9217a0228e9e86ddaa16f0d1eaee21fbefa49384059dbda237ee76a9487",
+      "seqno": 24373543
+    },
+    "service": {
+      "entropy": "jaNu3F9W/weAhZas4L2OUGi0",
+      "hostname": "www.julija.works",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.4"
+  },
+  "ctime": 1682367967,
+  "expire_in": 504576000,
+  "prev": "ac2ceb48f8268a3cc014b9c81115c416e98dc9f29964ee00b80ba8e1fe294bda",
+  "seqno": 13,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgb8wHZWI01EJYd20i5T1SAV7qN1vHnJUlI+7X1k/vOkoKp3BheWxvYWTESpcCDcQgrCzrSPgmijzAFLnIERXEFumNyfKZZO4AuAuo4f4pS9rEILKa9jDJy3hPiMG0MVKmqW6X9R9Zcb+jbC/oIVADd648AgHCo3NpZ8RALArV8DYLN/Qc+1+et1RSnlMk3Wbqfm95fWMQhRSX0KHcyKCLadusFLra7LtaL877kSd2fh9XP5LCVEmIIM8qDqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILe9spACVs8+ctEgXi7vGRhMmZsSrkxV5gon2s9IO/73o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/julijar
+
+==================================================================
