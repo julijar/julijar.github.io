@@ -108,7 +108,7 @@ sup {
     }
     a.link-arrow {
         text-decoration: none;
-        color: #06101D;
+        color: #06101daf;
     }
     
         a.link-arrow-light {
@@ -381,4 +381,17 @@ border-radius: 5%;
 
 img {
   border-radius: 16px;
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+  .desktop-padding {
+   width: 80%; 
+    padding-left: 10%; 
+    padding-right: 10%; 
+    padding-bottom: 2%;
+    padding-top: 2%;
+  }
 }
