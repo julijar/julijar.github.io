@@ -1,0 +1,7 @@
+test/
+.editorconfig
+.eslintrc.json
+.gitignore
+.nvmrc
+.travis.yml
+bower.json

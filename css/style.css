@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+
 }
 
 
@@ -14,7 +15,7 @@ br
 }
 
 h3, h4, h5 {
-  line-height: 1.5;
+  line-height: 1.32;
 font-weight: 400;
 
 }
@@ -29,7 +30,7 @@ letter-spacing: 0.005;
 }
 
 h3, h4 {
-  color: rgb(136, 136, 136);
+  color: rgb(97, 97, 97);
 }
 
 h2.body {
@@ -394,4 +395,12 @@ img {
     padding-bottom: 2%;
     padding-top: 2%;
   }
+
+}
+
+
+
+.bold-h3
+{font-weight: 500;
+  color: #06101D;
 }
