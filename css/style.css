@@ -1,5 +1,6 @@
 body {
-  color: #06101D;
+
+  color: rgb(41, 35, 35);
   background-color:  rgb(255, 255, 255);
   overflow-x: hidden;
   overflow-y: scroll;
@@ -18,9 +19,10 @@ h3, h4, h5 {
   line-height: 1.38;
 font-weight: 400;
 
+
 }
 
-h2, h1, h1.large, h1.xlarge {
+h2, h1, h1.large, h1.xlarge, h1.xxlarge {
 font-family: halyard-text, sans-serif;
 font-weight: 400;
 font-style: normal;
@@ -30,7 +32,8 @@ letter-spacing: 0.005;
 }
 
 h3, h4 {
-  color: #505050;
+  color: #3a3e42;
+  color: #5e6265;
 }
 
 h2.body {
@@ -185,15 +188,15 @@ a.link {
 
  a.button {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.956);
-    background-color:#05361af7;
-border: 1px solid rgba(26, 124, 51, 0.836);
+    color: rgba(0, 0, 0, 0.956);
+    background-color:rgba(51, 176, 82, 0.329);
+
        font-family: inter, sans-serif;
        font-weight: 400;
   
-       letter-spacing: 0.2;
+       letter-spacing: 0.1;
 font-style: normal;
-padding: 8px 32px;
+padding: 8px 16px;
 
 
 
@@ -201,10 +204,10 @@ padding: 8px 32px;
 
 
  a.round-button {
-  border-radius: 100%;
+  border-radius: 16%;
   letter-spacing: 0.2;
   font-size: large;
-  background-color: #2f2f2f;
+  background-color: #e2e2e2;
 border-radius: 5%;
   padding: 6px 10px 6px 10px;
   box-shadow: rgba(168, 168, 168, 0.2) 0px 2px 8px 0px;
@@ -217,15 +220,14 @@ border-radius: 5%;
         text-align: center;
         
         transition: all 0.3s ease 0s;
-        border-radius: 100px;
+        border-radius: 32px;
         text-decoration: none;
         padding-bottom: 10px;
     }
     a.button:hover {
       text-decoration: none;
-      background-color:#096c34f7
-; color: white;
       font-weight: 400;
+      padding: 8px 32px;
     }
 
     a.selected {
@@ -237,7 +239,7 @@ border-radius: 5%;
       text-decoration: none;
       background-color: #e0e0e0d3;
       font-weight: 300;
-      color: white;
+    
    
     }
 
@@ -445,3 +447,29 @@ img {
 .case-study-widget:hover {
   background-color:  #D0E4C9;
 } 
+
+
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+
+
+
+#background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#text-container {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Adjust the text color */
+}
