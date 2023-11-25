@@ -31,9 +31,13 @@ letter-spacing: 0.005;
 
 }
 
+
+
+
 h3, h4 {
-  color: #3a3e42;
-  color: #5e6265;
+  color: rgb(120, 120, 120);
+line-height: 1.32;
+font-weight: 400;
 }
 
 h2.body {
@@ -65,7 +69,7 @@ a.uppercase-link:hover {
     position: sticky;
     top: 0;
    padding: 2%;
-  
+   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.356), rgba(255, 255, 255, 0));
   color: #06101D;
   z-index: 1;
 
@@ -188,9 +192,8 @@ a.link {
 
  a.button {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.956);
-    background-color:rgba(51, 176, 82, 0.329);
-
+    color: rgba(242, 242, 242, 0.956);
+    background-color:  rgb(0, 57, 0);
        font-family: inter, sans-serif;
        font-weight: 400;
   
@@ -207,7 +210,7 @@ padding: 8px 16px;
   border-radius: 16%;
   letter-spacing: 0.2;
   font-size: large;
-  background-color: #e2e2e2;
+  background-color: #ffffff;
 border-radius: 5%;
   padding: 6px 10px 6px 10px;
   box-shadow: rgba(168, 168, 168, 0.2) 0px 2px 8px 0px;
@@ -228,6 +231,8 @@ border-radius: 5%;
       text-decoration: none;
       font-weight: 400;
       padding: 8px 32px;
+      color: white;
+      background-color: #009325;
     }
 
     a.selected {
@@ -426,6 +431,9 @@ img {
     padding-bottom: 2%;
     padding-top: 2%;
   }
+  .card {
+    padding: 2%;
+  }
 
 }
 
@@ -472,4 +480,63 @@ img {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white; /* Adjust the text color */
+}
+
+
+.grey-section {
+  background-color: rgba(236, 236, 236, 0.143); 
+  border-radius: 2%; 
+  padding: 8%;
+}
+
+
+.violet-section {
+  background-color: #F2F4FF;
+  border-radius: 0.5%; 
+  padding: 8% 12%;
+}
+
+
+.card {
+padding: none;
+margin: none;
+}
+
+
+
+.card:hover {
+
+}
+
+
+
+
+
+img {
+  transition: all 0.4s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+}
+img {
+
+  filter: grayscale(20%);
+  -webkit-filter: grayscale(20%);
+  -moz-filter: grayscale(20%);
+}
+img:hover {
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+}
+
+
+
+.selected-bulb {
+  padding: 8px 16px;
+  background: rgba(239, 239, 239, 0.418);
+  border-radius: 16px;
+  color: #181818;
 }
