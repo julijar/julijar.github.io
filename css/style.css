@@ -540,3 +540,9 @@ img:hover {
   border-radius: 16px;
   color: #181818;
 }
+
+
+.title-link:hover {
+  text-decoration: none;
+  color: #00290bf7;
+}
