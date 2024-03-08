@@ -1,6 +1,6 @@
 body {
 
-  color: rgb(41, 35, 35);
+  color: #13361c;
   background-color:  rgb(255, 255, 255);
   overflow-x: hidden;
   overflow-y: scroll;
@@ -509,7 +509,7 @@ img {
 
 
 .grey-section {
- background-color:  rgba(228, 220, 212, 0.322);
+ background-color:  rgba(228, 220, 212, 0.261);
   border-radius: 2%; 
   padding: 8%;
 }
@@ -566,10 +566,13 @@ img:hover {
   color: #181818;
 }
 
+.title-link:hover {
+  width: fit-content;
+}
 
 .title-link:hover {
   text-decoration: none;
-  color: #00290bf7;
+  color: #005829f7;
 }
 
 .tag {
