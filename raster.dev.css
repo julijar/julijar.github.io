@@ -59,7 +59,7 @@ Variables
 }
 @supports (font-variation-settings: normal) {
   :root {
-    --sansFont: "Inter var";
+    --sansFont: 'Helvetica Neue';
     --monoFont: "iaw-mono-var";
   }
 }

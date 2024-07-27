@@ -1,13 +1,14 @@
 body {
 
-  color: #13361c;
+  color: #0A090C;
   background-color:  rgb(255, 255, 255);
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
-
-
 }
+
+
+
 
 
 br
@@ -16,21 +17,42 @@ br
   left: 0;
 }
 
+
+
 h3, h4, h5 {
-  line-height: 1.38;
+  line-height: 1.4;
 font-weight: 400;
-
-
 }
 
-h2, h1, h1.large, h1.xlarge, h1.xxlarge {
-font-family: halyard-text, sans-serif;
+h1.large, h1.xlarge, h1.xxlarge {
+font-family: syne tactile, sans-serif;
 font-weight: 400;
 font-style: normal;
 line-height: 1.2;
 letter-spacing: 0.005;
-
 }
+
+
+
+
+
+h1{
+  font-family: Syne Tactile, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.005; 
+  }
+  
+
+  h2{
+    font-family: 'Syne', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0.005;
+    
+    }
 
 
 h2, h1, h1.large, h1.xlarge, h1.xxlarge {
@@ -39,14 +61,23 @@ h2, h1, h1.large, h1.xlarge, h1.xxlarge {
 
 
 
-h3, h4 {
-  color: rgb(120, 120, 120);
+h3, h4, p {
+  color: #2F2E30;
 line-height: 1.32;
 font-weight: 400;
 }
 
+h4 {
+  font-size: larger;
+  color: #2f2e30a5;
+}
+
+h3{
+  color: #2f2e30d3;
+}
+
 h2.body {
-  font-family: Inter, sans-serif;
+  font-family: Helvetica Neu, sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 0.9;
@@ -65,7 +96,7 @@ a.uppercase-link
 }
 
 a.uppercase-link:hover {
-  color: #0a7525f7
+  color: #A31621
 ;
 }
 
@@ -74,7 +105,7 @@ a.uppercase-link:hover {
     position: sticky;
     top: 0;
    padding: 2%;
-   background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.356), rgba(255, 255, 255, 0));
+   background-image: linear-gradient(180deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.07));
   color: #06101D;
   z-index: 1;
 
@@ -120,7 +151,7 @@ width: 30%;
     }
 
 sup {
- color: #0a7525f7
+ color: #A31621;
 ;
 }
  
@@ -129,13 +160,13 @@ sup {
   
   font-weight: 500;
   text-decoration: none;
-  color: #045326f7;
+  color: #584F697;
 }
 
 a.link {
       text-decoration: none;
       font-weight: 500;
-      color: #045326f7;
+      color: #584F697;
     }
     .link:hover {
       text-decoration: none;
@@ -153,19 +184,19 @@ a.link {
 
           a.link-arrow-light:hover {
             text-decoration: none;
-            color: #00d435;
+            color: #584F69;
   
 
       }
      a.link-arrow:hover{
         text-decoration: none;
-        color: #0a7525f7
+        color: #584F69
 ;
         
       }
       .link:hover {
         text-decoration:none;
-        color: #0a7525f7
+        color: #584F69
 ;
       }
 
@@ -217,9 +248,10 @@ a.link {
 
  a.button {
     text-decoration: none;
-    color: rgba(242, 242, 242, 0.956);
-    background-color:  rgb(0, 57, 0);
-       font-family: inter, sans-serif;
+    color: #A31621;
+    border: 1px solid  #A31621;
+    background-color:  none;
+       font-family: syne, sans-serif;
        font-weight: 400;
   
        letter-spacing: 0.1;
@@ -257,11 +289,11 @@ border-radius: 5%;
       font-weight: 400;
       padding: 8px 32px;
       color: white;
-      background-color: #009325;
+      background-color:  #A31621;
     }
 
     a.selected {
-      background-color:#045326f7
+      background-color:#584F697
 ;
     }
 
@@ -279,7 +311,7 @@ border-radius: 5%;
 .image-caption {
   font-weight: 300;
   text-align: center; 
-  color: grey;
+  color: #CDCCCD;
 }
 
  /* img {
@@ -509,9 +541,9 @@ img {
 
 
 .grey-section {
- background-color:  rgba(228, 220, 212, 0.261);
-  border-radius: 2%; 
-  padding: 8%;
+ background-color: #f3f4f692;
+  border-radius: 6px; 
+  padding: 12% 6% 8% 6%;
 }
 
 
@@ -561,10 +593,12 @@ img:hover {
 
 .selected-bulb {
   padding: 8px 16px;
-  background: rgba(239, 239, 239, 0.418);
+  background: #0000000c;
   border-radius: 16px;
-  color: #181818;
+ 
 }
+
+
 
 .title-link:hover {
   width: fit-content;
@@ -572,7 +606,7 @@ img:hover {
 
 .title-link:hover {
   text-decoration: none;
-  color: #005829f7;
+  color:  #A31621;
 }
 
 .tag {
@@ -581,14 +615,14 @@ img:hover {
   height: fit-content;
   background-color: rgba(192, 235, 176, 0.434);
   border-radius: 100px;
-  color: #047c22;
+  color: #A31621;
   font-weight: 400;
 
 }
 
 .tag:hover{
   text-decoration: none;
-  color: #047c22;
+  color: #A31621;
 }
 
 
