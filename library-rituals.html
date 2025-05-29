@@ -42,6 +42,11 @@
     <link rel="stylesheet" href="css/style.css">
 
 
+      
+  <!-- Swiss Typography Style -->
+  <link rel="stylesheet" href="/swiss-style.css">
+  
+
     <!--track events via Pirsch.io-->
 <script defer type="text/javascript" src="https://api.pirsch.io/pirsch-events.js"
 id="pirscheventsjs"
@@ -84,27 +89,11 @@ THE SOFTWARE.
 --> 
 
 
-<r-grid columns=8 columns-s=2 class="sticky">
-  <r-cell span=2-3 span-s=1 >
-<h3 style="font-family: syne tactile;  color: #C9C6CF ;"> <a href="index.html" class="link" >Julija.works  </a></h3>
-  </r-cell>
-  
-  
-  <r-cell span=4-7 span-s=1 >
-  
-    <h3 style="float: right; color: rgb(20, 20, 20);">
-        
-      <a href="index.html" class="link-arrow  selected-bulb"> Work</a>
-        &nbsp;   &nbsp;
-        <a href="services.html" class=" link-arrow">Services</a>
-        &nbsp;   &nbsp;
-          <a href="about.html" class="link-arrow">Bio</a>
-          &nbsp;   &nbsp;
-        </h3>
-  </r-cell>
-  
-    </r-grid>
- 
+ <!-- Header Navigation Placeholder -->
+<div id="header-placeholder"></div>
+
+<!-- Header Navigation Component -->
+<script src="js/header-nav-component.js"></script>
    
   
     <r-grid columns=8 columns-s=2  >
@@ -578,7 +567,7 @@ ing for books, actively making time for this activity of browsing.
                       <h3 style="  line-height: 1.3;">
                                
                                 
-                      The previous workshop revealed the importance of recommendations. Almost everyone we talked to relied on them in some form. The purpose of the second exercise was to find out more about what made recommendations reliable to individuals.
+                      The previous workshop revealed the importance of recommendations. Almost everyone we talked to relied on them in some form. The purpose of the second exercise was to find out more Bio what made recommendations reliable to individuals.
                     </br>  </br> </h3>  </r-cell>
 
 
@@ -595,7 +584,7 @@ ing for books, actively making time for this activity of browsing.
                            <h4 style="  line-height: 1.3;">
                             Each participant was given a paper divided in two sections. 
                             The right section was dedicated to a person recommending a 
-                            book and the left to information about the book. The task was 
+                            book and the left to information Bio the book. The task was 
                             to put together what information should be present on each side.
                            </br></br>
                             A number of cut out examples of recommendations were provided. These included things like grading, degree of personal information, related books, list and genres, which they could glue on as they liked. Participants could also choose to add their own elements. </h4>
@@ -694,7 +683,7 @@ ing for books, actively making time for this activity of browsing.
                               papers, radio, book clubs and the library recommendation shelf.
                               
                               Recommendations seem to be a way for people to feel assured
-                              about the book they are choosing, as well as a way of finding new
+                              Bio the book they are choosing, as well as a way of finding new
                               books to read.</h3>
               
  </r-cell>
@@ -761,35 +750,9 @@ ing for books, actively making time for this activity of browsing.
 </br>  </br>  </br>  </br>
 
 
-  
-  <r-grid   columns=8 columns-s=1 
-    data-aos="fade-zoom-in"
-  data-aos-easing="ease-in-back"
-  data-aos-delay="100"
-  data-aos-offset="0">
 
-  <r-cell span=2-4 span-s=1>
-
-         <!-- Calendly link widget begin -->
-         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-         <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-         <a class="button button-primary"  href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rukanskaite/meet'});return false;">Book a Coffee Chat ↗</a>
-         <!-- Calendly link widget end -->
-      
-   
-    
-  </r-cell>
-
-
-    <r-cell span=5-7 span-s=1>
-      <h1 style="color: #A31621;">hello@julija.works</h1>
-      <p> site developed by Julija Rukanskaitė, based on software by <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Rasmus Andersson, 2019 </a>
-      </p> </r-cell>
-    
-    </r-grid>
-             
-      
-  
+ <!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
    
         
       
@@ -1353,6 +1316,8 @@ updateComputedValueLabels()
 	});
 </script>
 
+<!-- Footer Include Script -->
+<script src="js/footer-include.js"></script>
 
 </body>
 </html>

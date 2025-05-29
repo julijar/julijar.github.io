@@ -25,7 +25,7 @@ font-weight: 400;
 }
 
 h1.large, h1.xlarge, h1.xxlarge {
-font-family: syne tactile, sans-serif;
+font-family: syne, sans-serif;
 font-weight: 400;
 font-style: normal;
 line-height: 1.2;
@@ -37,7 +37,7 @@ letter-spacing: 0.005;
 
 
 h1{
-  font-family: Syne Tactile, sans-serif;
+  font-family: Syne, sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1.2;
@@ -263,7 +263,7 @@ padding: 8px 16px;
  }
 
 
- a.round-button {
+ a.round- {
   border-radius: 16%;
   letter-spacing: 0.2;
   font-size: large;

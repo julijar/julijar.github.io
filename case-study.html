@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Designer Portfolio ☼ Case Study</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="https://www.example.com/img/icon.png">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <meta property="og:description" content="Product designer" />
+  <meta property="og:title" content="Designer Name" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../raster2.css?v=20">
+  
+  <!--scroll animation library-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!--cursor library-->
+  <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+  <!--fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Syne+Tactile&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--icons api-->
+  <script src="https://kit.fontawesome.com/123456789.js" crossorigin="anonymous"></script>
+  
+  <!-- Flickity carousel CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  
+  <!-- Swiss Typography Style -->
+  <link rel="stylesheet" href="/swiss-style.css">
+  
+  <!--track events via Pirsch.io-->
+  <script defer type="text/javascript" src="https://api.pirsch.io/pirsch-events.js" id="pirscheventsjs" data-code="ANONYMIZED_CODE"></script>
+  
+  <!-- Hotjar Tracking Code -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:0000000,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <r-grid columns=8 columns-s=2 class="sticky">
+    <r-cell span=2-3 span-s=1>
+      <h3 style="font-family: syne tactile; color: var(--color-highlight-soft);">
+        <a href="index.html" class="link">Portfolio.site</a>
+      </h3>
+    </r-cell>
+    
+    <r-cell span=4-7 span-s=1>
+      <h3 style="float: right; color: var(--color-text-primary);">
+        <a href="index.html" class="link-arrow selected-bulb">Work</a>
+        &nbsp; &nbsp;
+        <a href="services.html" class="link-arrow">Services</a>
+        &nbsp; &nbsp;
+        <a href="Bio.html" class="link-arrow">Bio</a>
+        &nbsp; &nbsp;
+      </h3>
+    </r-cell>
+  </r-grid>
+
+  <!-- Table of Contents -->
+  <div class="toc-container" id="toc">
+    <button class="toc-toggle" id="toc-toggle">
+      <span>Table of Contents</span>
+      <span class="toc-arrow">↑</span>
+    </button>
+    <div class="toc-content">
+      <div class="toc-title">Navigate</div>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#project-title" class="toc-link">Project</a></li>
+        <li class="toc-item"><a href="#services" class="toc-link">Services</a></li>
+        <li class="toc-item"><a href="#overview" class="toc-link">Overview</a></li>
+        <li class="toc-item"><a href="#challenge" class="toc-link">Challenge</a></li>
+        <li class="toc-item"><a href="#process" class="toc-link">Process</a></li>
+        <li class="toc-item"><a href="#solution" class="toc-link">Solution</a></li>
+        <li class="toc-item"><a href="#impact" class="toc-link">Impact</a></li>
+        <li class="toc-item"><a href="#related-work" class="toc-link">Related Work</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  
+  <script>
+    AOS.init(10);
+    
+    // Table of Contents functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const toc = document.getElementById('toc');
+      const tocToggle = document.getElementById('toc-toggle');
+      const tocLinks = document.querySelectorAll('.toc-link');
+      
+      // Toggle TOC on mobile/tablet
+      tocToggle.addEventListener('click', function() {
+        toc.classList.toggle('expanded');
+      });
+      
+      // Smooth scroll and active link tracking
+      tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // Close TOC on mobile after navigation
+            if (window.innerWidth <= 1024) {
+              toc.classList.remove('expanded');
+            }
+          }
+        });
+      });
+      
+      // Track scroll position and highlight active section
+      function updateActiveLink() {
+        const sections = document.querySelectorAll('[id]');
+        const scrollPos = window.scrollY + 100;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          const correspondingLink = document.querySelector(`a[href="#${sectionId}"]`);
+          
+          if (correspondingLink && scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            correspondingLink.classList.add('active');
+          }
+        });
+      }
+      
+      // Update active link on scroll
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink(); // Initial call
+    });
+  </script>
+
+  <script src="https://unpkg.com/kursor"></script>
+  <script>
+    new kursor({
+      removeDefaultCursor: true,
+      type: 4,
+      color: '#ANONYMIZED_COLOR'
+    })
+  </script>
+</body>
+</html>
+
+  <!-- Project Title Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-8 span-s=row>
+      <h1 class="xlarge">
+        </br>
+        <!-- PROJECT TITLE -->
+        [Project Title]
+      </h1>
+      </br></br>
+    </r-cell>
+    
+    <!-- Services Section -->
+    <r-cell span=2-3 span-s=row>
+      <h3>Services</h3>
+      </br>
+      <!-- LIST OF SERVICES -->
+      <h3>[Service 1]</h3>
+      </br>
+      <h3>[Service 2]</h3>
+      </br>
+      <h3>[Service 3]</h3>
+      </br>
+      <h3>[Service 4]</h3>
+    </r-cell>
+    
+    <!-- Brief Section -->
+    <r-cell span=5-7 span-s=row>
+      <h3>
+        <!-- BRIEF INTRODUCTION -->
+        [Brief project introduction that highlights your approach and expertise in this specific case study]
+      </h3>
+    </r-cell>
+  </r-grid>
+
+  <!-- Featured Content Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-4 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- FEATURED HEADLINE -->
+      <h2>[Featured Headline]</h2>
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image">[Image Placeholder]</div>
+    </r-cell>
+    
+    <r-cell span=5-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image">[Image Placeholder]</div>
+      </br></br></br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- Content Sections -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <h3>
+        <!-- CONTENT SECTION 1 -->
+        [Content describing project background, approach, or methodology. This section should provide context about the project and your role.]
+      </h3>
+      </br></br></br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- Carousel Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "prevNextButtons": true, "pageDots": true }'>
+        <div class="carousel-cell">[Carousel Item 1]</div>
+        <div class="carousel-cell">[Carousel Item 2]</div>
+        <div class="carousel-cell">[Carousel Item 3]</div>
+        <div class="carousel-cell">[Carousel Item 4]</div>
+        <div class="carousel-cell">[Carousel Item 5]</div>
+      </div>
+      </br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- More Content Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <h3>
+        <!-- CONTENT SECTION 2 -->
+        [Additional content describing your process, challenges faced, or solutions implemented. This section should highlight your problem-solving approach.]
+      </h3>
+      </br></br></br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- Image Grid Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-3 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image" style="height: 200px;">[Image 1]</div>
+    </r-cell>
+    
+    <r-cell span=4-5 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image" style="height: 200px;">[Image 2]</div>
+    </r-cell>
+    
+    <r-cell span=6-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image" style="height: 200px;">[Image 3]</div>
+      </br></br></br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- Additional Content Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <h3>
+        <!-- CONTENT SECTION 3 -->
+        [Further project details, implementation strategy, or outcomes. This section can focus on specific aspects of the project that demonstrate your expertise.]
+      </h3>
+      </br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- Second Image Grid Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-3 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image" style="height: 200px;">[Image 4]</div>
+    </r-cell>
+    
+    <r-cell span=4-5 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image" style="height: 200px;">[Image 5]</div>
+    </r-cell>
+    
+    <r-cell span=6-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <!-- PLACEHOLDER INSTEAD OF IMAGE -->
+      <div class="placeholder-image" style="height: 200px;">[Image 6]</div>
+      </br></br></br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- Final Content Section -->
+  <r-grid columns=8 columns-s=1>
+    <r-cell span=2-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
+      <h3>
+        <!-- CONTENT SECTION 5 -->
+        [Conclusion, results, or reflections on the project. This section should summarize the impact of your work and lessons learned.]
+      </h3>
+      </br></br></br></br>
+    </r-cell>
+  </r-grid>
+
+  <!-- Selected Work Section -->
+  <r-grid columns=8 columns-s=1 class="desktop-padding">
+    <r-cell span=2-8 span-s=row>
+      <h1>Selected work</h1>
+      </br></br>
+    </r-cell>
+    
+    <!-- First Selected Work -->
+    <r-cell span=2-8 span-s=row>
+      <h1 class="large">
+        <a href="project-1.html" class="title-link">[Project 1]</a>
+      </h1>
+      <h3>[Brief project description] ></h3>
+      </br></br>
+    </r-cell>
+    
+    <!-- Second Selected Work -->
+    <r-cell span=2-8 span-s=row>
+      <h1 class="large">
+        <a href="project-2.html" class="title-link">[Project 2]</a>
+      </h1>
+      <h3>[Brief project description] ></h3>
+      </br></br></br></br>
+    </r-cell>
+  </r-grid>
+
+ <!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+  <!-- Footer Include Script -->
+<script src="js/footer-include.js"></script>

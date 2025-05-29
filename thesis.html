@@ -44,6 +44,11 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+      
+  <!-- Swiss Typography Style -->
+  <link rel="stylesheet" href="/swiss-style.css">
+  
+
     <!--track events via Pirsch.io-->
 <script defer type="text/javascript" src="https://api.pirsch.io/pirsch-events.js"
 id="pirscheventsjs"
@@ -84,27 +89,12 @@ THE SOFTWARE.
 --> 
 
 
-  
-<r-grid columns=8 columns-s=2 class="sticky">
-  <r-cell span=2-3 span-s=1 >
-<h3 style="font-family: syne tactile;  color: #C9C6CF ;"> <a href="index.html" class="link" >Julija.works  </a></h3>
-  </r-cell>
-  
-  
-  <r-cell span=4-7 span-s=1 >
-  
-    <h3 style="float: right; color: rgb(20, 20, 20);">
-        
-      <a href="index.html" class="link-arrow  selected-bulb"> Work</a>
-        &nbsp;   &nbsp;
-        <a href="services.html" class=" link-arrow">Services</a>
-        &nbsp;   &nbsp;
-          <a href="about.html" class="link-arrow">Bio</a>
-          &nbsp;   &nbsp;
-        </h3>
-  </r-cell>
-  
-    </r-grid>
+ 
+ <!-- Header Navigation Placeholder -->
+<div id="header-placeholder"></div>
+
+<!-- Header Navigation Component -->
+<script src="js/header-nav-component.js"></script>
 
     <r-grid columns=8 columns-s=2  >
     
@@ -243,32 +233,8 @@ data-aos="fade-zoom-in"
 
 
   
-  <r-grid   columns=8 columns-s=1 
-    data-aos="fade-zoom-in"
-  data-aos-easing="ease-in-back"
-  data-aos-delay="100"
-  data-aos-offset="0">
-
-  <r-cell span=2-4 span-s=1>
-
-         <!-- Calendly link widget begin -->
-         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-         <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-         <a class="button button-primary"  href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rukanskaite/meet'});return false;">Book a Coffee Chat ↗</a>
-         <!-- Calendly link widget end -->
-      
-   
-    
-  </r-cell>
-
-
-    <r-cell span=5-7 span-s=1>
-      <h1 style="color: #A31621;">hello@julija.works</h1>
-      <p> site developed by Julija Rukanskaitė, based on software by <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Rasmus Andersson, 2019 </a>
-      </p> </r-cell>
-    
-    </r-grid>
- 
+ <!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
 
   <!-- ---- internal only -- not part of raster ---- -->
   <script>(function(){
@@ -819,6 +785,8 @@ updateComputedValueLabels()
 	});
 </script>
 
+<!-- Footer Include Script -->
+<script src="js/footer-include.js"></script>
 
 </body>
 </html>
