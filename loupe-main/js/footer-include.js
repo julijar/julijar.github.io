@@ -4,7 +4,25 @@
 function loadFooter() {
   const footerHTML = `
     <!-- Simple Footer Component -->
-    <r-grid columns=8 columns-s=1 style="background-color: rgb(255, 255, 255); border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
+    <r-grid columns=8 columns-s=1 
+    style="gradient-background {
+  background: linear-gradient(196deg,#fff7f7,#cec5c5,#fcfcfc);
+  background-size: 180% 180%;
+  animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
       <r-cell span=2-4 span-s=1>
         <a class="button button-primary" 
            href="#" 

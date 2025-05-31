@@ -115,11 +115,24 @@ THE SOFTWARE.
 
 
 
- <!-- Header Navigation Placeholder -->
-<div id="header-placeholder"></div>
-
-<!-- Header Navigation Component -->
-<script src="js/header-nav-component.js"></script>
+  <!-- Header Navigation -->
+    <r-grid columns="8" columns-s="4" class="sticky">
+    <r-cell span="2-4" span-s="1-1">
+      <h3 style="font-family: syne tactile; color: #C9C6CF;">
+        <a href="index.html" class="link">julija.works</a>
+      </h3>
+    </r-cell>
+    <r-cell span="5-7" span-s="2-4">
+      <h3 style="float: right; color: rgb(20, 20, 20);">
+        <a href="index.html" class="link-arrow selected-bulb">Work</a>
+        &nbsp; &nbsp;
+        <a href="services.html" class="link-arrow">Services</a>
+        &nbsp; &nbsp;
+        <a href="bio.html" class="link-arrow">Bio</a>
+        &nbsp; &nbsp;
+      </h3>
+    </r-cell>
+  </r-grid>
   
    
   
@@ -644,9 +657,26 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
 
 
   
- <!-- Footer Placeholder -->
-<div id="footer-placeholder"></div>
+ <!-- Footer -->
+  <r-grid columns="8" columns-s="1" style="background-color: rgb(255, 255, 255); border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
+    <r-cell span="2-4" span-s="1">
+      <a class="button" 
+         href="#" 
+         data-cal-link="julija/30min"
+         data-cal-namespace="30min"
+         data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
+    </r-cell>
 
+    <r-cell span="5-7" span-s="1">
+      <h2 style="color: #515151;">hello@julija.works</h2>
+      </br>
+      <p style="color: #afafaf;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
+      </br>  
+      <p style="color: #afafaf;">Studio Julija Rukanskaite 
+        </br>
+        Org.no: 932 773 511 MVA</p>
+    </r-cell>
+  </r-grid>
  
     
         
