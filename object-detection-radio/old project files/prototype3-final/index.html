@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Object Detection Radio</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- this link is supposed to fix the "io undefined" error but dk what it does -->
+    <!-- It loads the javascript file. defer makes the browser load it when everything else (html, css) has loaded -->
+    <!-- <script src="http://localhost:3000/app.js" defer></script> -->
+
+    <!-- Import TensorFlow.js library -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"
+      defer
+    ></script>
+
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"
+      defer
+    ></script>
+
+    <!-- Load the socket library to get rid of io() problems -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"
+      defer
+    ></script>
+
+    <!-- Load the client side app -->
+    <script src="/client.js" defer></script>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+   
+
+    <div class="section group">
+      <div class="col span_1_of_4">
+        <section>
+          <audio
+            id="plantSound1"
+            src="/prototype3-final/plant1_edtijo__happy-8bit-pixel-adenture.wav"
+          ></audio>
+          <audio
+            id="plantSound2"
+            src="/prototype3-final/plant2__rootsmessenger__rootsmessenger-spiral-loop-111bpm-freesound.wav"
+          ></audio>
+          <audio
+            id="plantSound3"
+            src="/prototype3-final/plant3__adnova__happy-cave.wav"
+          ></audio>
+    
+          <audio
+            id="radioStatic1"
+            src="/prototype3-final/radioStatic1.wav"
+          ></audio>
+          <audio
+            id="radioStatic2"
+            src="/prototype3-final/radioStatic2.wav"
+          ></audio>
+          <audio
+            id="radioStatic3"
+            src="/prototype3-final/radioStatic3.wav"
+          ></audio>
+    
+          <audio
+            id="deepScanning"
+            src="/prototype3-final/deep-scan.mp3"
+          ></audio>
+          <audio
+            id="noise-interference"
+            src="/prototype3-final/electronic-malfunction-4.wav"
+          ></audio>
+          <audio
+            id="person"
+            src="/prototype3-final/futuristic-tuning.wav"
+          ></audio>
+          <audio
+            id="beepScan"
+            src="/prototype3-final/radar-sonar-scan.wav"
+          ></audio>
+        </section>
+    
+        <section>
+          <button id="loadModel">Load model</button>
+          <button id="webcamButton">Start webcam</button>
+          <button id="playStateButton">Play / Pause</button>
+        </section>
+    
+        <div id="liveView" class="camView">
+          <video id="webcam" autoplay width="100%" height="500px"></video>
+        </div>
+        <section id="demos" class="invisible"></section>
+      </div>
+
+      <div  class="col span_2_of_4" >
+      <div  >
+    
+        <div class="sliderDiv" id="PlantSliderDiv">
+          <div>
+            <h1 class="sliderText">
+              <span id="predictionCount">0</span>
+              <span id="outputVar"></span>
+            <span style="size: 50%; color: rgb(192, 192, 192);"> things found</span> 
+            </h1>
+          </div>
+          <input
+            type="range"
+            min="0.00"
+            max="1.00"
+            step="0.01"
+            class="slider"
+            id="PlantSlider"
+          />
+
+          <br> <br><br>
+          <br>
+      
+        </div>
+      </div>
+
+      <div >
+        <input
+          type="range"
+          min="0.00"
+          max="1.00"
+          step="0.01"
+          class="slider"
+          id="stabilizingSlider"
+        />
+      </div>
+
+      </div>
+
+
+      <!-- <button id="updatePredictions" onclick="updatePredictions();">Search for signals</button>-->
+    </div>
+  </body>
+</html>

@@ -461,145 +461,693 @@
     </style>
 </head>
 <body>
-    <div class="intro-container">
-        <div class="corner-icon top-left"><span class="glow-icon">◼</span></div>
-        <div class="corner-icon top-right"><span class="glow-icon">◔◉</span></div>
-        <div class="corner-icon bottom-left"><span class="glow-icon">◼</span></div>
-        <div class="corner-icon bottom-right"><span class="glow-icon">◔◉</span></div>
-        <div class="centered-glow"><span class="glow-icon">◔◉</span></div>
-        <div class="about-section">
-            <h2>ABOUT</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, velit orci vitae id vestibulum, sapien.</p>
-            <p>Elit vitae pellentesque enim vel volutpat, aliquam donec. Ultricies amet lobortis senectus arcu. Scelerisque amet, ornare risus nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, velit orci vitae id vestibulum, sapien.</p>
-            <p>Elit vitae pellentesque enim vel volutpat, aliquam donec. Ultricies amet lobortis senectus arcu. Scelerisque amet, ornare risus nunc.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <section id="audioElements" style="display:none;">
+      <audio id="plantSound1" src="http://localhost:3000/plant1_edtijo__happy-8bit-pixel-adenture.wav"></audio>
+      <audio id="plantSound2" src="http://localhost:3000/plant2__rootsmessenger__rootsmessenger-spiral-loop-111bpm-freesound.wav"></audio>
+      <audio id="plantSound3" src="http://localhost:3000/plant3__adnova__happy-cave.wav"></audio>
+      <audio id="radioStatic1" src="http://localhost:3000/radioStatic1.wav"></audio>
+      <audio id="radioStatic2" src="http://localhost:3000/radioStatic2.wav"></audio>
+      <audio id="radioStatic3" src="http://localhost:3000/radioStatic3.wav"></audio>
+      <audio id="deepScanning" src="http://localhost:3000/deep-scan.mp3"></audio>
+      <audio id="noise-interference" src="http://localhost:3000/electronic-malfunction-4.wav"></audio>
+      <audio id="person" src="http://localhost:3000/futuristic-tuning.wav"></audio>
+      <audio id="beepScan" src="http://localhost:3000/radar-sonar-scan.wav"></audio>
+    </section>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" id="backBtn">←</button>
+            <div class="header-title">Object Detection Radio</div>
+            <button class="info-btn" id="infoBtn">ⓘ</button>
         </div>
-        <div class="model-select-section">
-            <h3>CHOOSE A MODEL</h3>
-            <div class="model-list">
-                <div class="model-card">
-                    <span class="model-glow-icon">⎔</span>
-                    <span class="model-name">model name</span>
-                    <span class="model-arrow">→</span>
+
+        <!-- Model Selection Screen -->
+        <div class="model-selection" id="modelSelection">
+            <div class="section-title">Choose a Model to Listen To</div>
+            
+            <div class="model-grid">
+                <div class="model-card" data-model="plants">
+                    <div class="model-icon">🌱</div>
+                    <div class="model-name">Plants</div>
+                    <div class="model-description">Detect potted plants and vegetation</div>
                 </div>
-                <div class="model-card">
-                    <span class="model-glow-icon">⎔</span>
-                    <span class="model-name">model name</span>
-                    <span class="model-arrow">→</span>
+                
+                <div class="model-card" data-model="objects">
+                    <div class="model-icon">📦</div>
+                    <div class="model-name">Objects</div>
+                    <div class="model-description">General object detection</div>
                 </div>
-                <div class="model-card">
-                    <span class="model-glow-icon">⎔</span>
-                    <span class="model-name">model name</span>
-                    <span class="model-arrow">→</span>
+                
+                <div class="model-card" data-model="people">
+                    <div class="model-icon">👤</div>
+                    <div class="model-name">People</div>
+                    <div class="model-description">Human detection and tracking</div>
+                </div>
+                
+                <div class="model-card" data-model="all">
+                    <div class="model-icon">🎯</div>
+                    <div class="model-name">All Objects</div>
+                    <div class="model-description">Complete COCO dataset</div>
+                </div>
+            </div>
+            
+            <div class="control-buttons">
+                <button class="control-btn primary" id="startDetectionBtn">Start Detection</button>
+            </div>
+        </div>
+
+        <!-- Detection Screen -->
+        <div class="detection-screen" id="detectionScreen">
+            <div class="camera-container">
+                <video id="videoElement" autoplay playsinline muted></video>
+                <div class="detection-overlay" id="detectionOverlay"></div>
+                <div class="loading" id="loadingCamera">
+                    <div class="loading-spinner"></div>
+                    Initializing camera...
+                </div>
+            </div>
+            
+            <div class="control-panel">
+                <div class="frequency-display">
+                    <div class="frequency-value" id="frequencyValue">440.0</div>
+                    <div class="frequency-unit">Hz</div>
+                </div>
+                
+                <div class="tuning-control">
+                    <div class="tuning-circle">
+                        <div class="tuning-knob" id="tuningKnob"></div>
+                        <div class="signal-indicators" id="signalIndicators"></div>
+                    </div>
+                </div>
+                
+                <div class="frequency-slider" id="frequencySlider">
+                    <div class="slider-track">
+                        <div class="slider-handle" id="sliderHandle"></div>
+                    </div>
+                </div>
+                
+                <div class="status-info">
+                    <div class="status-row">
+                        <span class="status-label">Signals Found</span>
+                        <span class="status-value" id="signalsCount">0</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Current Signal</span>
+                        <span class="status-value" id="currentSignal">None</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Signal Strength</span>
+                        <span class="status-value" id="signalStrength">0%</span>
+                    </div>
+                </div>
+                
+                <div class="control-buttons">
+                    <button class="control-btn" id="stopBtn">Stop</button>
+                    <button class="control-btn" id="resetBtn">Reset</button>
+                    <button class="control-btn primary" id="scanBtn">Scan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">About This Model</div>
+                    <button class="close-btn" id="closeModalBtn">×</button>
+                </div>
+                <div class="modal-text">
+                    The Object Detection Radio explores machine learning uncertainty through playful interaction. By "tuning into" different confidence levels, you can discover how the AI model sees and categorizes the world around you.
+                </div>
+                <div class="modal-text">
+                    This project uses TensorFlow.js and the COCO-SSD model to detect objects in real-time. The uncertainty and "failures" of the model become features - allowing you to explore the boundaries between different object categories.
+                </div>
+                <div class="modal-text">
+                    Move the frequency slider to tune into different confidence levels. Each detected object appears as a "signal" that you can tune into, revealing the probabilistic nature of machine learning predictions.
                 </div>
             </div>
         </div>
     </div>
-    <style>
-        body {
-            background: #111;
-            color: #fff;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
+    
+    <script>
+        class ObjectDetectionRadio {
+            constructor() {
+                this.model = null;
+                this.video = document.getElementById('videoElement');
+                this.detectionOverlay = document.getElementById('detectionOverlay');
+                this.isScanning = false;
+                this.detections = [];
+                this.audioContext = null;
+                this.oscillator = null;
+                this.gainNode = null;
+                this.frequency = 440;
+                this.selectedModel = 'all';
+                this.isDragging = false;
+                
+                // Audio elements for feedback system
+                this.audioElements = {
+                    plant: [
+                        document.getElementById('plantSound1'),
+                        document.getElementById('plantSound2'),
+                        document.getElementById('plantSound3')
+                    ],
+                    static: [
+                        document.getElementById('radioStatic1'),
+                        document.getElementById('radioStatic2'),
+                        document.getElementById('radioStatic3')
+                    ],
+                    deepScan: document.getElementById('deepScanning'),
+                    person: document.getElementById('person'),
+                    beepScan: document.getElementById('beepScan'),
+                    noise: document.getElementById('noise-interference')
+                };
+                this.volumeState = [0, 0, 0];
+                this.friction = 0.1; // Smoothing factor for volume transitions
+                
+                this.init();
+            }
+            
+            async init() {
+                this.setupEventListeners();
+                this.setupAudio();
+                this.startSounds(); // Start looping audio elements
+                await this.loadModel();
+            }
+            
+            setupEventListeners() {
+                // Model selection
+                document.querySelectorAll('.model-card').forEach(card => {
+                    card.addEventListener('click', (e) => this.selectModel(e.currentTarget));
+                });
+                
+                document.getElementById('startDetectionBtn').addEventListener('click', () => this.showDetectionScreen());
+                
+                // Navigation
+                document.getElementById('backBtn').addEventListener('click', () => this.showModelSelection());
+                document.getElementById('infoBtn').addEventListener('click', () => this.showModal());
+                document.getElementById('closeModalBtn').addEventListener('click', () => this.hideModal());
+                document.getElementById('modalOverlay').addEventListener('click', (e) => {
+                    if (e.target.id === 'modalOverlay') this.hideModal();
+                });
+                
+                // Controls
+                document.getElementById('scanBtn').addEventListener('click', () => this.toggleScanning());
+                document.getElementById('stopBtn').addEventListener('click', () => this.stopScanning());
+                document.getElementById('resetBtn').addEventListener('click', () => this.reset());
+                
+                // Touch controls for slider
+                this.setupSliderControls();
+                this.setupCircularControls();
+            }
+            
+            setupSliderControls() {
+                const slider = document.getElementById('frequencySlider');
+                const handle = document.getElementById('sliderHandle');
+                
+                const handleInteraction = (e) => {
+                    e.preventDefault();
+                    const rect = slider.getBoundingClientRect();
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+                    const percentage = x / rect.width;
+                    
+                    handle.style.left = `${percentage * 100}%`;
+                    this.frequency = 200 + (percentage * 600); // 200Hz to 800Hz range
+                    this.updateFrequencyDisplay();
+                    this.checkForSignals();
+                };
+                
+                slider.addEventListener('mousedown', (e) => {
+                    this.isDragging = true;
+                    handleInteraction(e);
+                });
+                
+                slider.addEventListener('touchstart', (e) => {
+                    this.isDragging = true;
+                    handleInteraction(e);
+                });
+                
+                document.addEventListener('mousemove', (e) => {
+                    if (this.isDragging) handleInteraction(e);
+                });
+                
+                document.addEventListener('touchmove', (e) => {
+                    if (this.isDragging) handleInteraction(e);
+                });
+                
+                document.addEventListener('mouseup', () => this.isDragging = false);
+                document.addEventListener('touchend', () => this.isDragging = false);
+            }
+            
+            setupCircularControls() {
+                const circle = document.querySelector('.tuning-circle');
+                const knob = document.getElementById('tuningKnob');
+                
+                const rotateKnob = (angle) => {
+                    const x = Math.cos(angle - Math.PI / 2) * 80;
+                    const y = Math.sin(angle - Math.PI / 2) * 80;
+                    knob.style.transform = `translate(${x}px, ${y}px)`;
+                    
+                    // Convert angle to frequency
+                    const normalizedAngle = (angle + Math.PI) / (2 * Math.PI);
+                    this.frequency = 200 + (normalizedAngle * 600);
+                    this.updateFrequencyDisplay();
+                    this.updateSliderPosition();
+                    this.checkForSignals();
+                };
+                
+                let isRotating = false;
+                
+                const handleRotation = (e) => {
+                    if (!isRotating) return;
+                    
+                    const rect = circle.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                    
+                    const angle = Math.atan2(clientY - centerY, clientX - centerX);
+                    rotateKnob(angle);
+                };
+                
+                circle.addEventListener('mousedown', (e) => {
+                    isRotating = true;
+                    handleRotation(e);
+                });
+                
+                circle.addEventListener('touchstart', (e) => {
+                    isRotating = true;
+                    handleRotation(e);
+                });
+                
+                document.addEventListener('mousemove', handleRotation);
+                document.addEventListener('touchmove', handleRotation);
+                document.addEventListener('mouseup', () => isRotating = false);
+                document.addEventListener('touchend', () => isRotating = false);
+            }
+            
+            updateSliderPosition() {
+                const percentage = (this.frequency - 200) / 600;
+                document.getElementById('sliderHandle').style.left = `${percentage * 100}%`;
+            }
+            
+            selectModel(card) {
+                document.querySelectorAll('.model-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                this.selectedModel = card.dataset.model;
+            }
+            
+            async showDetectionScreen() {
+                document.getElementById('modelSelection').style.display = 'none';
+                document.getElementById('detectionScreen').style.display = 'flex';
+                await this.setupCamera();
+            }
+            
+            showModelSelection() {
+                document.getElementById('detectionScreen').style.display = 'none';
+                document.getElementById('modelSelection').style.display = 'block';
+                this.stopScanning();
+            }
+            
+            showModal() {
+                document.getElementById('modalOverlay').style.display = 'flex';
+            }
+            
+            hideModal() {
+                document.getElementById('modalOverlay').style.display = 'none';
+            }
+            
+            async setupCamera() {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: {
+                            facingMode: 'environment',
+                            width: { ideal: 640 },
+                            height: { ideal: 480 }
+                        }
+                    });
+                    this.video.srcObject = stream;
+                    
+                    this.video.onloadedmetadata = () => {
+                        document.getElementById('loadingCamera').style.display = 'none';
+                    };
+                } catch (error) {
+                    console.error('Camera access failed:', error);
+                    document.getElementById('loadingCamera').innerHTML = 
+                        '<div style="color: #ff4444;">Camera access denied</div>';
+                }
+            }
+            
+            async loadModel() {
+                try {
+                    this.model = await cocoSsd.load();
+                } catch (error) {
+                    console.error('Model loading failed:', error);
+                }
+            }
+            
+            setupAudio() {
+                try {
+                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    this.gainNode = this.audioContext.createGain();
+                    this.gainNode.connect(this.audioContext.destination);
+                    this.gainNode.gain.value = 0;
+                } catch (error) {
+                    console.warn('Audio context not available');
+                }
+            }
+
+            startSounds() {
+                // Loop and mute all sounds initially
+                this.audioElements.deepScan.volume = 0;
+                this.audioElements.deepScan.loop = true;
+                this.audioElements.deepScan.play();
+                this.audioElements.person.volume = 0;
+                this.audioElements.person.loop = true;
+                this.audioElements.person.play();
+                this.audioElements.static.forEach(el => { el.volume = 0; el.loop = true; el.play(); });
+                this.audioElements.plant.forEach(el => { el.volume = 0; el.loop = true; el.play(); });
+            }
+
+            interpolateVolume(oldVol, targetVol, friction) {
+                const diff = Math.max(targetVol, 0) - Math.max(oldVol, 0);
+                const newVol = Math.max(oldVol + diff * friction, 0);
+                return newVol;
+            }
+            
+            updateFrequencyDisplay() {
+                document.getElementById('frequencyValue').textContent = this.frequency.toFixed(1);
+            }
+            
+            async toggleScanning() {
+                if (this.isScanning) {
+                    this.stopScanning();
+                } else {
+                    this.startScanning();
+                }
+            }
+            
+            async startScanning() {
+                if (!this.model || this.isScanning) return;
+                
+                this.isScanning = true;
+                document.getElementById('scanBtn').textContent = 'Scanning...';
+                document.getElementById('scanBtn').classList.remove('primary');
+                
+                this.scanLoop();
+            }
+            
+            async scanLoop() {
+                if (!this.isScanning) return;
+                
+                try {
+                    const predictions = await this.model.detect(this.video);
+                    this.processPredictions(predictions);
+                    requestAnimationFrame(() => this.scanLoop());
+                } catch (error) {
+                    console.error('Detection error:', error);
+                }
+            }
+            
+            processPredictions(predictions) {
+                // Filter predictions based on selected model
+                this.detections = this.filterPredictions(predictions);
+                
+                this.updateDetectionDisplay();
+                this.drawDetectionBoxes();
+                this.updateSignalIndicators();
+                this.checkForSignals();
+                this.updateAudioFeedback();
+            }
+            
+            filterPredictions(predictions) {
+                const filtered = predictions.filter(p => p.score > 0.1);
+                
+                switch (this.selectedModel) {
+                    case 'plants':
+                        return filtered.filter(p => 
+                            p.class.includes('plant') || 
+                            p.class.includes('potted') ||
+                            p.class.includes('vase')
+                        );
+                    case 'people':
+                        return filtered.filter(p => p.class === 'person');
+                    case 'objects':
+                        return filtered.filter(p => 
+                            !p.class.includes('person') && 
+                            !p.class.includes('plant')
+                        );
+                    default:
+                        return filtered;
+                }
+            }
+            
+            updateDetectionDisplay() {
+                document.getElementById('signalsCount').textContent = this.detections.length;
+            }
+            
+            drawDetectionBoxes() {
+                this.detectionOverlay.innerHTML = '';
+                
+                if (!this.video.videoWidth) return;
+                
+                const rect = this.video.getBoundingClientRect();
+                const scaleX = rect.width / this.video.videoWidth;
+                const scaleY = rect.height / this.video.videoHeight;
+                
+                this.detections.forEach(detection => {
+                    const [x, y, width, height] = detection.bbox;
+                    
+                    const box = document.createElement('div');
+                    box.className = 'detection-box';
+                    box.style.left = `${x * scaleX}px`;
+                    box.style.top = `${y * scaleY}px`;
+                    box.style.width = `${width * scaleX}px`;
+                    box.style.height = `${height * scaleY}px`;
+                    
+                    const label = document.createElement('div');
+                    label.className = 'detection-label';
+                    label.textContent = `${detection.class} ${Math.round(detection.score * 100)}%`;
+                    box.appendChild(label);
+                    
+                    this.detectionOverlay.appendChild(box);
+                });
+            }
+            
+            updateSignalIndicators() {
+                const container = document.getElementById('signalIndicators');
+                container.innerHTML = '';
+                
+                this.detections.forEach((detection, index) => {
+                    const angle = (detection.score * 2 * Math.PI) - Math.PI / 2;
+                    const x = Math.cos(angle) * 80 + 100;
+                    const y = Math.sin(angle) * 80 + 100;
+                    
+                    const dot = document.createElement('div');
+                    dot.className = 'signal-dot';
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                    dot.style.animationDelay = `${index * 0.2}s`;
+                    
+                    container.appendChild(dot);
+                });
+            }
+            
+            checkForSignals() {
+                if (!this.detections.length) {
+                    this.stopAudio();
+                    document.getElementById('currentSignal').textContent = 'None';
+                    document.getElementById('signalStrength').textContent = '0%';
+                    return;
+                }
+                
+                // Find closest signal to current frequency
+                let closestSignal = null;
+                let minDistance = Infinity;
+                
+                this.detections.forEach(detection => {
+                    const signalFreq = this.getObjectFrequency(detection.class);
+                    const distance = Math.abs(this.frequency - signalFreq);
+                    
+                    if (distance < 50 && distance < minDistance) { // 50Hz tolerance
+                        closestSignal = detection;
+                        minDistance = distance;
+                    }
+                });
+                
+                if (closestSignal) {
+                    const strength = Math.max(0, 1 - (minDistance / 50));
+                    this.playSignalAudio(closestSignal, strength);
+                    document.getElementById('currentSignal').textContent = closestSignal.class;
+                    document.getElementById('signalStrength').textContent = `${Math.round(strength * 100)}%`;
+                } else {
+                    this.stopAudio();
+                    document.getElementById('currentSignal').textContent = 'None';
+                    document.getElementById('signalStrength').textContent = '0%';
+                }
+            }
+            
+            getObjectFrequency(className) {
+                // Map different object classes to different frequency ranges
+                const frequencies = {
+                    'person': 220,
+                    'potted plant': 440,
+                    'plant': 440,
+                    'bottle': 330,
+                    'cup': 550,
+                    'book': 660,
+                    'cell phone': 880,
+                    'laptop': 770,
+                    'chair': 350,
+                    'dining table': 280,
+                    'tv': 600,
+                    'keyboard': 750,
+                    'mouse': 800,
+                    'remote': 720,
+                    'microwave': 400,
+                    'refrigerator': 300,
+                    'clock': 650,
+                    'vase': 500,
+                    'scissors': 780,
+                    'teddy bear': 380,
+                    'hair drier': 520,
+                    'toothbrush': 680,
+                    'default': 440
+                };
+                return frequencies[className] || frequencies.default;
+            }
+            
+            playSignalAudio(detection, strength) {
+                if (!this.audioContext) return;
+                
+                if (this.oscillator) {
+                    this.oscillator.stop();
+                }
+                
+                this.oscillator = this.audioContext.createOscillator();
+                this.oscillator.connect(this.gainNode);
+                
+                // Base frequency for the object type
+                const baseFreq = this.getObjectFrequency(detection.class);
+                
+                // Modulate frequency based on confidence
+                const freq = baseFreq + (detection.score * 100);
+                
+                this.oscillator.frequency.setValueAtTime(freq, this.audioContext.currentTime);
+                this.oscillator.type = 'sine';
+                
+                // Volume based on signal strength and proximity to tuned frequency
+                const volume = strength * 0.05; // Keep volume low
+                this.gainNode.gain.setValueAtTime(volume, this.audioContext.currentTime);
+                
+                this.oscillator.start();
+                
+                // Add some frequency modulation for organic feel
+                setTimeout(() => {
+                    if (this.oscillator) {
+                        this.oscillator.frequency.exponentialRampToValueAtTime(
+                            freq * (1 + (Math.random() - 0.5) * 0.1), 
+                            this.audioContext.currentTime + 0.3
+                        );
+                    }
+                }, 100);
+            }
+            
+            stopAudio() {
+                if (this.oscillator) {
+                    try {
+                        this.oscillator.stop();
+                    } catch (e) {
+                        // Oscillator may already be stopped
+                    }
+                    this.oscillator = null;
+                }
+                if (this.gainNode) {
+                    this.gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+                }
+            }
+
+            updateAudioFeedback() {
+                // Example: Only for plant detections (extend as needed)
+                const plants = this.detections.filter(d => d.class === 'potted plant' || d.class === 'plant');
+                const friction = this.friction;
+                // Plant sounds
+                for (let i = 0; i < 3; i++) {
+                    let targetVolume = 0;
+                    if (plants[i]) {
+                        // Use detection confidence for volume
+                        targetVolume = Math.max(0, Math.min(1, plants[i].score));
+                    }
+                    const oldVol = this.audioElements.plant[i].volume;
+                    const newVol = this.interpolateVolume(oldVol, targetVolume, friction);
+                    this.audioElements.plant[i].volume = newVol;
+                    // Inverse for static
+                    this.audioElements.static[i].volume = 1 - newVol;
+                }
+                // Deep scan sound: on if no plants
+                this.audioElements.deepScan.volume = this.interpolateVolume(
+                    this.audioElements.deepScan.volume,
+                    plants.length ? 0 : 0.4,
+                    friction
+                );
+                // Person sound: on if person detected
+                const personDetected = this.detections.some(d => d.class === 'person');
+                this.audioElements.person.volume = this.interpolateVolume(
+                    this.audioElements.person.volume,
+                    personDetected ? 0.5 : 0,
+                    friction
+                );
+            }
+            
+            stopScanning() {
+                this.isScanning = false;
+                this.stopAudio();
+                document.getElementById('scanBtn').textContent = 'Scan';
+                document.getElementById('scanBtn').classList.add('primary');
+                this.detectionOverlay.innerHTML = '';
+                document.getElementById('signalIndicators').innerHTML = '';
+                document.getElementById('signalsCount').textContent = '0';
+                document.getElementById('currentSignal').textContent = 'None';
+                document.getElementById('signalStrength').textContent = '0%';
+            }
+            
+            reset() {
+                this.stopScanning();
+                this.frequency = 440;
+                this.updateFrequencyDisplay();
+                this.updateSliderPosition();
+                
+                // Reset knob position
+                document.getElementById('tuningKnob').style.transform = 'translate(0px, -80px)';
+                
+                this.detections = [];
+            }
         }
-        .intro-container {
-            max-width: 400px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            position: relative;
-            background: #181818;
-            box-shadow: 0 0 40px #000a;
-        }
-        .centered-glow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 32px;
-            margin-bottom: 32px;
-        }
-        .glow-icon {
-            font-size: 2.5rem;
-            color: #fff;
-            text-shadow: 0 0 16px #fff, 0 0 32px #fff8, 0 0 64px #fff4;
-            letter-spacing: 0.2em;
-        }
-        .corner-icon {
-            position: absolute;
-            z-index: 2;
-        }
-        .corner-icon.top-left { left: 24px; top: 24px; }
-        .corner-icon.top-right { right: 24px; top: 24px; }
-        .corner-icon.bottom-left { left: 24px; bottom: 24px; }
-        .corner-icon.bottom-right { right: 24px; bottom: 24px; }
-        .about-section {
-            margin: 0 32px 32px 32px;
-        }
-        .about-section h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            margin-bottom: 18px;
-        }
-        .about-section p {
-            font-size: 1rem;
-            color: #e0e0e0;
-            margin-bottom: 16px;
-            line-height: 1.6;
-        }
-        .model-select-section {
-            margin: 0 0 32px 0;
-            padding: 0 32px;
-        }
-        .model-select-section h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            margin-bottom: 18px;
-        }
-        .model-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .model-card {
-            display: flex;
-            align-items: center;
-            background: #181818;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 18px 20px;
-            margin-bottom: 0;
-            box-shadow: 0 0 16px #fff2;
-            cursor: pointer;
-            transition: border 0.2s, box-shadow 0.2s;
-        }
-        .model-card:hover {
-            border: 1.5px solid #00ffb3;
-            box-shadow: 0 0 24px #00ffb355;
-        }
-        .model-glow-icon {
-            font-size: 1.5rem;
-            color: #fff;
-            text-shadow: 0 0 8px #fff, 0 0 16px #fff8;
-            margin-right: 18px;
-        }
-        .model-name {
-            flex: 1;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #fff;
-            letter-spacing: 0.05em;
-        }
-        .model-arrow {
-            font-size: 1.3rem;
-            color: #00ffb3;
-            text-shadow: 0 0 8px #00ffb3, 0 0 16px #00ffb388;
-        }
-    </style>
+        
+        // Initialize the app
+        let radio;
+        
+        window.addEventListener('load', () => {
+            radio = new ObjectDetectionRadio();
+        });
+        
+        // Handle audio context for mobile
+        document.addEventListener('touchstart', function() {
+            if (radio && radio.audioContext && radio.audioContext.state === 'suspended') {
+                radio.audioContext.resume();
+            }
+        }, { once: true });
+        
+        // Prevent default touch behaviors on control elements
+        document.addEventListener('touchmove', function(e) {
+            if (e.target.closest('.tuning-circle') || e.target.closest('.frequency-slider')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
 </body>
 </html>
