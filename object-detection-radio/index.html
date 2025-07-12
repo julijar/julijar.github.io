@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object Detection Radio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -24,6 +25,8 @@
             width: 100%;
             min-height: 100vh;
             position: relative;
+            padding: 0 32px;
+            box-sizing: border-box;
         }
 
         /* Header */
@@ -142,6 +145,31 @@
             position: relative;
             background: #111;
             overflow: hidden;
+            min-height: 120px;
+            height: 220px;
+            max-width: 100vw;
+            margin: 0 auto 0 auto;
+            resize: none;
+        }
+        .drag-handle {
+            width: 100%;
+            height: 18px;
+            background: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: ns-resize;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .drag-handle-bar {
+            width: 48px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            margin: 6px 0;
         }
 
         #videoElement {
@@ -195,6 +223,7 @@
             font-size: 24px;
             font-weight: 300;
             margin-bottom: 5px;
+            color: #fff;
         }
 
         .frequency-unit {
@@ -320,7 +349,7 @@
         .status-value {
             font-size: 14px;
             font-weight: 500;
-            color: #00ff00;
+            color: #fff;
         }
 
         /* Control Buttons */
@@ -328,14 +357,18 @@
             display: flex;
             gap: 10px;
             margin-top: 20px;
+            justify-content: flex-start;
         }
 
         .control-btn {
-            flex: 1;
+            width: auto;
+            min-width: 90px;
+            padding: 12px 28px;
+            flex: none;
+            display: inline-block;
             background: #333;
             border: 2px solid #555;
             color: #fff;
-            padding: 15px;
             border-radius: 12px;
             font-size: 14px;
             font-weight: 500;
@@ -385,7 +418,7 @@
             border: 2px solid #333;
             border-radius: 20px;
             padding: 30px;
-            max-width: 400px;
+            max-width: 520px;
             width: 100%;
             max-height: 80vh;
             overflow-y: auto;
@@ -455,10 +488,208 @@
             }
         }
 
+        @media (min-width: 900px) {
+          .main-columns {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            min-height: 70vh;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 0;
+          }
+          .model-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            min-width: 480px;
+            max-width: 600px;
+            margin-bottom: 32px;
+            justify-items: center;
+          }
+          .main-col-left, .main-col-right {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .control-buttons {
+            justify-content: center;
+            width: 100%;
+            margin-top: 0;
+          }
+          .camera-container {
+            position: sticky;
+            top: 40px;
+            height: 520px;
+            min-height: 520px;
+            max-height: 520px;
+            resize: none !important;
+          }
+          .model-grid {
+            min-width: 340px;
+            max-width: 520px;
+          }
+          .control-panel {
+            max-width: 420px;
+            width: 100%;
+            margin: 0;
+          }
+          .model-card {
+            min-width: 240px;
+            min-height: 200px;
+            padding: 36px 24px 28px 24px;
+            font-size: 18px;
+          }
+        }
+
         .hidden {
             display: none !important;
         }
+
+        .adversarial-toolkit {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+            background: #111;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 30px 30px 20px 30px;
+            max-width: 400px;
+            width: 90vw;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .adversarial-toolkit.visible {
+            display: block;
+        }
+        .adversarial-toolkit .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Replace neon green with a muted accent */
+        :root {
+          --accent: #8fd19e;
+          --accent-hover: #6db87c;
+        }
+        .model-card {
+          border: 2px solid #333;
+          background: #181818;
+        }
+        .model-card.selected, .model-card:hover {
+          border-color: var(--accent);
+          background: #232323;
+        }
+        .model-icon {
+          background: var(--accent);
+          color: #181818;
+        }
+        .control-btn.primary {
+          background: var(--accent);
+          color: #181818;
+          border-color: var(--accent);
+        }
+        .control-btn.primary:hover {
+          background: var(--accent-hover);
+        }
+        .tuning-knob {
+          background: var(--accent);
+          box-shadow: 0 0 20px rgba(143,209,158,0.3);
+        }
+        .feature-value {
+          color: var(--accent);
+        }
+        .prop-btn.active, .prop-btn:hover {
+          border-color: var(--accent);
+          color: var(--accent);
+          background: #232323;
+        }
+        .slider-handle {
+          border: 3px solid var(--accent);
+        }
+        .frequency-value {
+          color: var(--accent);
+        }
+        .signal-dot {
+          background: var(--accent);
+          box-shadow: 0 0 10px rgba(143,209,158,0.5);
+        }
+        /* Update SVG and icon green */
+        svg .green, .green {
+          color: var(--accent) !important;
+          stroke: var(--accent) !important;
+          fill: var(--accent) !important;
+        }
+        .control-btn {
+          border-color: var(--accent);
+        }
+
+        .intro-logo-glow {
+          animation: intro-glow 2s cubic-bezier(.4,0,.2,1) forwards;
+          opacity: 0;
+          transform: scale(0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        @keyframes intro-glow {
+          0% { opacity: 0; transform: scale(0.8); filter: blur(8px); }
+          40% { opacity: 1; transform: scale(1.1); filter: blur(2px); }
+          70% { opacity: 1; transform: scale(1); filter: blur(0.5px); }
+          100% { opacity: 1; transform: scale(1); filter: blur(0); }
+        }
+        html, body {
+          height: auto;
+        }
+        body, .app-container, .detection-screen {
+          height: auto !important;
+          overflow: auto !important;
+        }
+        .detection-screen {
+          display: block;
+          height: auto;
+          overflow: visible;
+          padding: 0;
+        }
+        .camera-container {
+          width: 100%;
+          min-height: 180px;
+          max-width: 100vw;
+          background: #111;
+          overflow: hidden;
+          margin: 0 auto 0 auto;
+        }
+        .control-panel, .adversarial-toolkit {
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          overflow-y: visible;
+        }
+        /* Remove or comment out the rule that hides the drag handle */
+        /* .drag-handle { display: none !important; } */
+        body, html, .app-container, .detection-screen, .model-card, .control-btn, .header, .camera-container, .control-panel, .feature-label, .feature-value, .section-title, .modal-text, .status-label, .status-value, .strategy-log, .strategy-entry {
+          font-family: 'Noto Sans HK', sans-serif !important;
+        }
+        #modelSelection, #detectionScreen {
+          display: none;
+        }
+        #modelSelection.active, #detectionScreen.active {
+          display: block;
+        }
     </style>
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e954dcb8-4990-4602-a4f2-1366f4a8184c"></script>
 </head>
 <body>
     <section id="audioElements" style="display:none;">
@@ -474,97 +705,149 @@
       <audio id="beepScan" src="http://localhost:3000/radar-sonar-scan.wav"></audio>
     </section>
     <div class="app-container">
-        <!-- Header -->
-        <div class="header">
-            <button class="back-btn" id="backBtn">←</button>
+        <!-- Header (only for model selection) -->
+        <div class="header" id="mainHeader">
             <div class="header-title">Object Detection Radio</div>
             <button class="info-btn" id="infoBtn">ⓘ</button>
         </div>
 
         <!-- Model Selection Screen -->
         <div class="model-selection" id="modelSelection">
-            <div class="section-title">Choose a Model to Listen To</div>
-            
-            <div class="model-grid">
-                <div class="model-card" data-model="plants">
-                    <div class="model-icon">🌱</div>
-                    <div class="model-name">Plants</div>
-                    <div class="model-description">Detect potted plants and vegetation</div>
+            <div class="main-columns">
+                <div class="main-col-left">
+                    <div class="section-title">Choose a Model to Listen To</div>
+                    
+                    <div class="model-grid">
+                        <div class="model-card" data-model="plants">
+                            <div class="model-icon">🌱</div>
+                            <div class="model-name">Plants</div>
+                            <div class="model-description">Detect potted plants and vegetation</div>
+                        </div>
+                        
+                        <div class="model-card" data-model="objects">
+                            <div class="model-icon">📦</div>
+                            <div class="model-name">Objects</div>
+                            <div class="model-description">General object detection</div>
+                        </div>
+                        
+                        <div class="model-card" data-model="people">
+                            <div class="model-icon">👤</div>
+                            <div class="model-name">People</div>
+                            <div class="model-description">Human detection and tracking</div>
+                        </div>
+                        
+                        <div class="model-card" data-model="all">
+                            <div class="model-icon">🎯</div>
+                            <div class="model-name">All Objects</div>
+                            <div class="model-description">Complete COCO dataset</div>
+                        </div>
+                    </div>
+                    <div class="control-buttons">
+                        <button class="control-btn primary" id="startDetectionBtn">Start Detection</button>
+                    </div>
                 </div>
-                
-                <div class="model-card" data-model="objects">
-                    <div class="model-icon">📦</div>
-                    <div class="model-name">Objects</div>
-                    <div class="model-description">General object detection</div>
-                </div>
-                
-                <div class="model-card" data-model="people">
-                    <div class="model-icon">👤</div>
-                    <div class="model-name">People</div>
-                    <div class="model-description">Human detection and tracking</div>
-                </div>
-                
-                <div class="model-card" data-model="all">
-                    <div class="model-icon">🎯</div>
-                    <div class="model-name">All Objects</div>
-                    <div class="model-description">Complete COCO dataset</div>
-                </div>
-            </div>
-            
-            <div class="control-buttons">
-                <button class="control-btn primary" id="startDetectionBtn">Start Detection</button>
             </div>
         </div>
 
         <!-- Detection Screen -->
         <div class="detection-screen" id="detectionScreen">
-            <div class="camera-container">
-                <video id="videoElement" autoplay playsinline muted></video>
-                <div class="detection-overlay" id="detectionOverlay"></div>
-                <div class="loading" id="loadingCamera">
-                    <div class="loading-spinner"></div>
-                    Initializing camera...
-                </div>
+            <div class="header">
+                <button class="back-btn" id="backBtn">←</button>
+                <div class="header-title">Object Detection Radio</div>
+                <button class="info-btn" id="infoBtn">ⓘ</button>
             </div>
-            
-            <div class="control-panel">
-                <div class="frequency-display">
-                    <div class="frequency-value" id="frequencyValue">440.0</div>
-                    <div class="frequency-unit">Hz</div>
-                </div>
-                
-                <div class="tuning-control">
-                    <div class="tuning-circle">
-                        <div class="tuning-knob" id="tuningKnob"></div>
-                        <div class="signal-indicators" id="signalIndicators"></div>
+            <div class="main-columns">
+                <div class="main-col-left">
+                    <div class="camera-container" id="cameraContainer">
+                        <video id="videoElement" autoplay playsinline muted></video>
+                        <div class="detection-overlay" id="detectionOverlay"></div>
+                        <div class="loading" id="loadingCamera">
+                            <div class="loading-spinner"></div>
+                            Initializing camera...
+                        </div>
+                        <div class="drag-handle" id="dragHandle"><div class="drag-handle-bar"></div></div>
+                    </div>
+                    <!-- Adversarial Toolkit (modal, hidden) -->
+                    <div class="adversarial-toolkit" id="adversarialToolkit" style="display:none;">
+                        <button class="close-btn" id="closeAdversarialBtn">×</button>
+                        <div class="section-title">Adversarial Props</div>
+                        <div class="modal-text" style="font-size: 12px; margin-bottom: 15px;">
+                            Use virtual props to interfere with detection and explore model boundaries
+                        </div>
+                        <div class="prop-buttons">
+                            <button class="prop-btn" data-prop="noise">
+                                <span class="prop-icon">⚡</span>
+                                Static Noise
+                            </button>
+                            <button class="prop-btn" data-prop="blur">
+                                <span class="prop-icon">🌫️</span>
+                                Blur Filter
+                            </button>
+                            <button class="prop-btn" data-prop="contrast">
+                                <span class="prop-icon">🔆</span>
+                                High Contrast
+                            </button>
+                            <button class="prop-btn" data-prop="invert">
+                                <span class="prop-icon">🔄</span>
+                                Color Invert
+                            </button>
+                            <button class="prop-btn" data-prop="pixelate">
+                                <span class="prop-icon">▦</span>
+                                Pixelate
+                            </button>
+                            <button class="prop-btn" data-prop="clear">
+                                <span class="prop-icon">✨</span>
+                                Clear All
+                            </button>
+                        </div>
+                        <!-- Custom Adversarial Prompt (hidden for now) -->
+                        <div id="adversarialPromptContainer" style="display:none; margin-top:18px;">
+                            <input id="adversarialPromptInput" type="text" placeholder="Type a visual prompt (e.g. cartoon, night, neon)" style="width:70%;padding:8px;border-radius:6px;border:1px solid #333;background:#222;color:#fff;">
+                            <button id="adversarialPromptBtn" class="control-btn" style="padding:8px 16px;margin-left:8px;">Apply</button>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="frequency-slider" id="frequencySlider">
-                    <div class="slider-track">
-                        <div class="slider-handle" id="sliderHandle"></div>
+                <div class="main-col-right">
+                    <div class="control-panel">
+                        <div class="frequency-display">
+                            <div class="frequency-value" id="frequencyValue">440.0</div>
+                            <div class="frequency-unit">Hz</div>
+                        </div>
+                        
+                        <div class="tuning-control">
+                            <div class="tuning-circle">
+                                <div class="tuning-knob" id="tuningKnob"></div>
+                                <div class="signal-indicators" id="signalIndicators"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="frequency-slider" id="frequencySlider">
+                            <div class="slider-track">
+                                <div class="slider-handle" id="sliderHandle"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="status-info">
+                            <div class="status-row">
+                                <span class="status-label">Signals Found</span>
+                                <span class="status-value" id="signalsCount">0</span>
+                            </div>
+                            <div class="status-row">
+                                <span class="status-label">Current Signal</span>
+                                <span class="status-value" id="currentSignal">None</span>
+                            </div>
+                            <div class="status-row">
+                                <span class="status-label">Signal Strength</span>
+                                <span class="status-value" id="signalStrength">0%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="control-buttons">
+                            <button class="control-btn" id="stopBtn">Stop</button>
+                            <button class="control-btn" id="resetBtn">Reset</button>
+                            <button class="control-btn primary" id="scanBtn">Scan</button>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="status-info">
-                    <div class="status-row">
-                        <span class="status-label">Signals Found</span>
-                        <span class="status-value" id="signalsCount">0</span>
-                    </div>
-                    <div class="status-row">
-                        <span class="status-label">Current Signal</span>
-                        <span class="status-value" id="currentSignal">None</span>
-                    </div>
-                    <div class="status-row">
-                        <span class="status-label">Signal Strength</span>
-                        <span class="status-value" id="signalStrength">0%</span>
-                    </div>
-                </div>
-                
-                <div class="control-buttons">
-                    <button class="control-btn" id="stopBtn">Stop</button>
-                    <button class="control-btn" id="resetBtn">Reset</button>
-                    <button class="control-btn primary" id="scanBtn">Scan</button>
                 </div>
             </div>
         </div>
@@ -573,17 +856,53 @@
         <div class="modal-overlay" id="modalOverlay">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title">About This Model</div>
+                    <div class="modal-title">About</div>
                     <button class="close-btn" id="closeModalBtn">×</button>
                 </div>
                 <div class="modal-text">
-                    The Object Detection Radio explores machine learning uncertainty through playful interaction. By "tuning into" different confidence levels, you can discover how the AI model sees and categorizes the world around you.
+                    Object Detection Radio explores machine learning uncertainty through playful interaction. By "tuning into" different confidence levels, you discover how AI models see and categorize the world around you.
                 </div>
                 <div class="modal-text">
-                    This project uses TensorFlow.js and the COCO-SSD model to detect objects in real-time. The uncertainty and "failures" of the model become features - allowing you to explore the boundaries between different object categories.
+                    This project transforms AI "failures" and unpredictable outputs into features for exploration. Instead of hiding model uncertainty, it becomes the center of interaction - revealing the probabilistic, shifting nature of machine learning predictions.
                 </div>
                 <div class="modal-text">
-                    Move the frequency slider to tune into different confidence levels. Each detected object appears as a "signal" that you can tune into, revealing the probabilistic nature of machine learning predictions.
+                    Originally developed as part of a bachelor's thesis in Interaction Design at Malmö University (2021), this web implementation demonstrates how we might relate to AI systems through play rather than control.
+                </div>
+                <hr style="border: none; border-top: 1px solid #333; margin: 18px 0 12px 0;">
+                <div class="modal-text" style="margin-top: 18px; font-weight: 600;">Model Details:</div>
+                <div class="modal-text" style="margin-bottom: 0;">
+                    TensorFlow.js COCO-SSD object detection model<br>
+                    Trained on Common Objects in Context (COCO) dataset<br>
+                    Detects 90 different object categories<br>
+                    Runs entirely in your browser - no data sent to servers<br>
+                    Real-time processing using your device's camera
+                </div>
+                <hr style="border: none; border-top: 1px solid #333; margin: 18px 0 12px 0;">
+                <div class="modal-text">
+                    Created by Julija Rukanskaitė<br>
+                </div>
+                <div class="modal-text" style="margin-top: 10px; font-size: 15px;">
+                    <a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank" rel="noopener noreferrer" style="color:#8fd19e;text-decoration:none;margin-right:18px;">
+                        LinkedIn ↗
+                    </a>
+                    <a href="https://julija.works" target="_blank" rel="noopener noreferrer" style="color:#8fd19e;text-decoration:none;">
+                        Portfolio ↗
+                    </a>
+                </div>
+                <hr style="border: none; border-top: 1px solid #333; margin: 18px 0 12px 0;">
+
+                <div>
+                    <div class="modal-text" style="margin-bottom: 0;">
+                        <strong>License:</strong> MIT License<br><br>
+                        <strong>Dependencies:</strong><br>
+                        - TensorFlow.js (Apache 2.0)<br>
+                        - COCO-SSD model (Apache 2.0)<br>
+                        - COCO dataset (Creative Commons)<br><br>
+                        This project is open source and available under the MIT License.<br>
+                        <a href="https://github.com/julijar/julijar.github.io/tree/main/object-detection-radio" target="_blank" rel="noopener noreferrer" style="color:#8fd19e;text-decoration:none;">
+                            GitHub ↗
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -642,25 +961,38 @@
                 document.querySelectorAll('.model-card').forEach(card => {
                     card.addEventListener('click', (e) => this.selectModel(e.currentTarget));
                 });
-                
-                document.getElementById('startDetectionBtn').addEventListener('click', () => this.showDetectionScreen());
-                
+                const startBtn = document.getElementById('startDetectionBtn');
+                if (startBtn) startBtn.addEventListener('click', () => this.showDetectionScreen());
                 // Navigation
-                document.getElementById('backBtn').addEventListener('click', () => this.showModelSelection());
-                document.getElementById('infoBtn').addEventListener('click', () => this.showModal());
-                document.getElementById('closeModalBtn').addEventListener('click', () => this.hideModal());
-                document.getElementById('modalOverlay').addEventListener('click', (e) => {
+                const backBtn = document.getElementById('backBtn');
+                if (backBtn) backBtn.addEventListener('click', () => this.showModelSelection());
+                const infoBtn = document.getElementById('infoBtn');
+                if (infoBtn) infoBtn.addEventListener('click', () => this.showModal());
+                const infoBtn2 = document.querySelector('.detection-screen .info-btn');
+                if (infoBtn2) infoBtn2.addEventListener('click', () => this.showModal());
+                const closeModalBtn = document.getElementById('closeModalBtn');
+                if (closeModalBtn) closeModalBtn.addEventListener('click', () => this.hideModal());
+                const modalOverlay = document.getElementById('modalOverlay');
+                if (modalOverlay) modalOverlay.addEventListener('click', (e) => {
                     if (e.target.id === 'modalOverlay') this.hideModal();
                 });
-                
                 // Controls
-                document.getElementById('scanBtn').addEventListener('click', () => this.toggleScanning());
-                document.getElementById('stopBtn').addEventListener('click', () => this.stopScanning());
-                document.getElementById('resetBtn').addEventListener('click', () => this.reset());
-                
+                const scanBtn = document.getElementById('scanBtn');
+                if (scanBtn) scanBtn.addEventListener('click', () => this.toggleScanning());
+                const stopBtn = document.getElementById('stopBtn');
+                if (stopBtn) stopBtn.addEventListener('click', () => this.stopScanning());
+                const resetBtn = document.getElementById('resetBtn');
+                if (resetBtn) resetBtn.addEventListener('click', () => this.reset());
                 // Touch controls for slider
                 this.setupSliderControls();
                 this.setupCircularControls();
+                // Adversarial props and prompt event listeners are removed/disabled
+                // this.setupAdversarialProps();
+                // const advPromptBtn = document.getElementById('adversarialPromptBtn');
+                // if (advPromptBtn) advPromptBtn.addEventListener('click', () => {
+                //     const prompt = document.getElementById('adversarialPromptInput').value.trim().toLowerCase();
+                //     this.applyAdversarialPrompt(prompt);
+                // });
             }
             
             setupSliderControls() {
@@ -762,14 +1094,12 @@
             }
             
             async showDetectionScreen() {
-                document.getElementById('modelSelection').style.display = 'none';
-                document.getElementById('detectionScreen').style.display = 'flex';
+                showScreen('detectionScreen');
                 await this.setupCamera();
             }
             
             showModelSelection() {
-                document.getElementById('detectionScreen').style.display = 'none';
-                document.getElementById('modelSelection').style.display = 'block';
+                showScreen('modelSelection');
                 this.stopScanning();
             }
             
@@ -1126,6 +1456,89 @@
                 
                 this.detections = [];
             }
+
+            setupAdversarialProps() {
+                const propButtons = document.querySelectorAll('.prop-btn');
+                propButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const prop = button.dataset.prop;
+                        this.toggleAdversarialProp(prop);
+                    });
+                });
+            }
+
+            toggleAdversarialProp(prop) {
+                const isActive = this.activeProps.includes(prop);
+                if (isActive) {
+                    this.activeProps = this.activeProps.filter(p => p !== prop);
+                    document.querySelector(`[data-prop="${prop}"]`).classList.remove('active');
+                } else {
+                    this.activeProps.push(prop);
+                    document.querySelector(`[data-prop="${prop}"]`).classList.add('active');
+                }
+                this.updateVideoFilters();
+                this.logStrategy(`Toggled prop: ${prop} (Active: ${this.activeProps.length})`);
+            }
+
+            updateVideoFilters() {
+                const filters = this.activeProps.map(prop => {
+                    switch (prop) {
+                        case 'noise':
+                            return 'grayscale(100%)';
+                        case 'blur':
+                            return 'blur(5px)';
+                        case 'contrast':
+                            return 'contrast(1.5)';
+                        case 'invert':
+                            return 'invert(100%)';
+                        case 'pixelate':
+                            return 'pixelate(10)';
+                        case 'clear':
+                            return 'none';
+                        default:
+                            return 'none';
+                    }
+                }).join(' ');
+                this.video.style.filter = filters;
+            }
+
+            logStrategy(message) {
+                console.log(`[Strategy] ${message}`);
+            }
+
+            applyAdversarialPrompt(prompt) {
+                // Map prompt keywords to filter sets
+                const promptMap = {
+                    'cartoon': ['invert', 'contrast'],
+                    'night': ['contrast', 'blur'],
+                    'neon': ['contrast', 'invert', 'blur'],
+                    'pixel': ['pixelate'],
+                    'static': ['noise'],
+                    'clear': []
+                };
+                let props = [];
+                for (const key in promptMap) {
+                    if (prompt.includes(key)) {
+                        props = promptMap[key];
+                        break;
+                    }
+                }
+                if (props.length === 0 && prompt !== '') {
+                    // If not matched, just apply contrast as a fallback
+                    props = ['contrast'];
+                }
+                // Clear all first
+                this.activeProps = [];
+                document.querySelectorAll('.prop-btn').forEach(b => b.classList.remove('active'));
+                // Apply mapped props
+                props.forEach(prop => {
+                    this.activeProps.push(prop);
+                    const btn = document.querySelector(`[data-prop="${prop}"]`);
+                    if (btn) btn.classList.add('active');
+                });
+                this.updateVideoFilters();
+                this.logStrategy(`Applied adversarial prompt: "${prompt}" (${props.join(', ') || 'none'})`);
+            }
         }
         
         // Initialize the app
@@ -1148,6 +1561,67 @@
                 e.preventDefault();
             }
         }, { passive: false });
+
+        // Show/hide headers based on active screen
+        function showScreen(screenId) {
+            document.getElementById('modelSelection').classList.remove('active');
+            document.getElementById('detectionScreen').classList.remove('active');
+            document.getElementById(screenId).classList.add('active');
+            // Show main header only on model selection
+            document.getElementById('mainHeader').style.display = (screenId === 'modelSelection') ? 'flex' : 'none';
+        }
+        // On load, show model selection by default
+        window.addEventListener('DOMContentLoaded', () => {
+          showScreen('modelSelection');
+        });
+
+        // Add detection-active class to body/app-container when in detection mode
+        function setDetectionActive(active) {
+          document.body.classList.toggle('detection-active', active);
+          document.querySelector('.app-container').classList.toggle('detection-active', active);
+        }
+        // Patch showDetectionScreen and showModelSelection
+        const origShowDetectionScreen = ObjectDetectionRadio.prototype.showDetectionScreen;
+        ObjectDetectionRadio.prototype.showDetectionScreen = async function() {
+          showScreen('detectionScreen');
+          await origShowDetectionScreen.apply(this, arguments);
+        };
+        const origShowModelSelection = ObjectDetectionRadio.prototype.showModelSelection;
+        ObjectDetectionRadio.prototype.showModelSelection = function() {
+          showScreen('modelSelection');
+          origShowModelSelection.apply(this, arguments);
+        };
+        // Camera drag handle logic
+        (function() {
+          function isDesktop() {
+            return window.innerWidth >= 900;
+          }
+          const camera = document.getElementById('cameraContainer');
+          const handle = document.getElementById('dragHandle');
+          let dragging = false;
+          let startY = 0;
+          let startHeight = 0;
+          if (handle) {
+            handle.addEventListener('mousedown', (e) => {
+              if (isDesktop()) return;
+              dragging = true;
+              startY = e.clientY;
+              startHeight = camera.offsetHeight;
+              document.body.style.userSelect = 'none';
+            });
+            window.addEventListener('mousemove', (e) => {
+              if (!dragging || isDesktop()) return;
+              let dy = e.clientY - startY;
+              let newHeight = Math.max(100, Math.min(window.innerHeight * 0.9, startHeight + dy));
+              camera.style.height = `${newHeight}px`;
+              camera.style.flex = `0 0 ${newHeight}px`;
+            });
+            window.addEventListener('mouseup', () => {
+              dragging = false;
+              document.body.style.userSelect = '';
+            });
+          }
+        })();
     </script>
 </body>
 </html>
