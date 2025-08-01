@@ -177,8 +177,14 @@
     function updateMetaTags() {
         const info = getPageInfo();
         
-        // Update title
-        document.title = info.title;
+        // Replace {{PAGE_TITLE}} placeholders in the HTML
+        const titleElement = document.querySelector('title');
+        if (titleElement && titleElement.textContent.includes('{{PAGE_TITLE}}')) {
+            titleElement.textContent = titleElement.textContent.replace('{{PAGE_TITLE}}', info.title);
+        } else {
+            // Fallback: set title directly
+            document.title = info.title;
+        }
         
         // Update or create meta description
         let descMeta = document.querySelector('meta[name="description"]');
@@ -202,16 +208,28 @@
             document.head.appendChild(keywordsMeta);
         }
         
-        // Update Open Graph tags
+        // Update Open Graph tags - replace placeholders if they exist
         const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle) ogTitle.setAttribute('content', info.title);
+        if (ogTitle) {
+            if (ogTitle.getAttribute('content') && ogTitle.getAttribute('content').includes('{{PAGE_TITLE}}')) {
+                ogTitle.setAttribute('content', ogTitle.getAttribute('content').replace('{{PAGE_TITLE}}', info.title));
+            } else {
+                ogTitle.setAttribute('content', info.title);
+            }
+        }
         
         const ogDesc = document.querySelector('meta[property="og:description"]');
         if (ogDesc) ogDesc.setAttribute('content', info.description);
         
-        // Update Twitter Card tags
+        // Update Twitter Card tags - replace placeholders if they exist
         const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-        if (twitterTitle) twitterTitle.setAttribute('content', info.title);
+        if (twitterTitle) {
+            if (twitterTitle.getAttribute('content') && twitterTitle.getAttribute('content').includes('{{PAGE_TITLE}}')) {
+                twitterTitle.setAttribute('content', twitterTitle.getAttribute('content').replace('{{PAGE_TITLE}}', info.title));
+            } else {
+                twitterTitle.setAttribute('content', info.title);
+            }
+        }
         
         const twitterDesc = document.querySelector('meta[name="twitter:description"]');
         if (twitterDesc) twitterDesc.setAttribute('content', info.description);
