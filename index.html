@@ -253,7 +253,8 @@ Designer focused on design for trust, safety, and emerging technology. With 4+ y
            href="#" 
            data-cal-link="julija/30min"
            data-cal-namespace="30min"
-           data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
+           data-cal-config='{"layout":"column_view","theme":"light"}'
+           onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'home'});">☕ Book a coffee chat</a>
     
            <br>
       <br><br>
@@ -394,7 +395,8 @@ Designer focused on design for trust, safety, and emerging technology. With 4+ y
          href="#" 
          data-cal-link="julija/30min"
          data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
+         data-cal-config='{"layout":"column_view","theme":"light"}'
+         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'home_footer'});">☕ Book a coffee chat</a>
     </r-cell>
 
     <r-cell span="5-7" span-s="1">
@@ -404,7 +406,9 @@ Designer focused on design for trust, safety, and emerging technology. With 4+ y
       </br>  
       <p style="color: #afafaf;">Studio Julija Rukanskaite 
         </br>
-        Org.no: 932 773 511 MVA</p>
+        Org.no: 932 773 511 MVA 🇳🇴</p>
+      </br>
+      <p style="color: #afafaf;"><a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank" class="link-arrow" onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: 'home'});">Connect on LinkedIn ↗</a></p>
     </r-cell>
   </r-grid>
   

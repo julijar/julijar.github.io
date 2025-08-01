@@ -38,7 +38,7 @@ function loadFooter() {
         </br>  
         <p style="color: #afafaf;">Studio Julija Rukanskaite 
           </br>
-          Org.no: 932 773 511 MVA</p>
+          Org.no: 932 773 511 MVA 🇳🇴</p>
       </r-cell>
     </r-grid>
   `;

@@ -467,7 +467,8 @@ To enable a seemless transition from platforms such as Facebook, Arttice is buil
          href="#" 
          data-cal-link="julija/30min"
          data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
+         data-cal-config='{"layout":"column_view","theme":"light"}'
+         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'arttice'});">☕ Book a coffee chat</a>
     </r-cell>
 
     <r-cell span="5-7" span-s="1">
@@ -477,7 +478,7 @@ To enable a seemless transition from platforms such as Facebook, Arttice is buil
       </br>  
       <p style="color: #afafaf;">Studio Julija Rukanskaite 
         </br>
-        Org.no: 932 773 511 MVA</p>
+        Org.no: 932 773 511 MVA 🇳🇴</p>
     </r-cell>
   </r-grid>           
     
