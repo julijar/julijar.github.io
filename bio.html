@@ -150,15 +150,11 @@ THE SOFTWARE.
 
 <r-cell span=2-8 span-s=row >
  
-  <h1 class="xlarge"
-  >
-</br>  </br>
-
+  <h1 class="xlarge">
 Bio
-
    </h1>
   
-  </br>  </br>
+<br><br>
 
 
 
@@ -171,20 +167,25 @@ Bio
 <r-cell span=2-4 span-s=row data-aos="fade-down" data-aos-duration="2000">
  
 
-  <H3 >
+  <h3>
+With experience in the arts and a fascination with ethnography and cognitive science, I approach design with a different lens—one that considers not just usability, but power, representation, and collective governance. This background shapes how I approach everything from law enforcement interview technology to community-driven AI platforms.
 
+<br><br>
+With 5+ years of experience across public sector, finance, community, and AI technology, I work from early concepts through onboarding to help organizations deploy technology responsibly.
 
+<br><br>
+I'm particularly interested in productizing ideas around democratic participation in technology—whether that's communities governing AI systems, or building tools that give marginalized users agency rather than just extracting their data or labor. My work draws on morphological and systemic design approaches, exploring how generative methods can create more adaptive and responsive systems.
 
-  Designer focused on design for trust, safety, and emerging technology. With 4+ years of experience in community, finance, and automation UX, I am currently working on ethical legal tech in Norway.  </H3>
-</r-cell>
-
-<r-cell span=5-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
-
-<H3 >  I am also the founding designer of Reliabl, a community-driven data labeling solution for contextual AI, and have contributed to several academic publications in the field of Human-Computer interaction.</h4> 
+<br><br>
+Currently designing ethical legal technology for the public sector. Published in Human-Computer Interaction research and developing expertise in AI fairness auditing and algorithmic governance.
   </h3>
+<br><br>  
+
+  </r-cell>
 
 
-</br>  </br>
+  <r-cell span="5-8" span-s="row" data-aos="fade-up" data-aos-duration="1000">
+    <img src="img/profile_new.png" alt="Bio image" style="width: 100%; height: auto; border-radius: 4px;">
   </r-cell>
 
 
@@ -197,7 +198,10 @@ Bio
 
 </br></br>
 
+<!-- Full Width Image Section -->
 
+
+</br></br>
 
 <!-- CV Section -->
 <r-grid columns="8" columns-s="1">
@@ -330,53 +334,45 @@ Bio
       </div>
     </div>
   </r-cell>
-</r-grid>
 
-</br></br>
-
-<!-- Approach Section -->
-<r-grid columns="8" columns-s="1">
-  <r-cell span="2-4" span-s="row" data-aos="fade-up" data-aos-duration="1000">
-    <div style="color: #8D8C8D; font-size: 0.9rem; margin-bottom: 1rem;">Approach</div>
-    <h2 class="xlarge" style="margin-bottom: 2rem;">Systemic & Morphological Design</h2>
-    <h3>
-      I bridge interaction design methods and systems thinking to create meaningful, evolving designs. Drawing on industry and HCI research experience, I translate complex insights into practical applications.
-    </h3>
-    <h4>
-      My personal interests include biological self-organization, morphological computation, and distributed cognition - I am investigating how these principles might eventually inform more adaptive and responsive design approaches. I'm always looking for collaboration opportunities with researchers and practitioners with similar interests.
-    </h4>
+  <r-cell span="2-8" span-s="row">
+    <div class="accordion-header" onclick="toggleApproach()" style="cursor: pointer; padding: 1rem 0;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <h2 class="xlarge" style="margin: 0;">Approach</h2>
+        <span class="approach-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+      </div>
+      <div class="divider-thin" style="margin-top: 1rem;"></div>
+    </div>
   </r-cell>
   
-  <r-cell span="5-8" span-s="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-    <div style="width: 100%; height: 400px; background: url('img/globe.png') no-repeat center center; background-size: contain; opacity: 0.7; animation: spin 30s linear infinite;"></div>
+  <r-cell span="1-8" span-s="row">
+    <div class="approach-content" style="display: none; overflow: hidden; transition: all 0.3s ease;">
+      <r-grid columns="8" columns-s="1">
+        <r-cell span="2-4" span-s="row" data-aos="fade-up" data-aos-duration="1000">
+          <h3>
+            <div class="text-grey-label" style="font-size: 0.9rem; margin-bottom: 1rem;"></div>
+            I bridge interaction design methods and systems thinking to create meaningful, evolving designs. Drawing on industry and HCI research experience, I translate complex insights into practical applications.
+          </h3>
+          <h4>
+            My personal interests include biological self-organization, morphological computation, and distributed cognition - I am investigating how these principles might eventually inform more adaptive and responsive design approaches. I'm always looking for collaboration opportunities with researchers and practitioners with similar interests.
+            
+            <br><br>
+            Currently expanding my expertise in AI fairness auditing and algorithmic governance to support responsible AI deployment
+          </h4>
+        </r-cell>
+        
+        <r-cell span="5-8" span-s="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <div style="width: 100%; height: 400px; background: url('img/globe.png') no-repeat center center; background-size: contain; opacity: 0.7; animation: spin 30s linear infinite;"></div>
+        </r-cell>
+      </r-grid>
+    </div>
   </r-cell>
 </r-grid>
 
 </br></br></br></br>
 
- <!-- Footer -->
-  <r-grid columns="8" columns-s="1" style="background-color: rgb(255, 255, 255); border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
-    <r-cell span="2-4" span-s="1">
-      <a class="button" 
-         href="#" 
-         data-cal-link="julija/30min"
-         data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'
-         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'bio'});">☕ Book a coffee chat</a>
-    </r-cell>
-
-    <r-cell span="5-7" span-s="1">
-      <h2 style="color: #515151;">hello@julija.works</h2>
-      </br>
-      <p style="color: #afafaf;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
-      </br>  
-      <p style="color: #afafaf;">Studio Julija Rukanskaite 
-        </br>
-        Org.no: 932 773 511 MVA 🇳🇴</p>
-      </br>
-      <p style="color: #afafaf;"><a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank" class="link-arrow" onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: 'bio'});">Connect on LinkedIn ↗</a></p>
-    </r-cell>
-  </r-grid>
+ <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
   <!-- ---- internal only -- not part of raster ---- -->
   <script>(function () {
@@ -605,6 +601,26 @@ Bio
         // Track accordion expand event
         if (typeof umami !== 'undefined') {
           umami.track('Publications_accordion_opened');
+        }
+      } else {
+        content.style.display = 'none';
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    function toggleApproach() {
+      const content = document.querySelector('.approach-content');
+      const icon = document.querySelector('.approach-icon');
+      
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+        
+        // Track accordion expand event
+        if (typeof umami !== 'undefined') {
+          umami.track('Approach_accordion_opened');
         }
       } else {
         content.style.display = 'none';

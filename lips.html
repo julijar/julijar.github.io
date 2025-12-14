@@ -54,6 +54,171 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="/swiss-style.css">
 
+  <!-- Table of Contents Footer Styles -->
+  <style>
+    :root {
+      --color-highlight-soft: #C9C6CF;
+      --color-text-primary: rgb(20, 20, 20);
+    }
+
+    .toc-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(223, 223, 223, 0.5);
+      z-index: 1000;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .toc-footer-scroll {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .toc-footer-scroll::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .toc-footer-link {
+      color: #888;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .toc-footer-link:hover {
+      color: #A31621;
+      border-bottom-color: #A31621;
+    }
+
+    .toc-footer-link.active {
+      color: #A31621;
+      border-bottom-color: #A31621;
+      font-weight: 600;
+    }
+
+    /* Desktop: center and limit width */
+    @media (min-width: 1025px) {
+      .toc-footer {
+        padding: 16px 0;
+      }
+
+      .toc-footer-scroll {
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 0 40px;
+        gap: 32px;
+      }
+
+      .toc-footer-link {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Mobile: horizontal scroll */
+    @media (max-width: 1024px) {
+      .toc-footer {
+        padding: 10px 0;
+      }
+
+      .toc-footer-scroll {
+        padding: 0 16px;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .toc-footer-link {
+        font-size: 1rem;
+      }
+    }
+
+    /* Add padding to body to prevent content from being hidden behind footer */
+    body {
+      padding-bottom: 60px;
+    }
+
+    @media (min-width: 1025px) {
+      body {
+        padding-bottom: 70px;
+      }
+    }
+
+    /* Swiss Style Stats */
+    .swiss-stats-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      padding: 16px 0;
+      margin: 16px 0 16px 0;
+      width: 100%;
+    }
+
+    .swiss-stat-item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiss-stat-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 5.5rem;
+      font-weight: 300;
+      line-height: 0.9;
+      color: #414141;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .swiss-stat-label {
+      
+      font-size: 1rem;
+      font-weight: 400;
+ 
+      color: #858484;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1024px) {
+      .swiss-stats-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 32px 0;
+        margin: 24px 0 32px 0;
+      }
+
+      .swiss-stat-number {
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+      }
+
+      .swiss-stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+      }
+    }
+  </style>
+
   <!-- JavaScript Libraries -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/568df73059.js" crossorigin="anonymous"></script>
@@ -132,92 +297,105 @@ THE SOFTWARE.
     </r-cell>
   </r-grid>
   
+
+  
+
+  
+  <r-grid columns="8" columns-s="1">
+  
+  
+
+    
+  
+
+  </r-grid>
+
+  <!-- Table of Contents Footer -->
+  <div class="toc-footer" id="toc-footer">
+    <div class="toc-footer-scroll">
+      <a href="#project-title" class="toc-footer-link">Project</a>
+      <a href="#problem" class="toc-footer-link">Problem</a>
+      <a href="#Services" class="toc-footer-link">Services</a>
+      <a href="#design" class="toc-footer-link">Design</a>
+      <a href="#learnings" class="toc-footer-link">Learnings</a>
+    </div>
+  </div>
+  
    
   
-    <r-grid columns=8 columns-s=2  >
+    <r-grid columns="8" columns-s="1">
     
 
 
 
 
-      <r-cell span=2-8 span-s=row 
+      <!-- Main Title -->
+      <r-cell span=2-7 span-s=row 
       data-aos="fade-up"
-      data-aos-duration="3000"">
-              <h1  class="xlarge"
-  
-            
-              >
-              Lips onboarding 
-    </br>  
-
-  </br>
-              </h1>
-  
-              </r-cell>
-
-
-
-             
-
-      
-
-           <r-cell span=2-3 span-s=row 
-           data-aos="fade-zoom-in"
-                   data-aos-easing="ease-in-back"
-                   data-aos-delay="200"
-                   data-aos-offset="0"
-                  >
-                  
-                   <h4  style="font-weight: 400">
-                  UX/UI design
-                   </br>
-                   April 2020 — January 2021
-                   
-                     </h4>
-               
-                    </br>  
-           
-
-                   <h4 style="  line-height: 1.5;" >
+      data-aos-duration="3000"
+      id="project-title">
+    
         
-        CEO & Founder — Annie Brown
-        </br>    
-        Community Manager — Val Elefante
-      
-      </br>   
-        Development — Bitcot
-      </br>    
-      Brand style guide — Ileana Lapaz 
-      </h4>
-        
+        <h1 class="large">
+       Lips <span style="color: #b1b1b1;">User Activation for a Social Media Platform     
+      </span>  
+    </br></br>  </h1>
+  
       </r-cell>
 
-      <r-cell span=5-7 span-s=row 
+
+<!-- Services/Timeline Right Column -->
+<r-cell span=2-3 span-s=row 
+data-aos="fade-zoom-in"
+data-aos-easing="ease-in-back"
+data-aos-delay="200"
+data-aos-offset="0">
+<h3 style="font-weight: 400; color: #666; font-size: 1.1rem;">
+   2020 — 2021
+</h3>
+</br>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+  <span class="service-tag">User Research</span>
+  <span class="service-tag">Growth Design</span>
+</div>
+</br></br>
+
+
+</r-cell>
+
+  
+
+      <!-- Main Introduction -->
+      <r-cell span=4-7 span-s=row 
 data-aos="fade-zoom-in"
         data-aos-easing="ease-in-back"
         data-aos-delay="200"
-        data-aos-offset="0"
-   >
-     
+        data-aos-offset="0">
+      
+        <h3 style="line-height: 1.3;">
+          Lips is a progressive web app by Reliabl, for womenand LGBTQ+ creators to express themselves freely, without biased censorship. With built-in moderation features to prevent biased censorship, harassment & plagiarism.
+        </br></br>
+         I designed the Lips app end-to-end, from feature scoping to buttons, grounding my Services in co-creation and long-term product strategy. 
+        </h3>
+  <!-- Swiss Style Stats -->
+<div class="swiss-stats-container">
 
-
-        <h3 style="  line-height: 1.3;" >
-          
-          Lips is a progressive web app by Reliabl, for wom*n and LGBTQ+
-          creators to express themselves freely, without biased censorship.  With patent-pending ML & Blockchain features to prevent biased censorship, harassment & plagiarism.
-        </br> 
-        
-   
  
-          Since launch at the end 2020, Lips maintains
-      
-          <span style="font-weight: 500;">25k monthly</span> users.
-        </br> </br>   I designed the Lips
-        app end-to-end, from feature scoping to buttons, grounding my Services in co-creation and long-term product strategy.
-      </br> </br> This is an overview of Lips' core functionality: 3 levels of engagement.
-      
-  </h3>
-   
+  <div class="swiss-stat-item">
+    <div class="swiss-stat-number">25k</div>
+    <div class="swiss-stat-label">Monthly Users</div>
+  </div>
+   <div class="swiss-stat-item">
+    <div class="swiss-stat-number">4</div>
+    <div class="swiss-stat-label">Co-Design Sessions</div>
+  </div>
+  <div class="swiss-stat-item">
+    <div class="swiss-stat-number">20+</div>
+    <div class="swiss-stat-label">User Tests</div>
+  </div>
+</div>
+</br></br>
+
       </r-cell>
 
     
@@ -251,8 +429,7 @@ data-aos="fade-zoom-in"
               id="problem"
            
               >  
-              <h1 class="large" >
-            Problem</h1>
+              <h4 class="section-title">Problem</h4>
      
           </r-cell>
 
@@ -261,14 +438,12 @@ data-aos="fade-zoom-in"
   
 
  
-              <r-cell span=4-6 span-s=row 
+              <r-cell span=4-7 span-s=row 
               data-aos="fade-zoom-in"
                     data-aos-easing="ease-in-back"
                     data-aos-delay="500"
                     data-aos-offset="0">
-                  <h3  style="  line-height: 1.4;" 
-                 class="desktop-padding"
-                >
+                  <h3  style="  line-height: 1.4;">
             
                   
               Harassment on and discriminatory moderation policies of mainstream social media platforms unproportionally affect women and the lgbtqia+ artists.
@@ -294,10 +469,7 @@ data-aos="fade-zoom-in"
                       id="Services" >
                 
                       
-                      <h1 class="large" >
-                        Services
-                      </br>   </br> 
-                      </h1>
+                      <h4 class="section-title">Services</h4>
              
                       
                     
@@ -308,13 +480,11 @@ data-aos="fade-zoom-in"
                  
 
           
-                  <r-cell span=4-6 span-s=row 
+                  <r-cell span=4-7 span-s=row 
                   data-aos="fade-zoom-in"
                         data-aos-easing="ease-in-back"
                         data-aos-delay="500"
-                        data-aos-offset="0" 
-                        class="desktop-padding"
-                        >  <h2  >
+                        data-aos-offset="0">  <h2  >
 Vision and feature exploration   
                                                                 
                         </h2>
@@ -328,7 +498,7 @@ Vision and feature exploration
 
                       </br>
                      <h2 >
-
+                      <br>
                           Low-fi prototype testing & co-design
                           </h2>                 
                             
@@ -344,7 +514,7 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
                           </br>
                      
                               <h2  >
-                          
+                          <br>
                            High-fi prototyping & handoff
                                 </h2>
                              
@@ -384,18 +554,16 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
                     id="design" 
                      >
                
-                <h1 class="large">
-            Design            </h1>
+                <h4 class="section-title">Design</h4>
      
  </r-cell>
 
 
- <r-cell span=4-6 span-s=row 
+ <r-cell span=4-7 span-s=row 
  data-aos="fade-zoom-in"
        data-aos-easing="ease-in-back"
        data-aos-delay="500"
-       data-aos-offset="0"
-       class="desktop-padding">
+       data-aos-offset="0">
  <h3 style="  line-height: 1.3;">
  Lips' information architecture is based on 3 levels of engagement. Users can either browse through recent public posts, create an account
    to follow others, or request approval and become a fully-fledged lips user.
@@ -454,9 +622,9 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
                          data-aos-offset="0" 
                          class="desktop-padding">
                        
-                         <h1 >
-                          Browse
-                           <br></h1>
+                         <h3 style="color: gray;">
+                        Browse
+                          <br>  
                            <h3 style="  line-height: 1.3;">
                             View recent public posts sorted by hashtags.
                           </h3>
@@ -490,9 +658,9 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
               data-aos-delay="500"
               data-aos-offset="0"
               class="desktop-padding" >
-              <h1 >
+              <h3 style="color: gray;">
                Register
-                <br></h1>
+               <br>    <br></h1>
           
               <h3 style="  line-height: 1.3;">
                 To communicate the brand's values to new users, 
@@ -535,9 +703,9 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
               data-aos-delay="100"
               data-aos-offset="0"
               class="desktop-padding">
-              <h1 >
+              <h3 style="color: gray;">
                 Get approved
-                   <br></h1>
+                <br><br></h3>
 
                   <h3 style="  line-height: 1.3;">
                     When ready, users can request approval by describing why they want to post on Lips.
@@ -574,26 +742,20 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
       data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="500"
-            data-aos-offset="0">
-            <h1 class="large"
-            id="learnings" 
-           > 
-          Learnings
-           
-            </h1>
+            data-aos-offset="0"
+            id="learnings">
+            <h4 class="section-title">Learnings</h4>
 
         </r-cell>
 
 
     
     
-        <r-cell span=4-6 span-s=row 
+        <r-cell span=4-7 span-s=row 
         data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-delay="500"
-              data-aos-offset="0"
-             class="desktop-padding"
-              >
+              data-aos-offset="0">
 
               <h2 >
          Revising the role of non-approved users
@@ -602,11 +764,10 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
               </h2>
               <h3 style="  line-height: 1.3;" >
                        
-              Currently a significant part of Lips' user base are unapproved. They only follow and love other's content, but do not intend to post their own.
-              Some have intentionally used their profile and cover pictures to upload harmful content.
+              Analysis reveals that a substantial portion of Lips' user base remains unapproved, primarily engaging through following and liking content without posting intent. This segment has also been exploited by bad actors who leverage profile and cover images to distribute harmful content.
 
               </br></br>
-            The following design phase will explore ways to both activelly prevent harmful non-approved users and encourage more upcoming creators to request approval.
+            The next design iteration will implement proactive moderation mechanisms to mitigate harmful non-approved user behavior while creating clearer pathways for emerging creators to gain posting approval.
              
           </h3>
       
@@ -616,20 +777,21 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
            
       
                     <h2 >
-                    Better onboarding to tags
+                           <br>
+                    Optimizing content classification
                     </br>
                  
                     </h2>
                     <h3 style="  line-height: 1.3;" >
-                      Currently a significant amount of users do not use the hashtag system as intended. As a result, some potentially sensitive content cannot be filtered out by tags and users are distressed.
+                      User research identified significant misalignment between intended hashtag usage and actual user behavior, resulting in ineffective content filtering and negative user experiences.
 
-                      To ensure good tag-based filtering, the second version of Lips will make it easier for users to learn and use the tag system, as well as possibly include other modes of filtering content. 
-                    </br></br>To ensure tags work for everyone, more qualitative and generative research around them will be conducted.
+                      The next iteration will introduce improved content classification workflows and educational interventions to align user behavior with the tag system's design intent. Additional content filtering mechanisms will complement tag-based classification to ensure comprehensive content moderation.
+                    </br></br>Ongoing qualitative and generative research will inform the evolution of the classification system to better serve diverse user needs.
                   
                  
                 </h3>
             
-              </br>
+              </br>     <br>
           
                        
                     </r-cell>
@@ -655,29 +817,8 @@ Designed and led 3 remote co-design sessions with key stakeholder groups: artist
 
 
   
- <!-- Footer -->
-  <r-grid columns="8" columns-s="1" style="background-color: rgb(255, 255, 255); border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
-    <r-cell span="2-4" span-s="1">
-      <a class="button" 
-         href="#" 
-         data-cal-link="julija/30min"
-         data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'
-         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'lips'});">☕ Book a coffee chat</a>
-    </r-cell>
-
-    <r-cell span="5-7" span-s="1">
-      <h2 style="color: #515151;">hello@julija.works</h2>
-      </br>
-      <p style="color: #afafaf;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
-      </br>  
-      <p style="color: #afafaf;">Studio Julija Rukanskaite 
-        </br>
-        Org.no: 932 773 511 MVA 🇳🇴</p>
-      </br>
-      <p style="color: #afafaf;"><a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank" class="link-arrow" onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: 'lips'});">Connect on LinkedIn ↗</a></p>
-    </r-cell>
-  </r-grid>
+ <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
  
     
         
@@ -1193,6 +1334,51 @@ updateComputedValueLabels()
 
     <script>
       AOS.init(10);
+    </script>
+
+  <script>
+    // Table of Contents Footer functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocLinks = document.querySelectorAll('.toc-footer-link');
+      
+      // Smooth scroll and active link tracking
+      tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Track scroll position and highlight active section
+      function updateActiveLink() {
+        const sections = document.querySelectorAll('[id]');
+        const scrollPos = window.scrollY + 150;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          const correspondingLink = document.querySelector(`.toc-footer-link[href="#${sectionId}"]`);
+          
+          if (correspondingLink && scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            correspondingLink.classList.add('active');
+          }
+        });
+      }
+      
+      // Update active link on scroll
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink(); // Initial call
+    });
     </script>
 
 <script src="https://unpkg.com/kursor"></script>

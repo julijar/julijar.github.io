@@ -134,13 +134,13 @@ h3, h4, p {
 
 h3 {
   color: var(--color-text-primary);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h4 {
   font-size: larger;
   color: var(--color-text-secondary);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 p {
@@ -149,9 +149,9 @@ p {
 }
 
 .image-caption {
-  font-weight: 200;
+  font-weight: 400;
   text-align: center; 
-  color: var(--color-text-tertiary);
+  color: var(--color-text-secondary);
   margin-top: var(--space-xs);
   font-size: 0.875rem;
 }

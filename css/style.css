@@ -189,10 +189,13 @@ a.link {
 
       }
      a.link-arrow:hover{
-        text-decoration: none;
-        color: #584F69
-;
-        
+        text-decoration: underline;
+        text-decoration-color: #999;
+        text-underline-offset: 3px;
+        color: #A31621;
+      }
+      a.link-arrow:hover sup {
+        color: #A31621;
       }
       .link:hover {
         text-decoration:none;
@@ -214,7 +217,7 @@ a.link {
         padding-top: 8px;
         text-align: center;
         font-family: halyard-text, sans-serif;
-        font-weight: 300;
+        font-weight: 400;
 
         font-style: normal;
 
@@ -239,6 +242,12 @@ a.link {
           font-style: normal;
   
           }
+
+        /* Footer text elements - ensure font-weight 400 */
+        r-grid[columns="8"] r-cell[span="5-7"] p,
+        r-grid[columns="8"] r-cell[span="5-7"] h2 {
+          font-weight: 400 !important;
+        }
    
 
 
@@ -250,16 +259,14 @@ a.link {
     text-decoration: none;
     color: #A31621;
     border: 1px solid  #A31621;
-    background-color:  none;
+    background-color:  transparent;
        font-family: syne, sans-serif;
        font-weight: 400;
   
        letter-spacing: 0.1;
 font-style: normal;
 padding: 8px 16px;
-
-
-
+transition: all 0.3s ease 0s;
  }
 
 
@@ -284,12 +291,31 @@ border-radius: 5%;
         text-decoration: none;
         padding-bottom: 10px;
     }
+    /* LinkedIn button - outline style by default, filled on hover */
     a.button:hover {
       text-decoration: none;
       font-weight: 400;
       padding: 8px 32px;
       color: white;
       background-color:  #A31621;
+    }
+    
+    /* Book a coffee chat button - red filled by default */
+    a.button-primary,
+    a.button.button-primary {
+      color: white;
+      background-color: #A31621;
+      border: 1px solid #A31621;
+    }
+    
+    a.button-primary:hover,
+    a.button.button-primary:hover {
+      text-decoration: none;
+      font-weight: 400;
+      padding: 8px 32px;
+      color: white;
+      background-color: #A31621;
+      opacity: 0.9;
     }
 
     a.selected {
@@ -700,4 +726,42 @@ img:hover {
   display: inline-block;
  align-items: baseline;
   text-align: center;
+}
+
+/* Section Title Styles */
+.section-title {
+  font-weight: 400;
+  color: #bfbfbf;
+  font-size: 2rem;
+}
+
+/* Service Tag Styles */
+.service-tag {
+  display: inline-block;
+  background-color: #f5f5f5;
+  color: #666;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.project-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+
+
+.header-highlight {
+  background-color: gradient;
+  background: linear-gradient(196deg,#fff7f7,#cec5c5,#fcfcfc);
+background-size: 180% 180%;
+animation: gradient-animation 6s ease infinite;
+color: #ffffff;
+
 }

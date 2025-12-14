@@ -60,6 +60,19 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #eaeaea;
+      box-shadow: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
   </style>
 
   <!-- JavaScript Libraries -->
@@ -99,8 +112,8 @@
 </head>
 
 <body>
-<!-- Header Navigation Placeholder -->  <!-- Header Navigation -->
-    <r-grid columns="8" columns-s="4" class="sticky">
+  <!-- Header Navigation -->
+  <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
       <h3 style="font-family: syne tactile; color: #C9C6CF;">
         <a href="index.html" class="link">julija.works</a>
@@ -108,25 +121,34 @@
     </r-cell>
     <r-cell span="5-7" span-s="2-4">
       <h3 style="float: right; color: rgb(20, 20, 20);">
-        <a href="index.html" class="link-arrow ">Work</a>
+        <a href="index.html" class="link-arrow">Work</a>
         &nbsp; &nbsp;
-        <a href="services.html" class="link-arrow  selected-bulb">Services</a>
+        <a href="services.html" class="link-arrow selected-bulb">Services</a>
         &nbsp; &nbsp;
         <a href="bio.html" class="link-arrow">Bio</a>
         &nbsp; &nbsp;
       </h3>
     </r-cell>
   </r-grid>
+  
 
-<!-- Header Navigation Component -->
-<script src="js/header-nav-component.js"></script>
+  
 
+  
+  <r-grid columns="8" columns-s="1">
+  
+  
+
+    
+  
+
+  </r-grid>
 
   <!-- Services Title -->
-  <r-grid columns=8 columns-s=1>
+  <r-grid columns="8" columns-s="1">
     <r-cell span=2-8 span-s=row>
       <h1 class="xlarge">
-        </br></br>
+      
         Services
       </h1>
       </br></br>
@@ -134,16 +156,15 @@
     
     <r-cell span=2-4 span-s=row data-aos="fade-down" data-aos-duration="2000">
       <h3>
-        I provide tailored services across all stages of the software development cycle. Choose from customized packages or opt for hourly engagements.
+        I provide tailored services across all stages of the software development cycle through custom packages or hourly engagements.
       </h3>
     </r-cell>
     
     <r-cell span=5-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
       <h3>
-        In 2025, I'm focusing on short-term consultations for founding teams of software for impact: social, planetary, etc. Book an introductory call to explore how I might help you work through an early stage software idea or help make it more modular and scaleable based on research.
-      </h3>
+        Currently available for short-term consultations with teams building technology for social and environmental impact, especially AI fairness and community governance.      </h3>
       </br>
-      <a class="button" 
+      <a class="button button-primary" 
          href="#" 
          data-cal-link="julija/30min"
          data-cal-namespace="30min"
@@ -157,7 +178,7 @@
 
   <!-- Services Grid -->
   <r-grid columns="8" columns-s="1">
-    <r-cell span="2-3" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section" style="padding: 2rem 1rem 2rem 2rem; border-right: 1px solid rgba(0, 0, 0, 0.15); border-radius: 16px; box-shadow: none;">
+    <r-cell span="2-3" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 1rem 2rem 2rem;">
       <h2 style="text-align: left; margin-bottom: 3rem;">
      
       Discovery & Ideation 🔍</h2>
@@ -213,7 +234,7 @@
       </div>
     </r-cell>
 
-    <r-cell span="4-5" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section" style="padding: 2rem 1rem; border-right: 1px solid rgba(0, 0, 0, 0.15); border-radius: 16px; box-shadow: none;">
+    <r-cell span="4-5" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 1rem;">
       <h2 style="text-align: left; margin-bottom: 3rem;">
         
         Prototype Design 🧫</h2>
@@ -269,7 +290,7 @@
       </div>
     </r-cell>
 
-    <r-cell span="6-7" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section" style="padding: 2rem 2rem 2rem 1rem; border-radius: 16px; box-shadow: none;">
+    <r-cell span="6-7" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 2rem 2rem 1rem;">
       <h2 style="text-align: left; margin-bottom: 3rem;">
       Launch<br>& Growth 🌱</h2>
       
@@ -329,29 +350,8 @@
 
 
 
-  <!-- Footer -->
-  <r-grid columns="8" columns-s="1" style="background-color: rgb(255, 255, 255); border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
-    <r-cell span="2-4" span-s="1">
-      <a class="button" 
-         href="#" 
-         data-cal-link="julija/30min"
-         data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'
-         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'services'});">☕ Book a coffee chat</a>
-    </r-cell>
-
-    <r-cell span="5-7" span-s="1">
-      <h2 style="color: #515151;">hello@julija.works</h2>
-      </br>
-      <p style="color: #afafaf;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
-      </br>  
-      <p style="color: #afafaf;">Studio Julija Rukanskaite 
-        </br>
-        Org.no: 932 773 511 MVA 🇳🇴</p>
-      </br>
-      <p style="color: #afafaf;"><a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank" class="link-arrow" onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: 'services'});">Connect on LinkedIn ↗</a></p>
-    </r-cell>
-  </r-grid>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
   <script>

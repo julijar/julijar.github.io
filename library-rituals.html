@@ -54,6 +54,115 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="/swiss-style.css">
 
+  <!-- Table of Contents Footer Styles -->
+  <style>
+    :root {
+      --color-highlight-soft: #C9C6CF;
+      --color-text-primary: rgb(20, 20, 20);
+    }
+
+    .toc-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(223, 223, 223, 0.5);
+      z-index: 1000;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .toc-footer-scroll {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .toc-footer-scroll::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .toc-footer-link {
+      color: #888;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .toc-footer-link:hover {
+      color: #A31621;
+      border-bottom-color: #A31621;
+    }
+
+    .toc-footer-link.active {
+      color: #A31621;
+      border-bottom-color: #A31621;
+      font-weight: 600;
+    }
+
+    /* Desktop: center and limit width */
+    @media (min-width: 1025px) {
+      .toc-footer {
+        padding: 16px 0;
+      }
+
+      .toc-footer-scroll {
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 0 40px;
+        gap: 32px;
+      }
+
+      .toc-footer-link {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Mobile: horizontal scroll */
+    @media (max-width: 1024px) {
+      .toc-footer {
+        padding: 10px 0;
+      }
+
+      .toc-footer-scroll {
+        padding: 0 16px;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .toc-footer-link {
+        font-size: 1rem;
+      }
+    }
+
+    /* Add padding to body to prevent content from being hidden behind footer */
+    body {
+      padding-bottom: 60px;
+    }
+
+    @media (min-width: 1025px) {
+      body {
+        padding-bottom: 70px;
+      }
+    }
+  </style>
+
   <!-- JavaScript Libraries -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/568df73059.js" crossorigin="anonymous"></script>
@@ -116,7 +225,7 @@ THE SOFTWARE.
   <!-- Header Navigation -->
     <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
-      <h3 style="font-family: syne tactile; color: #C9C6CF;">
+      <h3 style="font-family: syne tactile;" class="text-grey-header">
         <a href="index.html" class="link">julija.works</a>
       </h3>
     </r-cell>
@@ -131,105 +240,77 @@ THE SOFTWARE.
       </h3>
     </r-cell>
   </r-grid>
+
+  <r-grid columns="8" columns-s="1">
+  </r-grid>
+
+  <!-- Table of Contents Footer -->
+  <div class="toc-footer" id="toc-footer">
+    <div class="toc-footer-scroll">
+      <a href="#project-title" class="toc-footer-link">Project</a>
+      <a href="#importance" class="toc-footer-link">Importance</a>
+      <a href="#digital-pressure" class="toc-footer-link">Digital Pressures</a>
+      <a href="#browsing" class="toc-footer-link">Browsing</a>
+      <a href="#understanding" class="toc-footer-link">Understanding</a>
+      <a href="#co-design" class="toc-footer-link">Co-Design</a>
+      <a href="#opportunities" class="toc-footer-link">Opportunities</a>
+    </div>
+  </div>
    
   
-    <r-grid columns=8 columns-s=2  >
+    <r-grid columns="8" columns-s="1">
   
 
 
-      <r-cell span=2-8 span-s=row 
+      <!-- Main Title -->
+      <r-cell span=2-7 span-s=row 
       data-aos="fade-up"
-      data-aos-duration="3000">
-              <h1  class="xlarge"
-   
-           
-              >
-              Book browsing in a pandemic
-    </br>  
+      data-aos-duration="3000"
+      id="project-title">
+        <h1 class="large">
+          Book Browsing Services
+          <span style="color: #b1b1b1;">During a Pandemic</span>
+        </br></br>
+        </h1>
+      </r-cell>
 
-  </br>
-              </h1>
+
+      <!-- Timeline/Details Left Column -->
+      <r-cell span=2-3 span-s=row 
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="200"
+      data-aos-offset="0">
+        <h3 style="font-weight: 400; font-size: 1.1rem;" class="text-grey-section">
+          April — June 2020
+        </h3>
+        <h4 style="font-weight: 400; font-size: 1.1rem;" class="text-grey-section">
+          <span style="font-weight: 400;">Group project in Malmö University</span>
+        </h4>
+
+
+        </br>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+          <span class="service-tag">Service design</span>
+
+          <span class="service-tag">Fieldwork</span>
+          <span class="service-tag">Co-design</span>
+        </div>
+        </br></br>
+       
   
-              </r-cell>
+      </r-cell>
 
-
-              <r-cell span=2-2 span-s=row 
-              data-aos="fade-zoom-in"
-                      data-aos-easing="ease-in-back"
-                      data-aos-delay="200"
-                      data-aos-offset="0">
-      
-                      <h4  style="font-weight: 400" >
-                       
-              Design research
-                      </br>
-             
-                     April — June 2020
-                     </h4>
-      
-                  <h4  style="font-weight: 400" >      
-                    
-      
-      <span style="font-weight: 500;"   >        Group members</span>   
-    </br>
-  
-      Denisa Maria Bucuroiu
-    </br>
-    Felix Blomqvuist
-  </br>
-        Malin Benson
-      </br>
-        Michael Waldorff
-    </br>
-    Zakiya Pierre
-  
-      </h4>
-            
-   
- </r-cell>
-
-
- <r-cell span=3-3 span-s=row 
- data-aos="fade-zoom-in"
-         data-aos-easing="ease-in-back"
-         data-aos-delay="200"
-         data-aos-offset="0">
-         
-         <h4  style="font-weight: 400" >      
-               
-          <span style="font-weight: 500;"   >Methods used </span>
-         </br>
-
-
-Online reader survey
-</br>
-Interviews with the library staff
-</br>
-Interviews with readers
-</br>
-Participatory observation
-</br>
-Co-design
-</h4>
-
-         </r-cell>
-
-              <r-cell span=5-7 span-s=row 
-              data-aos="fade-zoom-in"
-                      data-aos-easing="ease-in-back"
-                      data-aos-delay="200"
-                      data-aos-offset="0">
-                   
-              
-              
-                      <h3 style="  line-height: 1.3;">
-                       During the Service Design course at Malmö University,
-                         in collaboration with the City library, our student group
-                       explored the reading rituals of the library visitors and the librarian work supporting them during Covid-19.
-                     
-                     
-                  </h3>
-                </r-cell>
+      <!-- Main Introduction Right Column -->
+      <r-cell span=4-7 span-s=row 
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="200"
+      data-aos-offset="0">
+        <h3 style="line-height: 1.3;">
+          During the Service Design course at Malmö University, in collaboration with the City library, our student group explored the reading rituals of library visitors and the work librarians do to support them during Covid-19.
+        </h3>
+      </r-cell>
                             
              
 
@@ -252,34 +333,25 @@ Co-design
 
 
       
-    <r-cell span=1-7 span-s=row 
-    data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="500"
-          data-aos-offset="0" >
-        
-  <h1 class="large">
-  </br>
-                The importance of the library</h1>
-               
-             
-                 </r-cell>
-                 <r-cell span=2-4 span-s=row 
-                 data-aos="fade-zoom-in"
-                       data-aos-easing="ease-in-back"
-                       data-aos-delay="500"
-                       data-aos-offset="0">
-                      
-                       <h3  style="  line-height: 1.4;">
-       
-                       </br>  </br>
-                Malmö Stadsbiblioteket is a space which many visit everyday to study, read and be
-                alone together with other people. The librarians have observe that some have the
-                same everyday routines and timing; reading the same newspapers, sitting by the
-                same computers. The library is an integral part of their everyday.
-                             </h3>
-                             
-       </r-cell>
+      <!-- Importance Section - Two Column Grid -->
+      <r-cell span=2-3 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            id="importance">
+        <h4 class="section-title">Importance</h4>
+      </r-cell>
+
+      <r-cell span=4-7 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0">
+        <h3 style="line-height: 1.4;">
+          Malmö Stadsbiblioteket is a space many people visit every day to study, read, and be alone together with others. Librarians have observed that some visitors have the same daily routines and timing—reading the same newspapers, sitting at the same computers. The library is an important part of their daily life.
+        </h3>
+      </r-cell>
        
 
    
@@ -294,13 +366,15 @@ Co-design
               <h1 class="large">“</h1>
              <h1  style=" line-height: 1.4; margin-left: 15%;  ">
              
-              You come here as a kid, maybe turn away for a few years, you come here to study, then
+              You come here as a kid, maybe turn away for a few years, you come here to studyand help
 go away for a few years. Maybe you have kids of your own, maybe you’re unemployed and
 come back: (throughout life) you interact with the library with different needs.
          </h1>
-             <h3 > Project developer, Malmö
+        
+        </br>
+             <h3 style=" line-height: 1.4; margin-left: 15%; color:#888; " > Project developer, Malmö
 Stadsbibliotek </h3>
-    
+      </br>  </br>  </br>  </br>
          
 
            
@@ -308,356 +382,134 @@ Stadsbibliotek </h3>
 
       
 
-          <r-cell span=2-8 span-s=row 
-          data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="500"
-                data-aos-offset="0" >
-              </br>
-            </br>
-    
-            </br>  
-        <h1 class="large" 
-                   
-        font-style: normal;">
-      
-                 Social distancing and the pressure to go digital</h1>
-                     
-                    </br>  </br>
-                       </r-cell>
-                       
-                       <r-cell span=2-3 span-s=row 
-                       data-aos="fade-zoom-in"
-                             data-aos-easing="ease-in-back"
-                             data-aos-delay="500"
-                             data-aos-offset="0"
-                           >
-                         
-                             <img   src="img/library/empty-library.JPG" 
-                             width="100%" >
-                        </r-cell>
-                      
-
-<r-cell span=4-5 span-s=row 
-data-aos="fade-zoom-in"
-      data-aos-easing="ease-in-back"
-      data-aos-delay="500"
-      data-aos-offset="0"
-    >
-      <h1>“</h1>
-      <h2  style="  line-height: 1.4; margin-left: 15%;  ">
-      
-       This Library is my second
-       home
-       </h2>
-    
-      <h3  style="  line-height: 1.4;">
-               
-           
-        Rapid readjustments in the ways borrowing, reading or participation
-
-        in events was done had to be made. This left many regular user, especially elders, unable to engage with the library.
-
-       </h3>
+      <!-- Digital Pressures Section - Two Column Grid -->
+      <r-cell span=2-3 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            id="digital-pressure">
+        <h4 class="section-title">Digital Pressures</h4>
       </r-cell>
-      
-      
-              <r-cell span=6-7 span-s=row 
-              data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="500"
-                    data-aos-offset="0"
-               
-                    >
-                    <h1>“</h1>
-                    <h2  style=" line-height: 1.4; margin-left: 15%; ">
-                    
-                     What is unique to us? How and should we compete with other
-                     providers in the digital space?
-                    </br>
-    
-                    </h2>
-                  <h3  style="  line-height: 1.4;">
-                    The library staff are also trying to change their ways of working and
-                    
-                    are raising urgent questions. 
-                    As an institution primarily focused on
-                    
-                    physical interaction, the library wants to maintain their culture and uniqueness, not just go digital. </h3>
-              
 
-                                 </h3>
-                   
-                 
-                 </r-cell>
+      <r-cell span=4-7 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0">
+        <h3 style="line-height: 1.4;">
+          The library had to quickly change how people borrow books, read, and participate in events. This left many regular users, especially older adults, unable to use the library.
+          </br></br>
+          Library staff are also changing how they work and asking urgent questions. As an institution focused on physical interaction, the library wants to maintain its culture and uniqueness, not just go digital.
+        </h3>
+      </r-cell>
 
-               
+      <r-cell span=2-7 span-s=row 
+      data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="500"
+          data-aos-offset="0">
+        </br></br>
+        <img src="img/library/empty-library.JPG" width="100%">
+        </br></br>
+      </r-cell>
 
-              <r-cell span=2-8 span-s=row 
-              data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="500"
-                    data-aos-offset="0" >
-            </br>
-            </br>
-    
-            </br>
-            <h1 class="large"  
-                       
-            font-style: normal;>
-          The importance of browsing
-        </br>  </br>     </h1>
-                </r-cell>
-          
-              
+      <!-- Browsing Section - Two Column Grid -->
+      <r-cell span=2-3 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            id="browsing">
+        <h4 class="section-title">Browsing</h4>
+      </r-cell>
 
-            
+      <r-cell span=4-7 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0">
+        <h3 style="line-height: 1.4;">
+          Our research revealed several design opportunities. We decided to focus on browsing, as it's at the core of library services and the reading ritual most affected by the pandemic.
+          </br></br>
+          Browsing for books can be a big part of the reading experience. People have particular ways of browsing and often follow specific routines. Some can't visit and browse in person during different periods of life or due to their situation.
+          </br></br>
+          Browsing is also tied to the physical presence of a book—its appearance, size, and printed text. When a book is available to touch and read, visitors get an impression and can decide whether to borrow it. Some people spend hours walking around the library browsing, making time for this activity.
+        </h3>
+      </r-cell>
 
-              <r-cell span=3-7 span-s=row 
-              data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="500"
-                    data-aos-offset="0">
-              </br> </br>
-                    <img   src="img/library/InitialVis-Browsing_Ownership_Ambience.jpg" 
-                    width="100%"  style="filter: grayscale(100%);">
-               </r-cell>
+      <r-cell span=2-7 span-s=row 
+      data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="500"
+          data-aos-offset="0">
+        </br></br>
+        <img src="img/library/InitialVis-Browsing_Ownership_Ambience.jpg" width="100%" style="filter: grayscale(100%);">
+        </br></br>
+      </r-cell>
 
-        
-                                        
-               <r-cell span=2-4 span-s=row 
-                               data-aos="fade-zoom-in"
-                                     data-aos-easing="ease-in-back"
-                                     data-aos-delay="500"
-                                     data-aos-offset="0">
-                                     <h3  style="  line-height: 1.4;" 
-                                  >
-                                       Our research led to several design opportunities. 
-                                       We decided to focus on browsing, as it is at 
-                                       core of existing library services and the visitors' go to reading ritual most affected by the pandemic.
-                
-                                              </h3>
-                                              </r-cell>
+      <!-- Understanding Section - Two Column Grid -->
+      <r-cell span=2-3 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            id="understanding">
+        <h4 class="section-title">Understanding</h4>
+      </r-cell>
 
-                                              <r-cell span=3-6 span-s=row 
-                                              data-aos="fade-zoom-in"
-                                                    data-aos-easing="ease-in-back"
-                                                    data-aos-delay="500"
-                                                    data-aos-offset="0">
-                                                  </br> <h1>“</h1>
-                                              <h1  style=" line-height: 1.4; margin-left: 15%;  ">
-                                              
-                                               The library’s best offer is to browse. You don’t really know what you want, you get inspired when you’re there. 
-                                             
-                                              </br>
-                                
-                                              </h1>
-                                            </br>    </br>
-                                            </r-cell>  
+      <r-cell span=4-7 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0">
+        <h3 style="line-height: 1.3;">
+          The first workshop took place outside the library and was open for people to participate as they passed by. This let us engage with them safely while staying connected to the physical library. We had 17 participants throughout the day, both library visitors and passersby.
+          </br></br>
+          This workshop helped us learn more about people's personal browsing practices and rituals. We prepared two exercises to help people think about browsing for books. During these exercises, we held interviews and observed people's behavior. We also asked them to think out loud. One task focused on physical browsing, and the other on finding a book to read.
+        </h3>
+      </r-cell>
 
-                                 <r-cell span=2-4 span-s=row 
-                                 data-aos="fade-zoom-in"
-                                       data-aos-easing="ease-in-back"
-                                       data-aos-delay="500"
-                                       data-aos-offset="0">
-                        <h3  style="  line-height: 1.4;">
-               
-                          Browsing for books to read can be a big part of the actual reading experience.
-                   
-                          People have particular ways of browsing and often follow a specific sequence of actions.
-                   
-                          Some are not able to visit and browse physically during different periods of life or due to situations they are in
-                       
-                       
-                        </br>
-                      </br>
-                      People have been spotted using their cameras, filming the surroundings of the library, and when one of the patrons was approached, they said that they were on a video call with someone that was not able to come to the library. 
-                    </br></br>
-                    Browsing is also strongly tied to the
-physical presence of a book, its looks, size, printed text. When a book
-is instantly available to touch and read, visitors get an impression and
-can decide whether or not to borrow based on it.  
-                  </br>
-                </br>
-                Some people can spend hours walking around the library brows-
-ing for books, actively making time for this activity of browsing.
-</br> This led us to converge on a research question:     
-            
-</h3>
-          
-                
-                   
-                    </r-cell>
+      <r-cell span=2-7 span-s=row 
+      data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="500"
+          data-aos-offset="0">
+        </br></br>
+        <img src="img/library/browsing-workshop.jpg" width="100%">
+        </br></br>
+      </r-cell>
 
-                    <r-cell span=3-6 span-s=row 
-                    data-aos="fade-zoom-in"
-                          data-aos-easing="ease-in-back"
-                          data-aos-delay="500"
-                          data-aos-offset="0">
-                        </br> <h1>“</h1>
-                        <h1 style="margin-left: 15%;">
-                                 
-                          How might the library support alternative ways of browsing? 
-                                                      
-                                              
-                                                        </h1>
-                  </br>    </br>
-                  </r-cell>  
+      <!-- Co-Design Section - Two Column Grid -->
+      <r-cell span=2-3 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            id="co-design">
+        <h4 class="section-title">Co-Design</h4>
+      </r-cell>
 
-           
+      <r-cell span=4-7 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0">
+        <h3 style="line-height: 1.3;">
+          The previous workshop showed how important recommendations are. Almost everyone we talked to relied on them in some way. The second exercise helped us understand what makes recommendations trustworthy to people.
+        </h3>
+      </r-cell>
 
-                    <r-cell span=2-8 span-s=row 
-                    data-aos="fade-zoom-in"
-                          data-aos-easing="ease-in-back"
-                          data-aos-delay="500"
-                          data-aos-offset="0" >
-                   
-                                        
-                             
-                        </r-cell>
-
-               
-                        <r-cell span=2-8 span-s=row 
-                        data-aos="fade-zoom-in"
-                              data-aos-easing="ease-in-back"
-                              data-aos-delay="500"
-                              data-aos-offset="0" >
-                      </br>
-                      </br>
-                  
-                      </br>
-                      <h1 class="large";
-                       
-                      style="font-style: normal;">
-                                     Understanding the how and why of browsing</h1>
-                                    </br>  </br>
-                      
-                          </r-cell>
-
-
-          
-                    <r-cell span=2-5 span-s=row 
-                    data-aos="fade-zoom-in"
-                          data-aos-easing="ease-in-back"
-                          data-aos-delay="500"
-                          data-aos-offset="0" >
-                         
-                          <img  
-                           src="img/library/browsing-workshop.jpg" 
-                           width="100%" style="align-items: center;">
-                       
-                        </r-cell>
-                    
-
-
-                
-                              <r-cell span=6-7 span-s=row 
-                              data-aos="fade-zoom-in"
-                                    data-aos-easing="ease-in-back"
-                                    data-aos-delay="500"
-                                    data-aos-offset="0" >
-                              <h3 style="  line-height: 1.3;"
-                              class="text-float-bottom;">
-                               
-                                
-
-                                The first workshop took place outside of the library and 
-                                was open for people to participate as they passed by. This way we could engage with
-                                them in a safer way and maintain a connection to the physical library.
-                                We had 17 participants throughout the day, both library visitors and
-                                passers by.
-                              </br>  </br>
-                                This workshop was done to broaden our knowledge and get more
-                                insight into people’s personal browsing practices and rituals.
-                              </br>  </br>
-                                We prepared two exercises to get people in the mindset of browsing
-                                for books. During these exercises we held semi-structured interviews
-                                and observed people’s behaviour. We also asked them to think out
-                                loud. One task was related to physical browsing, and the other to the
-                                journey of finding a book to read. 
-                              
-                              
-                              </h3></r-cell>
-
-                       
-
-                        <r-cell span=2-8 span-s=row 
-                        data-aos="fade-zoom-in"
-                              data-aos-easing="ease-in-back"
-                              data-aos-delay="500"
-                              data-aos-offset="0" >
-                      </br>
-                      </br>
-                  
-                      </br>
-                      <h1 class="large";
-                       
-                      style="font-style: normal;">
-                                    Co-imagining alternative ways of physical and digital browsing
-                                  </br>  </br>    </h1></r-cell>
-
-                      <r-cell span=2-4 span-s=row 
-                      data-aos="fade-zoom-in"
-                            data-aos-easing="ease-in-back"
-                            data-aos-delay="500"
-                            data-aos-offset="0" >
-                      <h3 style="  line-height: 1.3;">
-                               
-                                
-                      The previous workshop revealed the importance of recommendations. Almost everyone we talked to relied on them in some form. The purpose of the second exercise was to find out more Bio what made recommendations reliable to individuals.
-                    </br>  </br> </h3>  </r-cell>
-
-
-          
-                    <r-cell span=2-4 span-s=row 
-                    data-aos="fade-zoom-in"
-                          data-aos-easing="ease-in-back"
-                          data-aos-delay="500"
-                          data-aos-offset="0" >
-                         
-                          <img  
-                           src="img/library/recommendation-workshop.jpg" 
-                           width="100%" style="align-items: center;">
-                           <h4 style="  line-height: 1.3;">
-                            Each participant was given a paper divided in two sections. 
-                            The right section was dedicated to a person recommending a 
-                            book and the left to information Bio the book. The task was 
-                            to put together what information should be present on each side.
-                           </br></br>
-                            A number of cut out examples of recommendations were provided. These included things like grading, degree of personal information, related books, list and genres, which they could glue on as they liked. Participants could also choose to add their own elements. </h4>
-                        </r-cell>
-                        <r-cell span=5-6 span-s=row 
-                        data-aos="fade-zoom-in"
-                              data-aos-easing="ease-in-back"
-                              data-aos-delay="500"
-                              data-aos-offset="0" >
-                             
-                            
-                               <img  
-                               src="img/library/recommendation-workshop3.jpg" 
-                               width="100%" style="align-items: center;">
-                             
-                                <h4 style="  line-height: 1.3;">
-                                  
-                                  Participants were asked to mark places in Malmö where pick up points for reserve 
-                                  library books could be installed. 
-                                  They were then asked to visualize how this pick-up station could look, 
-                                  either by writing or drawing. </h4>
-                              </r-cell>
-                              <r-cell span=7-8 span-s=row 
-                              data-aos="fade-zoom-in"
-                                    data-aos-easing="ease-in-back"
-                                    data-aos-delay="500"
-                                    data-aos-offset="0" >
-                                   
-                                    <img  
-                               src="img/library/recommendation-workshop2.jpg" 
-                               width="100%" style="align-items: center;">
-                                  
-                               <h4 style="  line-height: 1.3;">
-                                Participants wrote down unusual, novel ways of filtering books while
-                               browsing, which they then presented to the group. </h4> 
-                                    </r-cell>
+      <r-cell span=2-7 span-s=row 
+      data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="500"
+          data-aos-offset="0">
+        </br></br>
+        <img src="img/library/recommendation-workshop.jpg" width="100%">
+        <h4 class="image-caption">Co-design workshop activities</h4>
+        </br></br>
+      </r-cell>
                       
 
 
@@ -669,99 +521,47 @@ ing for books, actively making time for this activity of browsing.
             
                                 
                              
-                                        <r-cell span=2-8 span-s=row 
-                                        data-aos="fade-zoom-in"
-                                              data-aos-easing="ease-in-back"
-                                              data-aos-delay="500"
-                                              data-aos-offset="0" >
-                                      </br>
-                                      </br>
-                                      
-                                      </br>
-                                          
-                <h1 class="large" style="
-                
-                font-style: normal;">
-                            Design opportunities
-                            </br></br></br></h1>
-                                          </r-cell> 
+      <!-- Opportunities Section - Two Column Grid -->
+      <r-cell span=2-3 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            id="opportunities">
+        <h4 class="section-title">Opportunities</h4>
+      </r-cell>
 
-                                          <r-cell span=2-8 span-s=row 
-                                          data-aos="fade-zoom-in"
-                                              data-aos-easing="ease-in-back"
-                                              data-aos-delay="100"
-                                              data-aos-offset="0"
-                                             >
-                                              <img src="img/library/delivery-service-flow.png" > 
-                                            </br>
-                                           <p style="color: gray; text-align: center;">
-                                           Touchpoints of an existing library book delivery service. Design opportunity touchpoints highlighted in blue.
-                                           </p>
-                                          </br>
-                                        </br>
-                                        
-                                        </br>
-                                            
-                                            </r-cell>
-                        
-              <r-cell span=2-3 span-s=row 
-              data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="500"
-                    data-aos-offset="0">
-                    <h1>
-                             The importance of recommendations
-                              <br></h1>
-                        
-                            <h3 style="  line-height: 1.3;">
-                              Recommendations were brought up by almost every participant in
-                    
-                              different forms. It could be recommendations from friends, news-
-                              papers, radio, book clubs and the library recommendation shelf.
-                              
-                              Recommendations seem to be a way for people to feel assured
-                              Bio the book they are choosing, as well as a way of finding new
-                              books to read.</h3>
-              
- </r-cell>
+      <r-cell span=4-7 span-s=row 
+      data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0">
+        <h2>The importance of recommendations</h2>
+        <h3 style="line-height: 1.3;">
+          Almost every participant mentioned recommendations in different forms. These could be from friends, newspapers, radio, book clubs, or the library recommendation shelf. Recommendations help people feel confident about their book choice and discover new books to read.
+        </h3>
+        </br>
+        <h2>Delivery points</h2>
+        <h3 style="line-height: 1.3;">
+          Workshop participants liked the idea of pick-up stations for books outside the library. They suggested these could be at transit hubs like Malmö Central Station or Södervärn, as well as parks, where they could pick up a book while walking. People also preferred impersonal postal boxes requiring a code. All participants also wanted to be able to return books this way.
+        </h3>
+        </br>
+        <h2>Filtering books by physical properties and mood</h2>
+        <h3 style="line-height: 1.3;">
+          Many factors influence what people choose to read. Mood plays a big role, similar to season but on a day-to-day basis. Some factors relate to the physical book—size, material, cover, or title. Book format also matters. Chapter length can be a deal breaker: very short chapters can make reading choppy, while long ones make it hard to pause and reflect. What's "too long" or "too short" is, of course, subjective.
+        </h3>
+      </r-cell>
 
- <r-cell span=4-5 span-s=row 
- data-aos="fade-zoom-in"
-       data-aos-easing="ease-in-back"
-       data-aos-delay="500"
-       data-aos-offset="0">
-       <h1 >
-              Delivery points
-                 <br></h1>
-           
-               <h3 style="  line-height: 1.3;">
-              Having pick-up stations 
-              for books outside of the library 
-              was very well received by workshop participants. 
-              They suggested these could be located at travelling junctures, 
-              such as Malmö Central Station or Södervärn as well as parks, 
-              where they could pick up a book while out walking. 
-              Moreover, people preferred to have impersonal postal boxes requiring a code, no one proposed something unusual. Being able to return books this way as was also a thing all participants suggested</h3>
- 
-
-        </r-cell>
-
-  
-    <r-cell span=6-7 span-s=row 
-    data-aos="fade-zoom-in"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="500"
-        data-aos-offset="0">
-        <h1 >
-                 Filtering books by physical properties and mood
-                  <br></h1>
-            
-                <h3 style="  line-height: 1.3;">
-                  
-                  It became evident that various dimensions play a part when choosing what to read. Mood plays a big part in what to read, this is similar to the factor of season but on a more day to day basis. Some aspects are more related to the physical aspects of the book (such as size, material and cover or title). The format of the book is also of importance, the chapter length of a book can be a deal breaker: very short chapters can make the reading choppy while long ones make it hard to pause and reflect. What makes “too long” or “too short” is, of course, subjective.
-                </h3>
-       
-          </r-cell>
+      <r-cell span=2-7 span-s=row 
+      data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="100"
+          data-aos-offset="0">
+        </br></br>
+        <img src="img/library/delivery-service-flow.png" width="100%">
+        <h4 class="image-caption">Touchpoints of an existing library book delivery service. Design opportunity touchpoints highlighted in blue.</h4>
+        </br></br>
+      </r-cell>
 
   
 
@@ -771,11 +571,7 @@ ing for books, actively making time for this activity of browsing.
 
                 
 
-                      <r-cell span=7 span-s=row > 
-                        <h1>
-                        </br> </br> 
-                        </h1>
-                     </r-cell>
+                    
     </r-grid>
    
 
@@ -788,27 +584,8 @@ ing for books, actively making time for this activity of browsing.
 
 
 
- <!-- Footer -->
-  <r-grid columns="8" columns-s="1" style="background-color: rgb(255, 255, 255); border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
-    <r-cell span="2-4" span-s="1">
-      <a class="button" 
-         href="#" 
-         data-cal-link="julija/30min"
-         data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'
-         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'library_rituals'});">☕ Book a coffee chat</a>
-    </r-cell>
-
-    <r-cell span="5-7" span-s="1">
-      <h2 style="color: #515151;">hello@julija.works</h2>
-      </br>
-      <p style="color: #afafaf;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
-      </br>  
-      <p style="color: #afafaf;">Studio Julija Rukanskaite 
-        </br>
-        Org.no: 932 773 511 MVA 🇳🇴</p>
-    </r-cell>
-  </r-grid>   
+ <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
         
       
       
@@ -1352,6 +1129,51 @@ updateComputedValueLabels()
 
     <script>
       AOS.init(10);
+    </script>
+
+  <script>
+    // Table of Contents Footer functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocLinks = document.querySelectorAll('.toc-footer-link');
+      
+      // Smooth scroll and active link tracking
+      tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Track scroll position and highlight active section
+      function updateActiveLink() {
+        const sections = document.querySelectorAll('[id]');
+        const scrollPos = window.scrollY + 150;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          const correspondingLink = document.querySelector(`.toc-footer-link[href="#${sectionId}"]`);
+          
+          if (correspondingLink && scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            correspondingLink.classList.add('active');
+          }
+        });
+      }
+      
+      // Update active link on scroll
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink(); // Initial call
+    });
     </script>
 
 <script src="https://unpkg.com/kursor"></script>

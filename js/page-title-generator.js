@@ -60,7 +60,7 @@
             },
             'lips.html': {
                 title: 'Lips Onboarding',
-                description: 'End-to-end design of a progressive web app for wom*n and LGBTQ+ creators',
+                description: 'End-to-end design of a progressive web app for womenand LGBTQ+ creators',
                 keywords: 'Lips, PWA, LGBTQ+, creator platform, onboarding design'
             },
             'library-rituals.html': {

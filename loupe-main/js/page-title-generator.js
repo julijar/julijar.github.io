@@ -60,7 +60,7 @@
             },
             'lips.html': {
                 title: 'Lips Onboarding',
-                description: 'End-to-end design of a progressive web app for wom*n and LGBTQ+ creators',
+                description: 'End-to-end design of a progressive web app for womenand LGBTQ+ creators',
                 keywords: 'Lips, PWA, LGBTQ+, creator platform, onboarding design'
             },
             'library-rituals.html': {
@@ -183,7 +183,7 @@
             titleElement.textContent = titleElement.textContent.replace('{{PAGE_TITLE}}', info.title);
         } else {
             // Fallback: set title directly
-            document.title = info.title;
+        document.title = info.title;
         }
         
         // Update or create meta description

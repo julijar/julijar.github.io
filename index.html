@@ -54,14 +54,7 @@
       font-weight: 400;
     }
     
-    .sticky {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 1.5rem 0;
-      backdrop-filter: blur(10px);
-    }
+ 
     
     .link {
       color: #333;
@@ -94,9 +87,11 @@
       margin-bottom: 1.5rem;
     }
     
+  
+    
     .section-title {
       font-size: 1.5rem;
-      color: #666;
+      color: #ffffff;
       font-weight: 400;
       margin-bottom: 40px;
     }
@@ -142,7 +137,7 @@
     }
     
     .project-services {
-      color: #c3c2c2;
+      color: #a2a2a2;
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 0;
@@ -192,8 +187,246 @@
       color: #C9C6CF;
     }
 
+    /* Carousel Navigation */
+    .carousel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .carousel-nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .carousel-nav-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #333;
+      font-size: 1.2rem;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .carousel-nav-button:hover {
+      background: #A31621;
+      border-color: #A31621;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .carousel-nav-button:active {
+      transform: scale(0.95);
+    }
+
+    .carousel-nav-button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Horizontal Carousel Styles */
+    .work-carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 0, 0, 0.08) transparent;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .work-carousel::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .work-carousel::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .work-carousel::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.08);
+      border-radius: 2px;
+    }
+
+    .work-carousel::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .carousel-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #eaeaea;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex: 0 0 auto;
+      width: 400px;
+      min-width: 300px;
+      max-width: 400px;
+      height: auto;
+      min-height: fit-content;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    
+    .carousel-card .project-image {
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .carousel-card * {
+      pointer-events: none;
+    }
+
+    .carousel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .carousel-card .project-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 0;
+      overflow: hidden;
+      position: relative;
+      pointer-events: none;
+      flex-shrink: 0;
+    }
+
+    .carousel-card .project-image::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    .carousel-card .project-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-card .project-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      flex: 1 1 auto;
+      pointer-events: none;
+      overflow: visible;
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .carousel-card .project-content > div {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      flex-shrink: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .carousel-card .project-content > div > * {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .carousel-card .project-title {
+      font-size: 1.8rem;
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      line-height: 1.2;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+      overflow: visible;
+      display: block;
+    }
+
+    .carousel-card .project-description {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      overflow: visible;
+      min-width: 0;
+      white-space: normal;
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .carousel-card .project-services {
+      margin-top: auto;
+    }
     
     @media (max-width: 768px) {
+      .carousel-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .carousel-nav {
+        margin-left: auto;
+      }
+
+      .carousel-nav-button {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+        min-width: 44px;
+        min-height: 44px;
+      }
+
+      .carousel-card {
+        width: 320px;
+        min-width: 280px;
+      }
+
       .project-content {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -211,8 +444,8 @@
 <script src="js/page-title-generator.js"></script>
 </head>
 <body>
-  <!-- Header Navigation -->
-  <r-grid columns="8" columns-s="4" class="sticky">
+   <!-- Header Navigation -->
+   <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
       <h3 style="font-family: syne tactile; color: #C9C6CF;">
         <a href="index.html" class="link">julija.works</a>
@@ -229,28 +462,57 @@
       </h3>
     </r-cell>
   </r-grid>
+  
 
-  <!-- Hero Section -->
-   <br><br>
+  
+
+  
   <r-grid columns="8" columns-s="1">
-    <r-cell span="2-4" span-s="row">
+  
+  
+
+    
+  
+
+  <r-cell span="2-4" span-s="row" >
       
-      <h1 class="xlarge" data-aos="fade-up" data-aos-duration="2000">
-        Design & Research
-        for thoughtful automation & trust <span class="light-text">no
-        matter how complex the technology &
-        context.</span>
+      <h1 class="xlarge" style="font-size: 4.2rem;" data-aos="fade-up" data-aos-duration="2000 ">
+        <span class="header-highlight">Design for Trust & Safety Technology</span>
       </h1>
       <br>
+      <h4 style="text-align: left;">Featured in</h4>
+      <div class="row">
+        <div class="column">
+          <a href="https://arxiv.org/abs/2301.09545" target="_blank">
+            <img src="img/CHI23.png" alt="CHI23" style="width:80%">
+          </a>  
+        </div>
+        <div class="column">
+          <a href="https://metagov.org/" target="_blank"> 
+            <img src="img/policykit/metagov_logo.png" alt="Metagov" style="width:80%">
+          </a> 
+        </div>
+        <div class="column">
+          <a href="https://mashable.com/article/lips-social-network-sexual-content" target="_blank"> 
+            <img src="img/lips/Mashable_Logo_.png" alt="Mashable" style="width:80%">
+          </a> 
+        </div>
+      </div>
     </r-cell>
 
-     <r-cell span="5-7" span-s="row" class="text-float-bottom desktop-padding"
+     <r-cell span="5-7" span-s="row" class="text-float-bottom "
      data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-      <br> <br> <h3  >
-Designer focused on design for trust, safety, and emerging technology. With 4+ years of experience in community, finance, and automation UX, I am currently working on ethical legal tech in Norway.      </h3>
-      
-      <br>
-       <a class="button" 
+  <h3  >
+I observe how people interact with technology and each other and help design systems and tools they can trust and understand.
+
+<br> <br> 
+With 5+ years experience across public sector, finance, community, and AI technology, I work from early concepts through onboarding to help organizations deploy technology responsibly.
+
+<br> <br> 
+Currently designing ethical legal technology for the public sector. Published in human-computer interaction research and developing expertise in AI fairness and algorithmic governance.
+
+      <br> </h3>
+       <a class="button button-primary" 
            href="#" 
            data-cal-link="julija/30min"
            data-cal-namespace="30min"
@@ -259,163 +521,174 @@ Designer focused on design for trust, safety, and emerging technology. With 4+ y
     
            <br>
       <br><br>
+   
     </r-cell>
-        <r-cell span="2-3" span-s="row" data-aos="fade-down" data-aos-duration="2000">
-      <h4 style="text-align: left;">Featured in</h4>
-      <div class="row">
-        <div class="column">
-          <a href="https://arxiv.org/abs/2301.09545" target="_blank">
-            <img src="img/CHI23.png" alt="CHI23" style="width:100%">
-          </a>  
-        </div>
-        <div class="column">
-          <a href="https://metagov.org/" target="_blank"> 
-            <img src="img/policykit/metagov_logo.png" alt="Metagov" style="width:120%">
-          </a> 
-        </div>
-        <div class="column">
-          <a href="https://mashable.com/article/lips-social-network-sexual-content" target="_blank"> 
-            <img src="img/lips/Mashable_Logo_.png" alt="Mashable" style="width:120%">
-          </a> 
-        </div>
-      </div>
-    </r-cell>
+
+  
   </r-grid>
 
-<br><br><br><br>
+<br><br>
   <!-- Work Section -->
   <r-grid columns="8" columns-s="1">
-    <r-cell span="2-7" span-s="row">
-      <h2 class="section-title">Selected work</h2>
-    </r-cell>
-  </r-grid>
-  <!-- PolicyKit Project -->
-  <r-grid columns="8" columns-s="1">
-    <r-cell span="2-7" span-s="row" data-aos="fade-up" data-aos-duration="1000">
-      <a href="policykit.html" style="display: block; text-decoration: none;">
-        <div class="project-image">
-          <img src="img/policykit/policykit-mockup.png" alt="No-code PolicyKit">
-        </div>
-      </a>
-      <div class="project-content">
-        <h1 class="project-title">
-          <a href="policykit.html" class="title-link">No-code PolicyKit</a>
-        </h1>
-        <div>
-          <h3 class="project-description">
-            Redesign of a no-code Slack integration for online community governance in collaboration with researchers from University of Washington's Social Futures Lab and the Metagovernance project.
-          </h3>
-          <p class="project-services">
-            UX Design<br>
-            Information Architecture<br>
-            UI Design
-          </p>
+    <r-cell span="2-8" span-s="row">
+      <div class="carousel-header">
+        <h3 style="margin: 0; color: #949494;">Selected Work</h3>
+        <div class="carousel-nav">
+          <button class="carousel-nav-button" id="carousel-prev" aria-label="Previous">←</button>
+          <button class="carousel-nav-button" id="carousel-next" aria-label="Next">→</button>
         </div>
       </div>
     </r-cell>
   </r-grid>
-  <!-- Juni Automations Project -->
+  
   <r-grid columns="8" columns-s="1">
-    <r-cell span="2-7" span-s="row" data-aos="fade-up" data-aos-duration="1000">
-      <a href="/juni.html" style="display: block; text-decoration: none;">
-        <div class="project-image">
-          <img src="img/juni/widget.png" alt="Juni Automations">
+    <r-cell span="1-8" span-s="row">
+      <div class="work-carousel" id="work-carousel">
+          <!-- PolicyKit Project -->
+          <a href="policykit.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="project-image">
+              <img src="img/policykit/Background.png" alt="No-code PolicyKit">
+            </div>
+            <div class="project-content">
+              <h1 class="project-title">
+                PolicyKit
+                <br> No-code Slack Integration
+              </h1>
+              <div>
+                <h3 class="project-description">
+                  Redesign of an open-source Slack integration for online community governance. 
+                  <br>
+                  In collaboration with researchers from University of Washington's Social Futures Lab and the Metagovernance project.
+                </h3>
+                <p class="project-services">
+                  <span class="service-tag">Design system</span>
+                  <span class="service-tag">Information architecture</span>
+                  <span class="service-tag">Product redesign</span>
+                </p>
+              </div>
+            </div>
+          </a>
+          
+        
+          
+          <!-- Lips Onboarding Project -->
+          <a href="lips.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="project-image">
+              <img src="img/lips/lips_cover.png" alt="Lips onboarding">
+            </div>
+            <div class="project-content">
+              <h1 class="project-title">
+                Lips
+                <br> User Activation
+              </h1>
+              <div>
+                <h3 class="project-description">
+                  End-to-end design of a progressive web app for women and LGBTQ+ artists to express themselves freely, without biased censorship.
+                </h3>
+                <p class="project-services">
+                  <span class="service-tag">User Research</span>
+                  <span class="service-tag">Growth Design</span>
+                </p>
+              </div>
+            </div>
+          </a>
+
+            <!-- Juni Automations Project -->
+            <a href="/juni.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+              <div class="project-image">
+                <img src="img/juni/widget.png" alt="Juni Automations">
+              </div>
+              <div class="project-content">
+                <h1 class="project-title">
+                  Juni Automations
+                  <br> Custom Workflows
+                </h1>
+                <div>
+                  <h3 class="project-description">
+                    End-to-end design of a no-code automated workflow builder for Europe's fastest growing b2b fintech.
+                  </h3>
+                  <p class="project-services">
+                    <span class="service-tag">Information architecture</span>
+                    <span class="service-tag">Product design</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          
+          <!-- Book Browsing Project -->
+          <a href="library-rituals.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <div class="project-image">
+              <img src="img/library/shelf.jpg" alt="Book browsing in a pandemic">
+            </div>
+            <div class="project-content">
+              <h1 class="project-title">
+                Book Browsing Services
+                <br> During a Pandemic
+              </h1>
+              <div>
+                <h3 class="project-description">
+                  Service design research into reading rituals and the librarian work supporting them during Covid-19. In collaboration with the Malmö City library.
+                </h3>
+                <p class="project-services">
+                  <span class="service-tag">Service design</span>
+                  <span class="service-tag">Fieldwork</span>
+                  <span class="service-tag">Co-design</span>
+                </p>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-      <div class="project-content">
-        <h1 class="project-title">
-          <a href="/juni.html" class="title-link">Juni Automations</a>
-        </h1>
-        <div>
-          <h3 class="project-description">
-            End-to-end design of a no-code automated workflow builder for Europe's fastest growing b2b fintech.
-          </h3>
-          <p class="project-services">
-            Concept Development<br>
-            Product Design
-          </p>
-        </div>
-      </div>
-    </r-cell>
-  </r-grid>
-  <!-- Lips Onboarding Project -->
-  <r-grid columns="8" columns-s="1">
-    <r-cell span="2-7" span-s="row" data-aos="fade-up" data-aos-duration="1000">
-      <a href="lips.html" style="display: block; text-decoration: none;">
-        <div class="project-image">
-          <img src="img/lips/Image from iOS copy.png" alt="Lips onboarding">
-        </div>
-      </a>
-      <div class="project-content">
-        <h1 class="project-title">
-          <a href="lips.html" class="title-link">Lips onboarding</a>
-        </h1>
-        <div>
-          <h3 class="project-description">
-            End-to-end design of a progressive web app for wom*n and LGBTQ+ creators to express themselves freely, without biased censorship.
-          </h3>
-          <p class="project-services">
-            Featured in 
-            <a href="https://sea.mashable.com/culture/14226/lips-is-a-new-social-network-where-sexual-expression-is-welcome" target="_blank">Mashable</a> • 
-            <a href="https://www.thedailybeast.com/the-pro-nudity-social-network-sex-workers-are-flocking-to" target="_blank">Daily beast</a> • 
-            <a href="https://www.bustle.com/wellness/lips-app-feminist-porn-sexual-expression" target="_blank">Bustle</a>
-          </p>
-        </div>
-      </div>
-    </r-cell>
-  </r-grid>
-  <!-- Book Browsing Project -->
-  <r-grid columns="8" columns-s="1">
-    <r-cell span="2-7" span-s="row" data-aos="fade-up" data-aos-duration="1000">
-      <a href="library-rituals.html" style="display: block; text-decoration: none;">
-        <div class="project-image">
-          <img src="img/library/shelf.jpg" alt="Book browsing in a pandemic">
-        </div>
-      </a>
-      <div class="project-content">
-        <h1 class="project-title">
-          <a href="library-rituals.html" class="title-link">Book browsing in a pandemic</a>
-        </h1>
-        <div>
-          <h3 class="project-description">
-            Service design research into reading rituals and the librarian work supporting them during Covid-19. In collaboration with the Malmö City library.
-          </h3>
-          <p class="project-services">
-            Service Design<br>
-            User Research
-          </p>
-        </div>
-      </div>
     </r-cell>
   </r-grid>
 
-  <!-- Footer -->
-  <r-grid columns="8" columns-s="1" style="background-color: rgb(255, 255, 255); border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
-    <r-cell span="2-4" span-s="1">
-      <a class="button" 
-         href="#" 
-         data-cal-link="julija/30min"
-         data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'
-         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'home_footer'});">☕ Book a coffee chat</a>
-    </r-cell>
-
-    <r-cell span="5-7" span-s="1">
-      <h2 style="color: #515151;">hello@julija.works</h2>
-      </br>
-      <p style="color: #afafaf;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
-      </br>  
-      <p style="color: #afafaf;">Studio Julija Rukanskaite 
-        </br>
-        Org.no: 932 773 511 MVA 🇳🇴</p>
-      </br>
-      <p style="color: #afafaf;"><a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank" class="link-arrow" onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: 'home'});">Connect on LinkedIn ↗</a></p>
-    </r-cell>
-  </r-grid>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
   
   <!-- Scripts -->
   <script>
     AOS.init(10);
+
+    // Carousel navigation
+    const carousel = document.getElementById('work-carousel');
+    const prevButton = document.getElementById('carousel-prev');
+    const nextButton = document.getElementById('carousel-next');
+
+    function updateButtons() {
+      if (carousel) {
+        const isAtStart = carousel.scrollLeft <= 0;
+        const isAtEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10;
+        
+        if (prevButton) prevButton.disabled = isAtStart;
+        if (nextButton) nextButton.disabled = isAtEnd;
+      }
+    }
+
+    if (prevButton && nextButton && carousel) {
+      // Handle both click and touch events for better mobile support
+      const handlePrev = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        carousel.scrollBy({ left: -450, behavior: 'smooth' });
+      };
+
+      const handleNext = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        carousel.scrollBy({ left: 450, behavior: 'smooth' });
+      };
+
+      // Add click event
+      prevButton.addEventListener('click', handlePrev);
+      nextButton.addEventListener('click', handleNext);
+
+      // Add touch events for mobile
+      prevButton.addEventListener('touchend', handlePrev);
+      nextButton.addEventListener('touchend', handleNext);
+
+      carousel.addEventListener('scroll', updateButtons);
+      updateButtons(); // Initial check
+    }
+
   </script>
   <script src="https://unpkg.com/kursor"></script>
   <script>
@@ -475,5 +748,8 @@ Designer focused on design for trust, safety, and emerging technology. With 4+ y
       "layout":"column_view"
     });
   </script>
+
+<!-- Footer Include Script -->
+<script src="js/footer-include.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ function loadHeaderNav() {
         position: sticky; 
         position: -webkit-sticky;
         top: 0;
-        background: rgba(255, 255, 255, 0.9);
+        background: gradient(to bottom right, #FAFAFA,rgba(250, 250, 250, 0));
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         z-index: 100;

@@ -2,6 +2,20 @@
 // This script injects the footer directly without needing a separate HTML file
 
 function loadFooter() {
+  // Build buttons HTML
+  const buttonsHTML = `
+        <a class="button button-primary" 
+           href="#" 
+           data-cal-link="julija/30min"
+           data-cal-namespace="30min"
+           data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
+         </br>
+        <a class="button" 
+           href="https://www.linkedin.com/in/julija-rukanskaite/" 
+           target="_blank" 
+           onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: window.location.pathname});">🏢 Connect on Linkedin <sup>↗</sup></a>
+  `;
+  
   const footerHTML = `
     <!-- Simple Footer Component -->
     <r-grid columns=8 columns-s=1 
@@ -24,21 +38,18 @@ function loadFooter() {
 }
     border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
       <r-cell span=2-4 span-s=1>
-        <a class="button button-primary" 
-           href="#" 
-           data-cal-link="julija/30min"
-           data-cal-namespace="30min"
-           data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
+        ${buttonsHTML}
       </r-cell>
 
       <r-cell span=5-7 span-s=1>
-        <h2 style="color: #515151;">hello@julija.works</h2>
+        <h2 style="color: #222;">hello@julija.works</h2>
         </br>
-        <p style="color: #afafaf;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
+        <p style="color: #444;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
         </br>  
-        <p style="color: #afafaf;">Studio Julija Rukanskaite 
+        <p style="color: #444;">Studio Julija Rukanskaite 
           </br>
           Org.no: 932 773 511 MVA 🇳🇴</p>
+     
       </r-cell>
     </r-grid>
   `;
