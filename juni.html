@@ -3,19 +3,19 @@
 <head>
   <!-- Basic Meta Tags -->
   <meta charset="utf-8">
-  <title>{{PAGE_TITLE}}</title>
+  <title>Julija Rukanskaitė ☼ Juni Automations ☼</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="description" content="Case study: no-code automation workflow builder for Juni, Europe's fastest-growing B2B fintech. 0-1 product design and information architecture.">
   <meta name="author" content="Julija Rukanskaitė">
   <meta name="keywords" content="product design, UX design, UI design, design research, emerging technology, trust, safety">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="{{PAGE_TITLE}}">
-  <meta property="og:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta property="og:title" content="Julija Rukanskaitė ☼ Juni Automations ☼">
+  <meta property="og:description" content="Case study: no-code automation workflow builder for Juni, Europe's fastest-growing B2B fintech. 0-1 product design and information architecture.">
   <meta property="og:image" content="https://www.julija.works/img/sun-icon.png">
   <meta property="og:url" content="https://www.julija.works">
   <meta property="og:type" content="website">
@@ -23,8 +23,8 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{PAGE_TITLE}}">
-  <meta name="twitter:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="twitter:title" content="Julija Rukanskaitė ☼ Juni Automations ☼">
+  <meta name="twitter:description" content="Case study: no-code automation workflow builder for Juni, Europe's fastest-growing B2B fintech. 0-1 product design and information architecture.">
   <meta name="twitter:image" content="https://www.julija.works/img/sun-icon.png">
 
   <!-- Favicon -->
@@ -116,23 +116,14 @@ THE SOFTWARE.
   <!-- Header Navigation -->
     <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
-      <h3 style="font-family: syne tactile; color: #C9C6CF;">
+      <h3 class="site-logo">
         <a href="index.html" class="link">julija.works</a>
       </h3>
     </r-cell>
-    <r-cell span="5-7" span-s="2-4">
-      <h3 style="float: right; color: rgb(20, 20, 20);">
-        <a href="index.html" class="link-arrow selected-bulb">Work</a>
-        &nbsp; &nbsp;
-        <a href="services.html" class="link-arrow">Services</a>
-        &nbsp; &nbsp;
-        <a href="bio.html" class="link-arrow">Bio</a>
-        &nbsp; &nbsp;
-      </h3>
-    </r-cell>
+    <r-cell span="5-7" span-s="2-4" id="nav-menu-placeholder"></r-cell>
   </r-grid>
   
-    <r-grid columns=8 columns-s=row  >
+    <r-grid columns="8" columns-s="1">
     
 
 
@@ -186,21 +177,20 @@ THE SOFTWARE.
     
       </r-cell>
 
-      <r-cell span=5-7 span-s=row 
+      <r-cell span=2-7 span-s=row 
 data-aos="fade-zoom-in"
         data-aos-easing="ease-in-back"
         data-aos-delay="200"
         data-aos-offset="0"
    >
-     
-
-
-        <h3 style="line-height: 1.3;">
-          Part of a cross-functional Automations product team, I owned the design of the Automations feature for Juni, a financial platform for modern businesses banking—from initial research to launch.
-        </br></br>
-          Together with a product manager and design lead, I helped facilitate executive-level decision-making, handled technical complexity, and collaborated closely with engineering to map design opportunities to feature architecture.
-        </br></br>
-      </h3>
+        <div class="two-col-text">
+          <div class="two-col-left">
+            Part of a cross-functional Automations product team, I owned the design of the Automations feature for Juni, a financial platform for modern businesses banking—from initial research to launch.
+          </div>
+          <div class="two-col-right">
+            Together with a product manager and design lead, I helped facilitate executive-level decision-making, handled technical complexity, and collaborated closely with engineering to map design opportunities to feature architecture.
+          </div>
+        </div>
       </r-cell>
 
   
@@ -212,7 +202,7 @@ data-aos="fade-zoom-in"
         data-aos-easing="ease-in-back"
         data-aos-delay="500"
         data-aos-offset="0"
-        class="violet-section" style="background-color:#F9F8F7; padding-bottom: 0"
+        class="violet-section case-study-image-section" style="background-color:#F9F8F7; padding-bottom: 0"
        >
       </br> 
    
@@ -356,14 +346,14 @@ animation-name: spin;
     text-decoration: underline;
     text-decoration-color: #999;
     text-underline-offset: 3px;
-    color: #A31621;
+    color: #7E0F18;
   }
   .link-arrow:hover sup {
-    color: #A31621;
+    color: #7E0F18;
   }
   .link:hover {
     text-decoration:none;
-    color: #0aa330;
+    color: #7E0F18;
   }
 
   a {
@@ -800,7 +790,28 @@ updateComputedValueLabels()
 </script>
 
 <!-- Footer Include Script -->
+<script src="js/nav-menu-include.js"></script>
 <script src="js/footer-include.js"></script>
 
+
+<script>
+(function() {
+  var pageName = window.location.pathname.split('/').pop().replace('.html','') || 'index';
+  var fired = {};
+  window.addEventListener('scroll', function() {
+    var scrolled = window.scrollY + window.innerHeight;
+    var total = document.documentElement.scrollHeight;
+    var pct = Math.round((scrolled / total) * 100);
+    if (pct >= 50 && !fired['50']) {
+      fired['50'] = true;
+      if (typeof umami !== 'undefined') umami.track('Case_study_scroll_50pct', {page: pageName});
+    }
+    if (pct >= 90 && !fired['90']) {
+      fired['90'] = true;
+      if (typeof umami !== 'undefined') umami.track('Case_study_scroll_90pct', {page: pageName});
+    }
+  });
+})();
+</script>
 </body>
 </html>

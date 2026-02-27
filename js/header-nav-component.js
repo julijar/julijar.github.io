@@ -6,8 +6,8 @@ function loadHeaderNav() {
     <!-- Navigation -->
     <r-grid columns=8 columns-s=2 class="sticky">
       <r-cell span=2-3 span-s=1>
-        <h3 style="font-family: syne tactile; color: #C9C6CF;">
-          <a href="index.html" class="link">Julija.works</a>
+        <h3 class="site-logo">
+          <a href="index.html" class="link">julija.works</a>
         </h3>
       </r-cell>
       
@@ -43,7 +43,7 @@ function loadHeaderNav() {
       
       /* Hover effects */
       .link-arrow:hover {
-        color:rgb(107, 1, 1);
+        color: #7E0F18;
         transition: color 0.3s ease;
       }
       

@@ -24,11 +24,11 @@ function loadFooter() {
 }
     border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
       <r-cell span=2-4 span-s=1>
-        <a class="button button-primary" 
+        <a class="btn-glossy" 
            href="#" 
            data-cal-link="julija/30min"
            data-cal-namespace="30min"
-           data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
+           data-cal-config='{"layout":"column_view","theme":"light"}'>Book a coffee chat</a>
       </r-cell>
 
       <r-cell span=5-7 span-s=1>

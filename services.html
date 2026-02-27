@@ -3,19 +3,19 @@
 <head>
   <!-- Basic Meta Tags -->
   <meta charset="utf-8">
-  <title>{{PAGE_TITLE}}</title>
+  <title>Julija Rukanskaitė ☼ Services ☼</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="description" content="Product design services for public sector, fintech, and AI companies — specialising in ethical AI, trust and safety, and responsible product design from discovery through deployment.">
   <meta name="author" content="Julija Rukanskaitė">
   <meta name="keywords" content="product design, UX design, UI design, design research, emerging technology, trust, safety">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="{{PAGE_TITLE}}">
-  <meta property="og:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta property="og:title" content="Julija Rukanskaitė ☼ Services ☼">
+  <meta property="og:description" content="Product design services for public sector, fintech, and AI companies — specialising in ethical AI, trust and safety, and responsible product design from discovery through deployment.">
   <meta property="og:image" content="https://www.julija.works/img/sun-icon.png">
   <meta property="og:url" content="https://www.julija.works">
   <meta property="og:type" content="website">
@@ -23,8 +23,8 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{PAGE_TITLE}}">
-  <meta name="twitter:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="twitter:title" content="Julija Rukanskaitė ☼ Services ☼">
+  <meta name="twitter:description" content="Product design services for public sector, fintech, and AI companies — specialising in ethical AI, trust and safety, and responsible product design from discovery through deployment.">
   <meta name="twitter:image" content="https://www.julija.works/img/sun-icon.png">
 
   <!-- Favicon -->
@@ -62,7 +62,7 @@
     }
 
     .service-card {
-      background: #ffffff;
+      background: #F3F4F6;
       border-radius: 8px;
       border: 1px solid #eaeaea;
       box-shadow: none;
@@ -71,7 +71,49 @@
 
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: none;
+    }
+    .services-intro-text {
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #2F2E30;
+      margin: 0;
+    }
+    .service-list-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .service-list-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .service-list-item strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.35rem;
+    }
+    .service-list-item p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .services-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+      .services-cards-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 
@@ -115,20 +157,11 @@
   <!-- Header Navigation -->
   <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
-      <h3 style="font-family: syne tactile; color: #C9C6CF;">
+      <h3 class="site-logo">
         <a href="index.html" class="link">julija.works</a>
       </h3>
     </r-cell>
-    <r-cell span="5-7" span-s="2-4">
-      <h3 style="float: right; color: rgb(20, 20, 20);">
-        <a href="index.html" class="link-arrow">Work</a>
-        &nbsp; &nbsp;
-        <a href="services.html" class="link-arrow selected-bulb">Services</a>
-        &nbsp; &nbsp;
-        <a href="bio.html" class="link-arrow">Bio</a>
-        &nbsp; &nbsp;
-      </h3>
-    </r-cell>
+    <r-cell span="5-7" span-s="2-4" id="nav-menu-placeholder"></r-cell>
   </r-grid>
   
 
@@ -144,210 +177,153 @@
 
   </r-grid>
 
-  <!-- Services Title -->
-  <r-grid columns="8" columns-s="1">
-    <r-cell span=2-8 span-s=row>
-      <h1 class="xlarge">
-      
-        Services
-      </h1>
-      </br></br>
+  <!-- Services: heading left, intro right (2 columns on mobile too) -->
+  <r-grid columns="8" columns-s="2" class="services-intro-grid">
+    <r-cell span="1-4" span-s="1" data-aos="fade-up" data-aos-duration="2000">
+      <h1 class="xlarge" style="margin-bottom: 0;">Services</h1>
     </r-cell>
-    
-    <r-cell span=2-4 span-s=row data-aos="fade-down" data-aos-duration="2000">
-      <h3>
-        I provide tailored services across all stages of the software development cycle through custom packages or hourly engagements.
-      </h3>
-    </r-cell>
-    
-    <r-cell span=5-7 span-s=row data-aos="fade-down" data-aos-duration="2000">
-      <h3>
-        Currently available for short-term consultations with teams building technology for social and environmental impact, especially in AI, community governance, and non-profit tech contexts.
-      </h3>
-      </br>
-      <a class="button button-primary" 
-         href="#" 
-         data-cal-link="julija/30min"
-         data-cal-namespace="30min"
-         data-cal-config='{"layout":"column_view","theme":"light"}'
-         onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'services_intro'});">☕ Book a coffee chat</a>
-      </br></br>
+    <r-cell span="5-8" span-s="2" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-end;">
+      <p class="services-intro-text">I provide tailored services across all stages of the software development cycle through custom packages or hourly engagements. Currently available for short-term consultations with teams building technology for social and environmental impact, especially in AI, community governance, and non-profit tech contexts.</p>
+      <a class="btn-glossy" href="#" data-cal-link="julija/30min" data-cal-namespace="30min" data-cal-config='{"layout":"column_view","theme":"light"}' onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'services_intro'});" style="margin-top: 1rem;">Book a coffee chat</a>
     </r-cell>
   </r-grid>
 
-  </br></br></br></br>
+  <br><br><br>
 
-  <!-- Services Grid -->
+  <!-- Services Grid: full r-grid width, 3 equal columns -->
   <r-grid columns="8" columns-s="1">
-    <r-cell span="2-3" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 1rem 2rem 2rem;">
-      <h2 style="text-align: left; margin-bottom: 3rem;">
-     
-      Discovery & Ideation 🔍</h2>
-      
+    <r-cell span="1-8" span-s="row">
+      <div class="services-cards-grid">
+        <div data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 1.5rem;">
+      <h2 style="text-align: left; margin-bottom: 1.75rem; font-size: 1.25rem;">Discovery & Ideation 🔍</h2>
       <div class="service-accordion">
-        <div class="accordion-item" onclick="toggleServiceAccordion('consulting'); if(typeof umami !== 'undefined') umami.track('workshops_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('consulting'); if(typeof umami !== 'undefined') umami.track('workshops_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Consulting & Workshops</h3>
-            <span class="consulting-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Consulting & Workshops</h3>
+            <span class="consulting-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="consulting-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Defining and shaping product objectives together with the team
-          </p>
+        <div id="consulting-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Defining and shaping product objectives together with the team</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('ux-audit'); if(typeof umami !== 'undefined') umami.track('ux_audit_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('ux-audit'); if(typeof umami !== 'undefined') umami.track('ux_audit_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">UX Audit</h3>
-            <span class="ux-audit-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">UX Audit</h3>
+            <span class="ux-audit-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="ux-audit-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            A holistic analysis of a Product's usability and scalability based on best practices and user needs
-          </p>
+        <div id="ux-audit-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">A holistic analysis of a product's usability and scalability based on best practices and user needs</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('competitor'); if(typeof umami !== 'undefined') umami.track('competitor_analysis_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('competitor'); if(typeof umami !== 'undefined') umami.track('competitor_analysis_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Competitor Analysis</h3>
-            <span class="competitor-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Competitor Analysis</h3>
+            <span class="competitor-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="competitor-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Competitor product strength, weakness, and strategy analysis
-          </p>
+        <div id="competitor-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Competitor product strength, weakness, and strategy analysis</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('research'); if(typeof umami !== 'undefined') umami.track('research_insights_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('research'); if(typeof umami !== 'undefined') umami.track('research_insights_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Synthesizing Research</h3>
-            <span class="research-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Research & Synthesis</h3>
+            <span class="research-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="research-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Conducting new or analyzing past user research materials to inform design
-          </p>
+        <div id="research-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Conducting new or analyzing past user research materials to inform design</p>
         </div>
       </div>
-    </r-cell>
+        </div>
 
-    <r-cell span="4-5" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 1rem;">
-      <h2 style="text-align: left; margin-bottom: 3rem;">
-        
-        Prototype Design 🧫</h2>
-      
+        <div data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 1.5rem;">
+      <h2 style="text-align: left; margin-bottom: 1.75rem; font-size: 1.25rem;">Product Design 🧫</h2>
       <div class="service-accordion">
-        <div class="accordion-item" onclick="toggleServiceAccordion('feature-prototypes'); if(typeof umami !== 'undefined') umami.track('feature_prototypes_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('feature-prototypes'); if(typeof umami !== 'undefined') umami.track('feature_prototypes_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Feature & Product Prototypes</h3>
-            <span class="feature-prototypes-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Feature & Product Prototypes</h3>
+            <span class="feature-prototypes-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="feature-prototypes-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Product or feature-level prototypes for development based on user & technical requirements
-          </p>
+        <div id="feature-prototypes-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Product or feature-level prototypes for development based on user & technical requirements</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('vision-prototypes'); if(typeof umami !== 'undefined') umami.track('vision_prototypes_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('vision-prototypes'); if(typeof umami !== 'undefined') umami.track('vision_prototypes_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Product Vision Prototypes</h3>
-            <span class="vision-prototypes-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Product Vision Prototypes</h3>
+            <span class="vision-prototypes-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="vision-prototypes-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Prototypes that communicate and explore product concepts for commercial and investor validation
-          </p>
+        <div id="vision-prototypes-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Prototypes that communicate and explore product concepts for commercial and investor validation</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('design-system'); if(typeof umami !== 'undefined') umami.track('design_system_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('design-system'); if(typeof umami !== 'undefined') umami.track('design_system_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Design System</h3>
-            <span class="design-system-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Design System</h3>
+            <span class="design-system-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="design-system-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            On-brand library of reusable interface components
-          </p>
+        <div id="design-system-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">On-brand library of reusable interface components</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('information-design'); if(typeof umami !== 'undefined') umami.track('information_design_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('information-design'); if(typeof umami !== 'undefined') umami.track('information_design_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Human-Centered Information Design</h3>
-            <span class="information-design-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Information Architecture</h3>
+            <span class="information-design-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="information-design-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Intuitive and scalable page & navigation structures
-          </p>
+        <div id="information-design-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Intuitive and scalable page & navigation structures</p>
         </div>
       </div>
-    </r-cell>
+        </div>
 
-    <r-cell span="6-7" span-s="row" data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 2rem 2rem 1rem;">
-      <h2 style="text-align: left; margin-bottom: 3rem;">
-      Launch<br>& Growth 🌱</h2>
-      
+        <div data-aos="fade-down" data-aos-duration="2000" class="grey-section service-card" style="padding: 2rem 1.5rem;">
+      <h2 style="text-align: left; margin-bottom: 1.75rem; font-size: 1.25rem;">Launch & Growth 🌱</h2>
       <div class="service-accordion">
-        <div class="accordion-item" onclick="toggleServiceAccordion('landing-pages'); if(typeof umami !== 'undefined') umami.track('landing_pages_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('landing-pages'); if(typeof umami !== 'undefined') umami.track('landing_pages_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Landing & Info Pages</h3>
-            <span class="landing-pages-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Landing & Info Pages</h3>
+            <span class="landing-pages-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="landing-pages-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Promoting a product and its features
-          </p>
+        <div id="landing-pages-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Promoting a product and its features</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('development-support'); if(typeof umami !== 'undefined') umami.track('development_support_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('development-support'); if(typeof umami !== 'undefined') umami.track('development_support_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Development Support</h3>
-            <span class="development-support-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Development Support</h3>
+            <span class="development-support-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="development-support-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Detailed handoffs & close collaboration with developers
-          </p>
+        <div id="development-support-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Detailed handoffs & close collaboration with developers</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('post-launch'); if(typeof umami !== 'undefined') umami.track('post_launch_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('post-launch'); if(typeof umami !== 'undefined') umami.track('post_launch_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Post-Launch Enhancements</h3>
-            <span class="post-launch-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Post-Launch Enhancements</h3>
+            <span class="post-launch-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="post-launch-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            Metrics & feedback based improvements
-          </p>
+        <div id="post-launch-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Metrics & feedback based improvements</p>
         </div>
-
-        <div class="accordion-item" onclick="toggleServiceAccordion('maintenance'); if(typeof umami !== 'undefined') umami.track('maintenance_scaling_accordion_opened');" style="cursor: pointer; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('maintenance'); if(typeof umami !== 'undefined') umami.track('maintenance_scaling_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size:  1.1rem;">Maintenance & Scaling</h3>
-            <span class="maintenance-icon" style="font-size: 1.2rem; transition: transform 0.3s ease;">+</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Maintenance & Scaling</h3>
+            <span class="maintenance-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="maintenance-content" class="accordion-content" style="display: none; padding: 1rem 0;">
-          <p style="color: #666; font-size: 1.1rem; margin: 0; font-weight: 400;">
-            As-needed support for maintaining the user experience as your product changes & grows
-          </p>
+        <div id="maintenance-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">As-needed support for maintaining the user experience as your product changes & grows</p>
+        </div>
+      </div>
         </div>
       </div>
     </r-cell>
   </r-grid>
 
-  </br></br></br></br>
+  <br><br><br><br>
 
 
 
@@ -370,14 +346,14 @@
     function toggleServiceAccordion(serviceId) {
       const content = document.getElementById(serviceId + '-content');
       const icon = document.querySelector('.' + serviceId + '-icon');
-      
+      if (!content || !icon) return;
       if (content.style.display === 'none' || content.style.display === '') {
         content.style.display = 'block';
         icon.textContent = '−';
         icon.style.transform = 'rotate(180deg)';
       } else {
         content.style.display = 'none';
-        icon.textContent = '+';
+        icon.textContent = '☼';
         icon.style.transform = 'rotate(0deg)';
       }
     }
@@ -444,6 +420,7 @@
   </script>
 
 <!-- Footer Include Script -->
+<script src="js/nav-menu-include.js"></script>
 <script src="js/footer-include.js"></script>
 
 </body>

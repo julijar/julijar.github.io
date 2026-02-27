@@ -3,19 +3,19 @@
 <head>
   <!-- Basic Meta Tags -->
   <meta charset="utf-8">
-  <title>{{PAGE_TITLE}}</title>
+  <title>Julija Rukanskaitė ☼ Library Research ☼</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="description" content="Service design research into reading rituals and library services during Covid-19, with Malmö City Library. Fieldwork, co-design, and service design methods.">
   <meta name="author" content="Julija Rukanskaitė">
   <meta name="keywords" content="product design, UX design, UI design, design research, emerging technology, trust, safety">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="{{PAGE_TITLE}}">
-  <meta property="og:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta property="og:title" content="Julija Rukanskaitė ☼ Library Research ☼">
+  <meta property="og:description" content="Service design research into reading rituals and library services during Covid-19, with Malmö City Library. Fieldwork, co-design, and service design methods.">
   <meta property="og:image" content="https://www.julija.works/img/sun-icon.png">
   <meta property="og:url" content="https://www.julija.works">
   <meta property="og:type" content="website">
@@ -23,8 +23,8 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{PAGE_TITLE}}">
-  <meta name="twitter:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="twitter:title" content="Julija Rukanskaitė ☼ Library Research ☼">
+  <meta name="twitter:description" content="Service design research into reading rituals and library services during Covid-19, with Malmö City Library. Fieldwork, co-design, and service design methods.">
   <meta name="twitter:image" content="https://www.julija.works/img/sun-icon.png">
 
   <!-- Favicon -->
@@ -105,13 +105,13 @@
     }
 
     .toc-footer-link:hover {
-      color: #A31621;
-      border-bottom-color: #A31621;
+      color: #851219;
+      border-bottom-color: #851219;
     }
 
     .toc-footer-link.active {
-      color: #A31621;
-      border-bottom-color: #A31621;
+      color: #851219;
+      border-bottom-color: #851219;
       font-weight: 600;
     }
 
@@ -225,20 +225,11 @@ THE SOFTWARE.
   <!-- Header Navigation -->
     <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
-      <h3 style="font-family: syne tactile;" class="text-grey-header">
+      <h3 class="site-logo">
         <a href="index.html" class="link">julija.works</a>
       </h3>
     </r-cell>
-    <r-cell span="5-7" span-s="2-4">
-      <h3 style="float: right; color: rgb(20, 20, 20);">
-        <a href="index.html" class="link-arrow selected-bulb">Work</a>
-        &nbsp; &nbsp;
-        <a href="services.html" class="link-arrow">Services</a>
-        &nbsp; &nbsp;
-        <a href="bio.html" class="link-arrow">Bio</a>
-        &nbsp; &nbsp;
-      </h3>
-    </r-cell>
+    <r-cell span="5-7" span-s="2-4" id="nav-menu-placeholder"></r-cell>
   </r-grid>
 
   <r-grid columns="8" columns-s="1">
@@ -536,17 +527,17 @@ Stadsbibliotek </h3>
             data-aos-easing="ease-in-back"
             data-aos-delay="500"
             data-aos-offset="0">
-        <h2>The importance of recommendations</h2>
+        <h2>The Importance of Recommendations</h2>
         <h3 style="line-height: 1.3;">
           Almost every participant mentioned recommendations in different forms. These could be from friends, newspapers, radio, book clubs, or the library recommendation shelf. Recommendations help people feel confident about their book choice and discover new books to read.
         </h3>
         </br>
-        <h2>Delivery points</h2>
+        <h2>Delivery Points</h2>
         <h3 style="line-height: 1.3;">
           Workshop participants liked the idea of pick-up stations for books outside the library. They suggested these could be at transit hubs like Malmö Central Station or Södervärn, as well as parks, where they could pick up a book while walking. People also preferred impersonal postal boxes requiring a code. All participants also wanted to be able to return books this way.
         </h3>
         </br>
-        <h2>Filtering books by physical properties and mood</h2>
+        <h2>Filtering Books by Physical Properties and Mood</h2>
         <h3 style="line-height: 1.3;">
           Many factors influence what people choose to read. Mood plays a big role, similar to season but on a day-to-day basis. Some factors relate to the physical book—size, material, cover, or title. Book format also matters. Chapter length can be a deal breaker: very short chapters can make reading choppy, while long ones make it hard to pause and reflect. What's "too long" or "too short" is, of course, subjective.
         </h3>
@@ -682,11 +673,11 @@ animation-name: spin;
   }
   .link-arrow:hover{
     text-decoration: none;
-    color: #0aa330;
+    color: #7E0F18;
   }
   .link:hover {
     text-decoration:none;
-    color: #0aa330;
+    color: #7E0F18;
   }
 
   a {
@@ -1194,7 +1185,28 @@ updateComputedValueLabels()
 </script>
 
 <!-- Footer Include Script -->
+<script src="js/nav-menu-include.js"></script>
 <script src="js/footer-include.js"></script>
 
+
+<script>
+(function() {
+  var pageName = window.location.pathname.split('/').pop().replace('.html','') || 'index';
+  var fired = {};
+  window.addEventListener('scroll', function() {
+    var scrolled = window.scrollY + window.innerHeight;
+    var total = document.documentElement.scrollHeight;
+    var pct = Math.round((scrolled / total) * 100);
+    if (pct >= 50 && !fired['50']) {
+      fired['50'] = true;
+      if (typeof umami !== 'undefined') umami.track('Case_study_scroll_50pct', {page: pageName});
+    }
+    if (pct >= 90 && !fired['90']) {
+      fired['90'] = true;
+      if (typeof umami !== 'undefined') umami.track('Case_study_scroll_90pct', {page: pageName});
+    }
+  });
+})();
+</script>
 </body>
 </html>

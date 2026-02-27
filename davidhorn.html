@@ -1,0 +1,368 @@
+<html>
+<!-- STANDARD HEAD TEMPLATE - Copy this to each HTML file -->
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="utf-8">
+  <title>Davidhorn — Ethical Technology for Law Enforcement Interviews | Julija Rukanskaitė</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Designing interview recording systems that balance investigator efficiency with evidence integrity and human rights protections.">
+  <meta name="author" content="Julija Rukanskaitė">
+  <meta name="keywords" content="product design, UX design, public sector, law enforcement, human rights, regulatory compliance">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Davidhorn — Ethical Technology for Law Enforcement Interviews">
+  <meta property="og:description" content="Designing interview recording systems that balance investigator efficiency with evidence integrity and human rights protections.">
+  <meta property="og:image" content="https://www.julija.works/img/sun-icon.png">
+  <meta property="og:url" content="https://www.julija.works/davidhorn.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Julija Rukanskaitė">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Davidhorn — Ethical Technology for Law Enforcement Interviews">
+  <meta name="twitter:description" content="Designing interview recording systems that balance investigator efficiency with evidence integrity and human rights protections.">
+  <meta name="twitter:image" content="https://www.julija.works/img/sun-icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" href="https://www.julija.works/img/sun-icon.png">
+
+  <!-- CSS Framework -->
+  <link rel="stylesheet" href="../raster2.css?v=20">
+
+  <!-- Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Cursor Library -->
+  <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Syne+Tactile&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/swiss-style.css">
+
+  <!-- Table of Contents Footer Styles -->
+  <style>
+    .toc-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(223, 223, 223, 0.5);
+      z-index: 1000;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .toc-footer-scroll {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .toc-footer-scroll::-webkit-scrollbar { display: none; }
+    .toc-footer-link {
+      color: #888;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+    .toc-footer-link:hover {
+      color: #851219;
+      border-bottom-color: #851219;
+    }
+    .toc-footer-link.active {
+      color: #851219;
+      border-bottom-color: #851219;
+      font-weight: 600;
+    }
+    @media (min-width: 1025px) {
+      .toc-footer { padding: 16px 0; }
+      .toc-footer-scroll { max-width: 1200px; margin: 0 auto; padding: 0 40px; gap: 32px; }
+      .toc-footer-link { font-size: 1.2rem; }
+    }
+    @media (max-width: 1024px) {
+      .toc-footer { padding: 10px 0; }
+      .toc-footer-scroll { padding: 0 16px; gap: 20px; }
+      .toc-footer-link { font-size: 1rem; }
+    }
+    body { padding-bottom: 60px; }
+    @media (min-width: 1025px) { body { padding-bottom: 70px; } }
+  </style>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/568df73059.js" crossorigin="anonymous"></script>
+
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e954dcb8-4990-4602-a4f2-1366f4a8184c"></script>
+
+  <!-- Hotjar Tracking Code -->
+  <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:3306492,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Julija Rukanskaitė",
+    "jobTitle": "Product Designer",
+    "description": "Product designer focused on design for trust, safety, and emerging technology",
+    "url": "https://www.julija.works",
+    "image": "https://www.julija.works/img/sun-icon.png",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <!-- Header Navigation -->
+  <r-grid columns="8" columns-s="4" class="sticky">
+    <r-cell span="2-4" span-s="1-1">
+      <h3 class="site-logo">
+        <a href="index.html" class="link">julija.works</a>
+      </h3>
+    </r-cell>
+    <r-cell span="5-7" span-s="2-4" id="nav-menu-placeholder"></r-cell>
+  </r-grid>
+
+  <r-grid columns="8" columns-s="1">
+    <!-- Main Title -->
+    <r-cell span="2-8" span-s="row" data-aos="fade-up" data-aos-duration="3000" id="project-title">
+      <h1 class="large">
+        Davidhorn <span style="color: #b1b1b1;">| Ethical Technology for Law Enforcement Interviews</span>
+      </br></br></h1>
+    </r-cell>
+
+    <!-- Sidebar: Role, Timeline, Tags, Link -->
+    <r-cell span="2-3" span-s="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">
+      <h3 style="font-weight: 400; color: #666; font-size: 1.1rem;">2024 – Present</h3>
+      </br>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+        <span class="service-tag">Public Sector Technology</span>
+        <span class="service-tag">Product Adoption</span>
+        <span class="service-tag">Cross-Platform UX</span>
+        <span class="service-tag">Product Design</span>
+      </div>
+      </br></br>
+      <h3 style="line-height: 1.5; font-size: 1.1rem; color: #666;">
+         
+      </h3>
+    
+      <h3 style="line-height: 1.5; font-size: 1.1rem; color: #666;">
+        <a class="link-arrow" href="https://davidhorn.com/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+          Davidhorn<sup class="link"> ↗</sup>
+        </a>
+      </h3>
+    </r-cell>
+
+    <!-- Overview -->
+    <r-cell span="5-7" span-s="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0" id="overview">
+      <h3 style="line-height: 1.4;">
+        Davidhorn makes interview recording systems for law enforcement — hardware devices and software used by police and child protection services across European and international markets.
+        </br></br>
+        This is a domain where design carries real stakes. Systems serve people with very different relationships to the process: investigators, victims, witnesses, suspects. I work cross-functionally with a UX lead, engineers, and domain experts on product design and adoption.
+        </br></br>
+      </h3>
+    </r-cell>
+
+    <!-- Hero Image -->
+    <r-cell span="1-8" span-s="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0" class="violet-section case-study-image-section" style="background-color:#F9F8F7; padding-bottom: 0">
+      </br>
+      <img src="img/davidhorn/cover.jpg" width="100%" alt="Davidhorn — Ethical Technology for Law Enforcement Interviews" style="drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));">
+      <h4 class="image-caption">Image courtesy of Davidhorn AS</h4>
+      </br></br>
+    </r-cell>
+
+    <!-- My Work -->
+    <r-cell span="2-3" span-s="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0" id="my-work">
+      <h4 class="section-title">My Work</h4>
+    </r-cell>
+    <r-cell span="4-7" span-s="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="500" data-aos-offset="0">
+      <h2>Cross-Product UX</h2>
+      <h3 style="line-height: 1.4;">
+        Designing across hardware and software to reduce friction at key transitions and build a coherent experience through a shared design system.
+        </br></br>
+      </h3>
+      <h2>Product Adoption</h2>
+      <h3 style="line-height: 1.4;">
+        Shaping how the product is understood and adopted across organizations with different regulatory contexts — accountability, compliance, and transparency built in.
+        </br></br>
+      </h3>
+      <h2>Human Rights & Compliance</h2>
+      <h3 style="line-height: 1.4;">
+        Factoring evidence-handling standards and human rights into design decisions, so compliance is structural rather than added on.
+        </br></br>
+      </h3>
+    </r-cell>
+
+    <!-- Confidentiality Notice -->
+    <r-cell span="3-6" span-s="row" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" style="position: relative; text-align: center; padding: 60px 40px; margin: 40px 0; border-radius: 8px; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url(/img/juni/figma_board_overview.png); background-size: cover; background-position: center; filter: blur(8px); opacity: 0.3; z-index: 0;"></div>
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
+      <div style="position: relative; z-index: 2;">
+        <div style="background-color: #d7d7d7; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+          <i class="fa fa-lock" style="font-size: 32px; color: #ffffff;"></i>
+        </div>
+        <h4 style="font-weight: 400; color: #707070; font-size: 1.2rem; line-height: 1.5; max-width: 600px; margin: 0 auto 30px;">
+           The details of this work are confidential. Let's connect over a coffee to chat about my learnings and impact.
+          👀   </h4>
+      </div>
+    </r-cell>
+  </r-grid>
+
+  </br></br>
+  </br></br>
+  </br></br></br></br>
+
+  <!-- Table of Contents Footer -->
+  <div class="toc-footer" id="toc-footer">
+    <div class="toc-footer-scroll">
+      <a href="#project-title" class="toc-footer-link">Project</a>
+      <a href="#overview" class="toc-footer-link">Overview</a>
+      <a href="#my-work" class="toc-footer-link">My Work</a>
+    </div>
+  </div>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    AOS.init(10);
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocLinks = document.querySelectorAll('.toc-footer-link');
+      tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+      function updateActiveLink() {
+        const scrollPos = window.scrollY + 150;
+        document.querySelectorAll('[id]').forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          const correspondingLink = document.querySelector('.toc-footer-link[href="#' + sectionId + '"]');
+          if (correspondingLink && scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            tocLinks.forEach(l => l.classList.remove('active'));
+            correspondingLink.classList.add('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink();
+    });
+  </script>
+  <script src="https://unpkg.com/kursor"></script>
+  <script>
+    new kursor({
+      removeDefaultCursor: true,
+      type: 4,
+      color: '#B05CBA'
+    });
+  </script>
+  <!-- Cal.com Script -->
+  <script>
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "30min", { origin: "https://cal.com" });
+    Cal.ns["30min"]("ui", {
+      "theme": "light",
+      "cssVarsPerTheme": {
+        "light": { "cal-brand": "#6f0000", "cal-modal-width": "400px", "cal-modal-max-width": "90vw" },
+        "dark": { "cal-brand": "#ffffff", "cal-modal-width": "400px", "cal-modal-max-width": "90vw" }
+      },
+      "hideEventTypeDetails": false,
+      "layout": "column_view"
+    });
+  </script>
+  <!-- Footer Include Script -->
+  <script src="js/nav-menu-include.js"></script>
+<script src="js/footer-include.js"></script>
+
+<script>
+(function() {
+  var pageName = window.location.pathname.split('/').pop().replace('.html','') || 'index';
+  var fired = {};
+  window.addEventListener('scroll', function() {
+    var scrolled = window.scrollY + window.innerHeight;
+    var total = document.documentElement.scrollHeight;
+    var pct = Math.round((scrolled / total) * 100);
+    if (pct >= 50 && !fired['50']) {
+      fired['50'] = true;
+      if (typeof umami !== 'undefined') umami.track('Case_study_scroll_50pct', {page: pageName});
+    }
+    if (pct >= 90 && !fired['90']) {
+      fired['90'] = true;
+      if (typeof umami !== 'undefined') umami.track('Case_study_scroll_90pct', {page: pageName});
+    }
+  });
+})();
+</script>
+</body>
+</html>

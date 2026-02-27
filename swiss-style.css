@@ -11,8 +11,8 @@
   --color-text-primary: #2F2E30;
   --color-text-secondary: #2f2e30a5;
   --color-text-tertiary: #CDCCCD;
-  --color-accent: #A31621;
-  --color-highlight: #B05CBA;
+  --color-accent: #851219;
+  --color-highlight: #DBEFD2;
   --color-secondary-highlight: #584F69;
   --color-highlight-soft: #C9C6CF;
   
@@ -82,8 +82,8 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-highlight);
-  color: white;
+  background-color: #DBEFD2;
+  color: #0A090C;
 }
 
 br {
@@ -176,6 +176,7 @@ a.link {
 
 a.link:hover {
   text-decoration: none;
+  color: #7E0F18;
 }
 
 a.link-arrow {
@@ -187,7 +188,7 @@ a.link-arrow {
 
 a.link-arrow:hover {
   text-decoration: none;
-  color: var(--color-secondary-highlight);
+  color: #7E0F18;
 }
 
 a.link-arrow-light {
@@ -198,7 +199,7 @@ a.link-arrow-light {
 
 a.link-arrow-light:hover {
   text-decoration: none;
-  color: var(--color-secondary-highlight);
+  color: #7E0F18;
 }
 
 a.title-link {
@@ -210,7 +211,7 @@ a.title-link {
 
 a.title-link:hover {
   text-decoration: none;
-  color: var(--color-accent);
+  color: #7E0F18;
 }
 
 a.uppercase-link {
@@ -223,7 +224,7 @@ a.uppercase-link {
 }
 
 a.uppercase-link:hover {
-  color: var(--color-accent);
+  color: #7E0F18;
 }
 
 .selected-bulb {
@@ -308,10 +309,15 @@ a.selected {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  padding: 2%;
+  padding: 1rem 6%;
   background-image: linear-gradient(180deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.07));
   color: #06101D;
   z-index: 100;
+}
+@media screen and (min-width: 769px) {
+  .sticky {
+    padding: 1rem 4%;
+  }
 }
 
 @media screen and (min-width: 800px) {

@@ -4,19 +4,19 @@
 <head>
   <!-- Basic Meta Tags -->
   <meta charset="utf-8">
-  <title>{{PAGE_TITLE}}</title>
+  <title>Julija Rukanskaitė ☼ Bio ☼</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="description" content="Product designer and HCI researcher working at the intersection of design, AI fairness, and democratic governance. Based in south Norway.">
   <meta name="author" content="Julija Rukanskaitė">
   <meta name="keywords" content="product design, UX design, UI design, design research, emerging technology, trust, safety">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="{{PAGE_TITLE}}">
-  <meta property="og:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta property="og:title" content="Julija Rukanskaitė ☼ Bio ☼">
+  <meta property="og:description" content="Product designer and HCI researcher working at the intersection of design, AI fairness, and democratic governance. Based in south Norway.">
   <meta property="og:image" content="https://www.julija.works/img/sun-icon.png">
   <meta property="og:url" content="https://www.julija.works">
   <meta property="og:type" content="website">
@@ -24,8 +24,8 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{PAGE_TITLE}}">
-  <meta name="twitter:description" content="Design & Growth for Research-backed Innovation | Trust & Safety | Contextual AI">
+  <meta name="twitter:title" content="Julija Rukanskaitė ☼ Bio ☼">
+  <meta name="twitter:description" content="Product designer and HCI researcher working at the intersection of design, AI fairness, and democratic governance. Based in south Norway.">
   <meta name="twitter:image" content="https://www.julija.works/img/sun-icon.png">
 
   <!-- Favicon -->
@@ -99,7 +99,16 @@
 
 </head>
 
-<body style="  background-color:  rgb(255, 255, 255);" >
+<body style="background-color: rgb(255, 255, 255);">
+  <!-- SVG filter for marker highlight effect -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute;width:0;height:0;">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+      </filter>
+    </defs>
+  </svg>
   <!--Copyright (c) 2019 Rasmus Andersson <https://rsms.me/raster/>
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -122,77 +131,39 @@ THE SOFTWARE.
  <!-- Navigation -->
   <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
-      <h3 style="font-family: syne tactile; color: #C9C6CF;">
+      <h3 class="site-logo">
         <a href="index.html" class="link">julija.works</a>
       </h3>
     </r-cell>
-    <r-cell span="5-7" span-s="2-4">
-      <h3 style="float: right; color: rgb(20, 20, 20);">
-        <a href="index.html" class="link-arrow">Work</a>
-        &nbsp; &nbsp;
-        <a href="services.html" class="link-arrow ">Services</a>
-        &nbsp; &nbsp;
-        <a href="Bio.html" class="link-arrow selected-bulb">Bio</a>
-        &nbsp; &nbsp;
-      </h3>
-    </r-cell>
+    <r-cell span="5-7" span-s="2-4" id="nav-menu-placeholder"></r-cell>
   </r-grid>
   
 
   
 
   
-  <r-grid columns=8 columns-s=1 >
-  
-  
-    
-  
+  <!-- Bio: same grid layout as Services – heading left, intro right (2 columns on mobile too) -->
+  <r-grid columns="8" columns-s="2" class="services-intro-grid">
+    <r-cell span="1-4" span-s="1" data-aos="fade-up" data-aos-duration="2000">
+      <h1 class="xlarge" style="margin-bottom: 0;">Bio</h1>
+    </r-cell>
+    <r-cell span="5-8" span-s="2" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-end;">
+      <p class="services-intro-text" style="margin-bottom: 1.2rem;">A long-running curiosity about people, things, and systems (how affordances emerge, how trends travel, how making shapes thinking) is what drew me into design.</p>
+      <p class="services-intro-text" style="margin-bottom: 0;">Over the past five years I've worked across finance, social apps, and legal technology, consistently drawn to where design intersects with trust, safety, and governance. 
+        <br><br>
 
-<r-cell span=2-8 span-s=row >
- 
-  <h1 class="xlarge">
-Bio
-   </h1>
-  
-<br><br>
+        I use generative systems and AI as design tools to model behaviour, surface patterns, and identify design and product opportunities.</p>
+    </r-cell>
+  </r-grid>
 
+  <br><br>
 
-
-
-  
-
-   </r-cell>
-
-
-<r-cell span=2-4 span-s=row data-aos="fade-down" data-aos-duration="2000">
- 
-
-  <h3>
-With experience in the arts and a fascination with ethnography and cognitive science, I approach design with a different lens—one that considers not just usability, but power, representation, and collective governance.  
-
-<br><br>
-With 5 years of experience across public sector, finance, community, and AI technology, I work from early concepts through onboarding to help organizations deploy technology responsibly.
-
-<br><br>
-I'm particularly interested in productizing ideas around democratic participation in technology—whether that's communities governing technology systems, or building tools that value and respect human agency.  
-
-<br><br>
- .
-  </h3>
-<br><br>  
-
-  </r-cell>
-
-
-  <r-cell span="5-8" span-s="row" data-aos="fade-up" data-aos-duration="1000">
-    <img src="img/profile_new.png" alt="Bio image" style="width: 100%; height: auto; border-radius: 4px;">
-  </r-cell>
-
-
- 
-
-    
-</r-grid>
+  <!-- Profile image: full width -->
+  <r-grid columns="8" columns-s="1">
+    <r-cell span="1-8" span-s="row" data-aos="fade-up" data-aos-duration="1000">
+      <img src="img/profile_new.png" alt="Julija Rukanskaitė" style="width: 100%; max-width: 560px; height: auto; border-radius: 4px; display: block;">
+    </r-cell>
+  </r-grid>
 
 
 
@@ -205,22 +176,22 @@ I'm particularly interested in productizing ideas around democratic participatio
 
 <!-- CV Section -->
 <r-grid columns="8" columns-s="1">
-  <r-cell span="2-8" span-s="row">
+  <r-cell span="1-8" span-s="row">
     <div class="accordion-header" onclick="toggleAccordion()" style="cursor: pointer; padding: 1rem 0;">
       <div style="display: flex; align-items: center; gap: 1rem;">
         <h2 class="xlarge" style="margin: 0;">Experience</h2>
-        <span class="accordion-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+        <span class="accordion-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">☼</span>
       </div>
       <div style="height: 1px; background: rgba(201, 198, 207, 0.3); margin-top: 1rem;"></div>
     </div>
   </r-cell>
   
-  <r-cell span="2-8" span-s="row">
+  <r-cell span="1-8" span-s="row">
     <div class="accordion-content" style="display: none; overflow: hidden; transition: all 0.3s ease;">
       <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
           <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Design & Product Growth</div>
+            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Design & Product Marketing Specialist</div>
             <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Davidhorn</div>
           </div>
           <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
@@ -288,17 +259,17 @@ I'm particularly interested in productizing ideas around democratic participatio
 
 <!-- Publications Section -->
 <r-grid columns="8" columns-s="1">
-  <r-cell span="2-8" span-s="row">
+  <r-cell span="1-8" span-s="row">
     <div class="accordion-header" onclick="togglePublications()" style="cursor: pointer; padding: 1rem 0;">
       <div style="display: flex; align-items: center; gap: 1rem;">
         <h2 class="xlarge" style="margin: 0;">Publications</h2>
-        <span class="publications-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+        <span class="publications-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">☼</span>
       </div>
       <div style="height: 1px; background: rgba(201, 198, 207, 0.3); margin-top: 1rem;"></div>
     </div>
   </r-cell>
   
-  <r-cell span="2-8" span-s="row">
+  <r-cell span="1-8" span-s="row">
     <div class="publications-content" style="display: none; overflow: hidden; transition: all 0.3s ease;">
       <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
@@ -335,11 +306,11 @@ I'm particularly interested in productizing ideas around democratic participatio
     </div>
   </r-cell>
 
-  <r-cell span="2-8" span-s="row">
+  <r-cell span="1-8" span-s="row">
     <div class="accordion-header" onclick="toggleApproach()" style="cursor: pointer; padding: 1rem 0;">
       <div style="display: flex; align-items: center; gap: 1rem;">
         <h2 class="xlarge" style="margin: 0;">Approach</h2>
-        <span class="approach-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">+</span>
+        <span class="approach-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">☼</span>
       </div>
       <div class="divider-thin" style="margin-top: 1rem;"></div>
     </div>
@@ -584,7 +555,7 @@ I'm particularly interested in productizing ideas around democratic participatio
         }
       } else {
         content.style.display = 'none';
-        icon.textContent = '+';
+        icon.textContent = '☼';
         icon.style.transform = 'rotate(0deg)';
       }
     }
@@ -604,7 +575,7 @@ I'm particularly interested in productizing ideas around democratic participatio
         }
       } else {
         content.style.display = 'none';
-        icon.textContent = '+';
+        icon.textContent = '☼';
         icon.style.transform = 'rotate(0deg)';
       }
     }
@@ -624,7 +595,7 @@ I'm particularly interested in productizing ideas around democratic participatio
         }
       } else {
         content.style.display = 'none';
-        icon.textContent = '+';
+        icon.textContent = '☼';
         icon.style.transform = 'rotate(0deg)';
       }
     }
@@ -694,6 +665,7 @@ I'm particularly interested in productizing ideas around democratic participatio
   </script>
 
   <!-- Footer Include Script -->
+<script src="js/nav-menu-include.js"></script>
 <script src="js/footer-include.js"></script>
 
 </body>

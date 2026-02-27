@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="https://www.julija.works/img/sun-icon.png">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <meta property="og:description" content="Concepts & Design for thoughtful automation - Product designer focused on emerging technology" />
+  <meta name="description" content="Product designer specialising in trust and safety, AI fairness, and democratic governance. 5 years of 0-1 product experience across fintech, social, and the public sector. Based in south Norway." />
+  <meta property="og:description" content="Product designer specialising in trust and safety, AI fairness, and democratic governance. 5 years of 0-1 product experience across fintech, social, and the public sector. Based in south Norway." />
   <meta property="og:title" content="Julija Rukanskaitė" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- CSS -->
@@ -187,7 +188,128 @@
       color: #C9C6CF;
     }
 
-    /* Carousel Navigation */
+    /* Home grid – blocky layout like reference: 2x2, 2x1, text blocks, empty squares */
+    .home-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: minmax(80px, auto);
+      gap: 1rem;
+      padding: 0 0 3rem;
+      max-width: 100%;
+    }
+    .home-grid-hero {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+    .home-grid-featured {
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
+    /* Single text block – both intro paragraphs */
+    .home-grid-text-block {
+      grid-column: 4 / 7;
+      grid-row: 3;
+      padding: 0.75rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5em;
+    }
+    .home-grid-text-block p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #2F2E30;
+      font-weight: 400;
+    }
+    .home-grid-text-block .text-highlight {
+      background-color: #DBEFD2;
+      padding: 0.1em 0.2em;
+      border-radius: 2px;
+    }
+    @media screen and (max-width: 768px) {
+      .home-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(60px, auto);
+        gap: 1.25rem;
+      }
+      .home-grid-hero { grid-column: 1; grid-row: 1; }
+      .home-grid-featured { grid-column: 1; grid-row: 2; }
+      .home-grid-text-block { grid-column: 1; grid-row: 3; }
+    }
+    @media screen and (min-width: 769px) {
+      .home-grid-text-block p { font-size: 1.15rem; }
+    }
+
+    /* Work grid – project links in randomised layout (replaces carousel) */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 180px;
+      gap: 1.25rem;
+      padding: 0 0 4rem;
+      max-width: 100%;
+    }
+    .work-grid-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #e8e8e8;
+      min-height: 0;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .work-grid-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .work-grid-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .work-grid-card .work-grid-card-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+    /* Cards 2x or 3x row height – varied spans */
+    .work-grid-card:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+    .work-grid-card:nth-child(2) { grid-column: 4; grid-row: 1 / span 3; }
+    .work-grid-card:nth-child(3) { grid-column: 2; grid-row: 2 / span 2; }
+    .work-grid-card:nth-child(4) { grid-column: 5; grid-row: 2 / span 2; }
+    .work-grid-card:nth-child(5) { grid-column: 3; grid-row: 4 / span 3; }
+    @media screen and (max-width: 768px) {
+      .work-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 140px;
+        gap: 1rem;
+      }
+      .work-grid-card:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+      .work-grid-card:nth-child(2) { grid-column: 3; grid-row: 1 / span 3; }
+      .work-grid-card:nth-child(3) { grid-column: 2; grid-row: 3 / span 2; }
+      .work-grid-card:nth-child(4) { grid-column: 4; grid-row: 2 / span 2; }
+      .work-grid-card:nth-child(5) { grid-column: 1; grid-row: 5 / span 2; }
+    }
+
+    .work-section-title {
+      margin: 0 0 1.5rem;
+      color: #949494;
+      font-size: 1rem;
+    }
+
+    /* Carousel Navigation (kept for any legacy use) */
     .carousel-header {
       display: flex;
       justify-content: space-between;
@@ -223,8 +345,8 @@
     }
 
     .carousel-nav-button:hover {
-      background: #A31621;
-      border-color: #A31621;
+      background: #851219;
+      border-color: #851219;
       color: #ffffff;
       transform: scale(1.05);
     }
@@ -248,7 +370,7 @@
       scroll-behavior: smooth;
       scrollbar-width: thin;
       scrollbar-color: rgba(0, 0, 0, 0.08) transparent;
-      padding-bottom: 1rem;
+      padding: 0 1.25rem 1rem 1.25rem;
       -webkit-overflow-scrolling: touch;
     }
 
@@ -269,7 +391,12 @@
       background-color: rgba(0, 0, 0, 0.15);
     }
 
+    .carousel-section {
+      margin-bottom: 4rem;
+    }
+
     .carousel-card {
+      position: relative;
       display: flex;
       flex-direction: column;
       background: #ffffff;
@@ -402,7 +529,7 @@
     .carousel-card .project-services {
       margin-top: auto;
     }
-    
+
     @media (max-width: 768px) {
       .carousel-header {
         flex-direction: row;
@@ -440,27 +567,47 @@
         font-size: 2.5rem;
       }
     }
+
+    /* Case study card loading state */
+    .card-loading-label {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 39, 68, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #fff;
+      z-index: 1;
+      transition: opacity 0.25s ease;
+    }
+    .carousel-card.card-loading .card-loading-label {
+      display: flex;
+    }
   </style>
 <script src="js/page-title-generator.js"></script>
 </head>
 <body>
+  <div id="main-content">
+  <!-- SVG filter for realistic marker highlight (wavy edges) -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters" style="position:absolute;width:0;height:0;">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+      </filter>
+    </defs>
+  </svg>
    <!-- Header Navigation -->
    <r-grid columns="8" columns-s="4" class="sticky">
     <r-cell span="2-4" span-s="1-1">
-      <h3 style="font-family: syne tactile; color: #C9C6CF;">
+      <h3 class="site-logo">
         <a href="index.html" class="link">julija.works</a>
       </h3>
     </r-cell>
-    <r-cell span="5-7" span-s="2-4">
-      <h3 style="float: right; color: rgb(20, 20, 20);">
-        <a href="index.html" class="link-arrow selected-bulb">Work</a>
-        &nbsp; &nbsp;
-        <a href="services.html" class="link-arrow">Services</a>
-        &nbsp; &nbsp;
-        <a href="bio.html" class="link-arrow">Bio</a>
-        &nbsp; &nbsp;
-      </h3>
-    </r-cell>
+    <r-cell span="5-7" span-s="2-4" id="nav-menu-placeholder"></r-cell>
   </r-grid>
   
 
@@ -468,67 +615,49 @@
 
   
   <r-grid columns="8" columns-s="1">
-  
-  
-
+    <r-cell span="1-8" span-s="row">
+      <div class="home-grid">
+        <div class="home-grid-hero" data-aos="fade-up" data-aos-duration="2000">
+          <h1 class="xlarge">
+            <span>Design & Growth for Democratic Technology</span>
+          </h1>
+        </div>
+        <div class="home-grid-featured">
+          <h4 style="text-align: left;">Featured in</h4>
+          <div class="row featured-in">
+            <div class="column">
+              <a href="https://arxiv.org/abs/2301.09545" target="_blank">
+                <img src="img/CHI23.png" alt="CHI23">
+              </a>
+            </div>
+            <div class="column">
+              <a href="https://metagov.org/" target="_blank">
+                <img src="img/policykit/metagov_logo.png" alt="Metagov">
+              </a>
+            </div>
+            <div class="column">
+              <a href="https://mashable.com/article/lips-social-network-sexual-content" target="_blank">
+                <img src="img/lips/Mashable_Logo_.png" alt="Mashable">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="home-grid-text-block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+          <p>I observe how people interact with technology and help design <span class="text-highlight">systems they can trust and understand</span>.</p>
+          <p>5 years of <span class="text-highlight">0-1 product experience</span> across finance, social, and AI — from early concepts through implementation and growth, helping organizations deploy and scale technology responsibly.</p>
+          <p>Currently designing <span class="text-highlight">ethical justice technology</span> for the public sector at Davidhorn. Also founding designer at Reliabl.ai. Published in HCI research with a focus on AI fairness and governance.
+            <br><br>
+            Based in the south of Norway.</p>
     
-  
-
-  <r-cell span="2-4" span-s="row" >
-      
-      <h1 class="xlarge" style="font-size: 4.2rem;" data-aos="fade-up" data-aos-duration="2000 ">
-        <span class="header-highlight">Design for Trust & Safety Technology</span>
-      </h1>
-      <br>
-      <h4 style="text-align: left;">Featured in</h4>
-      <div class="row">
-        <div class="column">
-          <a href="https://arxiv.org/abs/2301.09545" target="_blank">
-            <img src="img/CHI23.png" alt="CHI23" style="width:80%">
-          </a>  
-        </div>
-        <div class="column">
-          <a href="https://metagov.org/" target="_blank"> 
-            <img src="img/policykit/metagov_logo.png" alt="Metagov" style="width:80%">
-          </a> 
-        </div>
-        <div class="column">
-          <a href="https://mashable.com/article/lips-social-network-sexual-content" target="_blank"> 
-            <img src="img/lips/Mashable_Logo_.png" alt="Mashable" style="width:80%">
-          </a> 
+          </p>
         </div>
       </div>
     </r-cell>
-
-     <r-cell span="5-7" span-s="row" class="text-float-bottom "
-     data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-  <h3  >
-I observe how people interact with technology and each other and help design systems and tools they can trust and understand.
-
-<br> <br> 
-With 5 years experience across public sector, finance, community, and AI technology, I work from early concepts through onboarding to help organizations deploy technology responsibly.
-
-<br> <br> 
-Currently designing ethical legal technology for the public sector. Published in human-computer interaction research and developing expertise in AI fairness and algorithmic governance.
-
-      <br> </h3>
-       <a class="button button-primary" 
-           href="#" 
-           data-cal-link="julija/30min"
-           data-cal-namespace="30min"
-           data-cal-config='{"layout":"column_view","theme":"light"}'
-           onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'home'});">☕ Book a coffee chat</a>
-    
-           <br>
-      <br><br>
-   
-    </r-cell>
-
-  
   </r-grid>
 
-<br><br>
-  <!-- Work Section -->
+  <br><br>
+
+  <!-- Work Section – Carousel -->
   <r-grid columns="8" columns-s="1">
     <r-cell span="2-8" span-s="row">
       <div class="carousel-header">
@@ -540,155 +669,151 @@ Currently designing ethical legal technology for the public sector. Published in
       </div>
     </r-cell>
   </r-grid>
-  
-  <r-grid columns="8" columns-s="1">
+
+  <r-grid columns="8" columns-s="1" class="carousel-section">
     <r-cell span="1-8" span-s="row">
       <div class="work-carousel" id="work-carousel">
-          <!-- PolicyKit Project -->
-          <a href="policykit.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000">
-            <div class="project-image">
-              <img src="img/policykit/Background.png" alt="No-code PolicyKit">
+        <a href="/davidhorn.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" onclick="if(typeof umami !== 'undefined') umami.track('Project_card_clicked', {project: 'davidhorn'});">
+          <div class="project-image">
+            <img src="img/davidhorn/cover.jpg" alt="Davidhorn — Justice & Human Rights in Investigative Interviews">
+          </div>
+          <div class="project-content">
+            <h1 class="project-title">Davidhorn<br>Justice & Human Rights in Investigative Interviews</h1>
+            <div>
+              <h3 class="project-description">Interview recording systems for law enforcement: devices and software used across European and international markets.</h3>
+              <p class="project-services">
+                <span class="service-tag">Public Sector Technology</span>
+                <span class="service-tag">Product Adoption</span>
+                <span class="service-tag">Cross-Platform UX</span>
+                <span class="service-tag">Product Design</span>
+              </p>
             </div>
-            <div class="project-content">
-              <h1 class="project-title">
-                PolicyKit
-                <br> No-code Slack Integration
-              </h1>
-              <div>
-                <h3 class="project-description">
-                  Redesign of an open-source Slack integration for online community governance. 
-                  <br>
-                  In collaboration with researchers from University of Washington's Social Futures Lab and the Metagovernance project.
-                </h3>
-                <p class="project-services">
-                  <span class="service-tag">Design system</span>
-                  <span class="service-tag">Information architecture</span>
-                  <span class="service-tag">Product redesign</span>
-                </p>
-              </div>
+          </div>
+        </a>
+        <a href="policykit.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" onclick="if(typeof umami !== 'undefined') umami.track('Project_card_clicked', {project: 'policykit'});">
+          <div class="project-image">
+            <img src="img/policykit/Background.png" alt="No-code PolicyKit">
+          </div>
+          <div class="project-content">
+            <h1 class="project-title">PolicyKit<br>No-code Slack Integration</h1>
+            <div>
+              <h3 class="project-description">Redesign of an open-source Slack integration for online community governance. In collaboration with researchers from University of Washington's Social Futures Lab and the Metagovernance project.</h3>
+              <p class="project-services">
+                <span class="service-tag">Design system</span>
+                <span class="service-tag">Information architecture</span>
+                <span class="service-tag">Product redesign</span>
+              </p>
             </div>
-          </a>
-          
-        
-          
-          <!-- Lips Onboarding Project -->
-          <a href="lips.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-            <div class="project-image">
-              <img src="img/lips/lips_cover.png" alt="Lips onboarding">
+          </div>
+        </a>
+        <a href="lips.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" onclick="if(typeof umami !== 'undefined') umami.track('Project_card_clicked', {project: 'lips'});">
+          <div class="project-image">
+            <img src="img/lips/lips_cover.png" alt="Lips onboarding">
+          </div>
+          <div class="project-content">
+            <h1 class="project-title">Lips<br>User Activation</h1>
+            <div>
+              <h3 class="project-description">End-to-end design of a progressive web app for women and LGBTQ+ artists to express themselves freely, without biased censorship.</h3>
+              <p class="project-services">
+                <span class="service-tag">User Research</span>
+                <span class="service-tag">Growth Design</span>
+              </p>
             </div>
-            <div class="project-content">
-              <h1 class="project-title">
-                Lips
-                <br> User Activation
-              </h1>
-              <div>
-                <h3 class="project-description">
-                  End-to-end design of a progressive web app for women and LGBTQ+ artists to express themselves freely, without biased censorship.
-                </h3>
-                <p class="project-services">
-                  <span class="service-tag">User Research</span>
-                  <span class="service-tag">Growth Design</span>
-                </p>
-              </div>
+          </div>
+        </a>
+        <a href="/juni.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" onclick="if(typeof umami !== 'undefined') umami.track('Project_card_clicked', {project: 'juni'});">
+          <div class="project-image">
+            <img src="img/juni/widget.png" alt="Juni Automations">
+          </div>
+          <div class="project-content">
+            <h1 class="project-title">Juni Automations<br>Custom Workflows</h1>
+            <div>
+              <h3 class="project-description">End-to-end design of a no-code automated workflow builder for Europe's fastest growing b2b fintech.</h3>
+              <p class="project-services">
+                <span class="service-tag">Information architecture</span>
+                <span class="service-tag">Product design</span>
+              </p>
             </div>
-          </a>
-
-            <!-- Juni Automations Project -->
-            <a href="/juni.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-              <div class="project-image">
-                <img src="img/juni/widget.png" alt="Juni Automations">
-              </div>
-              <div class="project-content">
-                <h1 class="project-title">
-                  Juni Automations
-                  <br> Custom Workflows
-                </h1>
-                <div>
-                  <h3 class="project-description">
-                    End-to-end design of a no-code automated workflow builder for Europe's fastest growing b2b fintech.
-                  </h3>
-                  <p class="project-services">
-                    <span class="service-tag">Information architecture</span>
-                    <span class="service-tag">Product design</span>
-                  </p>
-                </div>
-              </div>
-            </a>
-          
-          <!-- Book Browsing Project -->
-          <a href="library-rituals.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-            <div class="project-image">
-              <img src="img/library/shelf.jpg" alt="Book browsing in a pandemic">
+          </div>
+        </a>
+        <a href="library-rituals.html" class="carousel-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" onclick="if(typeof umami !== 'undefined') umami.track('Project_card_clicked', {project: 'library-rituals'});">
+          <div class="project-image">
+            <img src="img/library/shelf.jpg" alt="Book browsing in a pandemic">
+          </div>
+          <div class="project-content">
+            <h1 class="project-title">Book Browsing Services<br>During a Pandemic</h1>
+            <div>
+              <h3 class="project-description">Service design research into reading rituals and the librarian work supporting them during Covid-19. In collaboration with the Malmö City library.</h3>
+              <p class="project-services">
+                <span class="service-tag">Service design</span>
+                <span class="service-tag">Fieldwork</span>
+                <span class="service-tag">Co-design</span>
+              </p>
             </div>
-            <div class="project-content">
-              <h1 class="project-title">
-                Book Browsing Services
-                <br> During a Pandemic
-              </h1>
-              <div>
-                <h3 class="project-description">
-                  Service design research into reading rituals and the librarian work supporting them during Covid-19. In collaboration with the Malmö City library.
-                </h3>
-                <p class="project-services">
-                  <span class="service-tag">Service design</span>
-                  <span class="service-tag">Fieldwork</span>
-                  <span class="service-tag">Co-design</span>
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </div>
     </r-cell>
   </r-grid>
 
   <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
-  
+  </div><!-- /#main-content -->
+
   <!-- Scripts -->
   <script>
     AOS.init(10);
 
-    // Carousel navigation
-    const carousel = document.getElementById('work-carousel');
-    const prevButton = document.getElementById('carousel-prev');
-    const nextButton = document.getElementById('carousel-next');
+    (function initCardLoading() {
+      function setupCard(card) {
+        card.classList.add('card-loading');
+        var label = document.createElement('span');
+        label.className = 'card-loading-label';
+        label.setAttribute('aria-hidden', 'true');
+        label.textContent = 'Loading';
+        card.appendChild(label);
+        var img = card.querySelector('.project-image img') || card.querySelector('img');
+        if (!img) {
+          card.classList.remove('card-loading');
+          return;
+        }
+        function done() {
+          card.classList.remove('card-loading');
+        }
+        if (img.complete) done();
+        else img.addEventListener('load', done);
+        img.addEventListener('error', done);
+      }
+      document.querySelectorAll('.carousel-card').forEach(setupCard);
+    })();
+
+    var carousel = document.getElementById('work-carousel');
+    var prevButton = document.getElementById('carousel-prev');
+    var nextButton = document.getElementById('carousel-next');
 
     function updateButtons() {
       if (carousel) {
-        const isAtStart = carousel.scrollLeft <= 0;
-        const isAtEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10;
-        
+        var isAtStart = carousel.scrollLeft <= 0;
+        var isAtEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10;
         if (prevButton) prevButton.disabled = isAtStart;
         if (nextButton) nextButton.disabled = isAtEnd;
       }
     }
 
     if (prevButton && nextButton && carousel) {
-      // Handle both click and touch events for better mobile support
-      const handlePrev = (e) => {
+      prevButton.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         carousel.scrollBy({ left: -450, behavior: 'smooth' });
-      };
-
-      const handleNext = (e) => {
+      });
+      nextButton.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         carousel.scrollBy({ left: 450, behavior: 'smooth' });
-      };
-
-      // Add click event
-      prevButton.addEventListener('click', handlePrev);
-      nextButton.addEventListener('click', handleNext);
-
-      // Add touch events for mobile
-      prevButton.addEventListener('touchend', handlePrev);
-      nextButton.addEventListener('touchend', handleNext);
-
+      });
       carousel.addEventListener('scroll', updateButtons);
-      updateButtons(); // Initial check
+      updateButtons();
     }
-
   </script>
   <script src="https://unpkg.com/kursor"></script>
   <script>
@@ -730,6 +855,12 @@ Currently designing ethical legal technology for the public sector. Published in
     
     Cal("init", "30min", {origin:"https://cal.com"});
     
+    Cal.ns["30min"]("on", {
+      action: "bookingSuccessful",
+      callback: function() {
+        if (typeof umami !== 'undefined') umami.track('Coffee_chat_booked', {page: 'index'});
+      }
+    });
     Cal.ns["30min"]("ui", {
       "theme":"light",
       "cssVarsPerTheme":{
@@ -750,6 +881,7 @@ Currently designing ethical legal technology for the public sector. Published in
   </script>
 
 <!-- Footer Include Script -->
+<script src="js/nav-menu-include.js"></script>
 <script src="js/footer-include.js"></script>
 </body>
 </html>

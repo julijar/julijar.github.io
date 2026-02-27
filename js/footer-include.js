@@ -2,56 +2,37 @@
 // This script injects the footer directly without needing a separate HTML file
 
 function loadFooter() {
-  // Build buttons HTML
-  const buttonsHTML = `
-        <a class="button button-primary" 
-           href="#" 
-           data-cal-link="julija/30min"
-           data-cal-namespace="30min"
-           data-cal-config='{"layout":"column_view","theme":"light"}'>☕ Book a coffee chat</a>
-         </br>
-        <a class="button" 
-           href="https://www.linkedin.com/in/julija-rukanskaite/" 
-           target="_blank" 
-           onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: window.location.pathname});">🏢 Connect on Linkedin <sup>↗</sup></a>
-  `;
-  
   const footerHTML = `
-    <!-- Simple Footer Component -->
-    <r-grid columns=8 columns-s=1 
-    style="gradient-background {
-  background: linear-gradient(196deg,#fff7f7,#cec5c5,#fcfcfc);
-  background-size: 180% 180%;
-  animation: gradient-animation 6s ease infinite;
-}
+    <div class="site-footer" style="background-color: #f5f5f5; margin-top: 80px;">
+      <r-grid columns="8" columns-s="2" style="padding-top: 40px; padding-bottom: 20px;">
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-    border-top: 1px solid rgba(223, 223, 223, 0.323); height:fit-content; padding-top: 5%; padding-bottom: 5%; padding-left: 4%;">
-      <r-cell span=2-4 span-s=1>
-        ${buttonsHTML}
-      </r-cell>
+        <!-- Left: email, then LinkedIn on next line -->
+        <r-cell span="2-4" span-s="1" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0;">
+          <a href="mailto:hello@julija.works"
+             style="font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 400; color: #1a1a1a; text-decoration: none; letter-spacing: -0.01em;"
+             onclick="if(typeof umami !== 'undefined') umami.track('Email_link_clicked', {page: window.location.pathname});"
+             onmouseover="this.style.color='#7E0F18'" onmouseout="this.style.color='#1a1a1a'">
+            hello@julija.works
+          </a>
+          <a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank"
+             onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: window.location.pathname});"
+             style="color: #6b6b6b; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: opacity 0.2s ease; margin-top: 0.75em;"
+             onmouseover="this.style.opacity='0.5';"
+             onmouseout="this.style.opacity='1';">
+            <i class="fa fa-linkedin" style="font-size: 20px; color: #6b6b6b;"></i>
+          </a>
+        </r-cell>
 
-      <r-cell span=5-7 span-s=1>
-        <h2 style="color: #222;">hello@julija.works</h2>
-        </br>
-        <p style="color: #444;">site developed by Julija Rukanskaitė, based on <a href="https://rsms.me/raster/" target="blank" class="link-arrow">Raster by Rasmus Andersson (c) 2019</a></p>
-        </br>  
-        <p style="color: #444;">Studio Julija Rukanskaite 
-          </br>
-          Org.no: 932 773 511 MVA 🇳🇴</p>
-     
-      </r-cell>
-    </r-grid>
+        <!-- Right: attribution -->
+        <r-cell class="footer-right-cell" span="6-7" span-s="2" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left;">
+          <p style="color: #555; font-size: 0.95rem; font-weight: 500; line-height: 1.6; text-align: left; margin: 0; padding-top: 12px; border-top: 1px solid #ccc;">
+            site developed by Julija Rukanskaitė, based on software by Rasmus Andersson, 2019<br>
+            <span style="display: block; margin-top: 0.6em; padding-top: 0.6em; border-top: 1px solid #ccc;">Studio Julija Rukanskaite · Org.no: 932 773 511 MVA 🇳🇴</span>
+          </p>
+        </r-cell>
+
+      </r-grid>
+    </div>
   `;
 
   // Find the footer placeholder and inject the HTML
