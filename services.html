@@ -11,7 +11,7 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="Product design services for public sector, fintech, and AI companies — specialising in ethical AI, trust and safety, and responsible product design from discovery through deployment.">
   <meta name="author" content="Julija Rukanskaitė">
-  <meta name="keywords" content="product design, UX design, UI design, design research, emerging technology, trust, safety">
+  <meta name="keywords" content="product design, UX design, design research, AI ethics, responsible AI, algorithmic governance, EU AI Act, democratic technology, trust, safety, civic tech">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Julija Rukanskaitė ☼ Services ☼">
@@ -142,8 +142,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Julija Rukanskaitė",
-      "jobTitle": "Product Designer",
-      "description": "Product designer focused on design for trust, safety, and emerging technology",
+      "jobTitle": "Product Designer & AI Ethics Practitioner",
+      "description": "Product designer and HCI researcher working at the intersection of design, AI ethics, EU AI Act readiness, and democratic governance.",
       "url": "https://www.julija.works",
       "image": "https://www.julija.works/img/sun-icon.png",
       "sameAs": []
@@ -183,7 +183,9 @@
       <h1 class="xlarge" style="margin-bottom: 0;">Services</h1>
     </r-cell>
     <r-cell span="5-8" span-s="2" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-end;">
-      <p class="services-intro-text">I provide tailored services across all stages of the software development cycle through custom packages or hourly engagements. Currently available for short-term consultations with teams building technology for social and environmental impact, especially in AI, community governance, and non-profit tech contexts.</p>
+      <p class="services-intro-text">I provide tailored services across all stages of the software development cycle through custom packages or hourly engagements. 
+        <br><br>
+        Available for short-term consultations with teams building technology for social and environmental impact, especially in AI, community governance, and non-profit tech.</p>
       <a class="btn-glossy" href="#" data-cal-link="julija/30min" data-cal-namespace="30min" data-cal-config='{"layout":"column_view","theme":"light"}' onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'services_intro'});" style="margin-top: 1rem;">Book a coffee chat</a>
     </r-cell>
   </r-grid>
@@ -208,12 +210,12 @@
         </div>
         <div class="accordion-item" onclick="toggleServiceAccordion('ux-audit'); if(typeof umami !== 'undefined') umami.track('ux_audit_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">UX Audit</h3>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">UX Audit & Research</h3>
             <span class="ux-audit-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
         <div id="ux-audit-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
-          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">A holistic analysis of a product's usability and scalability based on best practices and user needs</p>
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Holistic analysis of usability and scalability, combining best practice review with new or existing user research</p>
         </div>
         <div class="accordion-item" onclick="toggleServiceAccordion('competitor'); if(typeof umami !== 'undefined') umami.track('competitor_analysis_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -224,14 +226,14 @@
         <div id="competitor-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
           <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Competitor product strength, weakness, and strategy analysis</p>
         </div>
-        <div class="accordion-item" onclick="toggleServiceAccordion('research'); if(typeof umami !== 'undefined') umami.track('research_insights_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('ai-ethics-review'); if(typeof umami !== 'undefined') umami.track('ai_ethics_review_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Research & Synthesis</h3>
-            <span class="research-icon" style="font-size: 1.1rem;">☼</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Responsible AI Review</h3>
+            <span class="ai-ethics-review-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="research-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
-          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Conducting new or analyzing past user research materials to inform design</p>
+        <div id="ai-ethics-review-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Reviewing AI-facing interfaces for clear disclosures, user agency, and transparent communication of system behaviour</p>
         </div>
       </div>
         </div>
@@ -241,21 +243,12 @@
       <div class="service-accordion">
         <div class="accordion-item" onclick="toggleServiceAccordion('feature-prototypes'); if(typeof umami !== 'undefined') umami.track('feature_prototypes_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Feature & Product Prototypes</h3>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Prototyping</h3>
             <span class="feature-prototypes-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
         <div id="feature-prototypes-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
-          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Product or feature-level prototypes for development based on user & technical requirements</p>
-        </div>
-        <div class="accordion-item" onclick="toggleServiceAccordion('vision-prototypes'); if(typeof umami !== 'undefined') umami.track('vision_prototypes_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Product Vision Prototypes</h3>
-            <span class="vision-prototypes-icon" style="font-size: 1.1rem;">☼</span>
-          </div>
-        </div>
-        <div id="vision-prototypes-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
-          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Prototypes that communicate and explore product concepts for commercial and investor validation</p>
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">From feature-level builds for development to product vision prototypes for stakeholder and investor validation</p>
         </div>
         <div class="accordion-item" onclick="toggleServiceAccordion('design-system'); if(typeof umami !== 'undefined') umami.track('design_system_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -274,6 +267,15 @@
         </div>
         <div id="information-design-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
           <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Intuitive and scalable page & navigation structures</p>
+        </div>
+        <div class="accordion-item" onclick="toggleServiceAccordion('governance-design'); if(typeof umami !== 'undefined') umami.track('governance_design_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Governance by Design</h3>
+            <span class="governance-design-icon" style="font-size: 1.1rem;">☼</span>
+          </div>
+        </div>
+        <div id="governance-design-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Designing policy and consent structures into AI-powered products from the start</p>
         </div>
       </div>
         </div>
@@ -301,21 +303,21 @@
         </div>
         <div class="accordion-item" onclick="toggleServiceAccordion('post-launch'); if(typeof umami !== 'undefined') umami.track('post_launch_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Post-Launch Enhancements</h3>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Ongoing Support</h3>
             <span class="post-launch-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
         <div id="post-launch-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
-          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Metrics & feedback based improvements</p>
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Metrics and feedback-based improvements, plus as-needed support as your product changes and grows</p>
         </div>
-        <div class="accordion-item" onclick="toggleServiceAccordion('maintenance'); if(typeof umami !== 'undefined') umami.track('maintenance_scaling_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
+        <div class="accordion-item" onclick="toggleServiceAccordion('fairness-review'); if(typeof umami !== 'undefined') umami.track('fairness_review_accordion_opened');" style="cursor: pointer; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Maintenance & Scaling</h3>
-            <span class="maintenance-icon" style="font-size: 1.1rem;">☼</span>
+            <h3 style="margin: 0; font-size: 1rem; font-weight: 600;">Post-Launch Fairness Review</h3>
+            <span class="fairness-review-icon" style="font-size: 1.1rem;">☼</span>
           </div>
         </div>
-        <div id="maintenance-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
-          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">As-needed support for maintaining the user experience as your product changes & grows</p>
+        <div id="fairness-review-content" class="accordion-content" style="display: none; padding: 0.5rem 0 0.75rem;">
+          <p style="color: #555; font-size: 0.95rem; margin: 0; line-height: 1.5;">Reviewing user feedback and interaction patterns for unintended bias or harm in live AI features</p>
         </div>
       </div>
         </div>
