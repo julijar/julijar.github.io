@@ -14,13 +14,26 @@ function loadFooter() {
              onmouseover="this.style.color='#7E0F18'" onmouseout="this.style.color='#1a1a1a'">
             hello@julija.works
           </a>
-          <a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank"
-             onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: window.location.pathname});"
-             style="color: #6b6b6b; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: opacity 0.2s ease; margin-top: 0.75em;"
-             onmouseover="this.style.opacity='0.5';"
-             onmouseout="this.style.opacity='1';">
-            <i class="fa fa-linkedin" style="font-size: 20px; color: #6b6b6b;"></i>
-          </a>
+          <div style="display: inline-flex; align-items: center; gap: 1rem; margin-top: 0.75em;">
+            <a href="https://www.linkedin.com/in/julija-rukanskaite/" target="_blank" rel="noopener noreferrer"
+               onclick="if(typeof umami !== 'undefined') umami.track('LinkedIn_link_clicked', {page: window.location.pathname});"
+               style="color: #6b6b6b; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: opacity 0.2s ease;"
+               onmouseover="this.style.opacity='0.5';"
+               onmouseout="this.style.opacity='1';"
+               aria-label="LinkedIn">
+              <i class="fa fa-linkedin" style="font-size: 20px; color: #6b6b6b;"></i>
+            </a>
+            <a href="https://bsky.app/profile/julija00.bsky.social" target="_blank" rel="noopener noreferrer"
+               onclick="if(typeof umami !== 'undefined') umami.track('Bluesky_link_clicked', {page: window.location.pathname});"
+               style="color: #6b6b6b; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: opacity 0.2s ease;"
+               onmouseover="this.style.opacity='0.5';"
+               onmouseout="this.style.opacity='1';"
+               aria-label="Bluesky">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bluesky" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"/>
+              </svg>
+            </a>
+          </div>
         </r-cell>
 
         <!-- Right: attribution -->
