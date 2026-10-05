@@ -3,17 +3,17 @@
 // A pageview is sent only once the visitor acts like a person: they interact
 // with the page, or keep it visible for a few seconds. Headless browsers that
 // render the page and leave right away are never counted.
-// A second event after 30s of visible time gives single-page visits a real
-// duration instead of 0s.
+// Engaged_10s and Engaged_30s events after that much visible time give
+// single-page visits a real duration instead of 0s.
 (function () {
   if (navigator.webdriver) return;
 
   var DWELL_MS = 4000;
-  var ENGAGED_MS = 30000;
+  var MILESTONES = [10, 30];
   var INTERACTIONS = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'mousemove'];
 
   var pageviewSent = false;
-  var engagedSent = false;
+  var nextMilestone = 0;
   var visibleMs = 0;
   var visibleSince = null;
   var tick = null;
@@ -30,17 +30,21 @@
     withUmami(function () { umami.track(); });
   }
 
+  function sendEngaged(seconds) {
+    withUmami(function () { umami.track('Engaged_' + seconds + 's', { page: location.pathname }); });
+  }
+
   function update() {
     if (visibleSince !== null) {
       visibleMs += Date.now() - visibleSince;
       visibleSince = document.hidden ? null : Date.now();
     }
     if (visibleMs >= DWELL_MS) sendPageview();
-    if (pageviewSent && !engagedSent && visibleMs >= ENGAGED_MS) {
-      engagedSent = true;
-      withUmami(function () { umami.track('Engaged_30s', { page: location.pathname }); });
-      clearInterval(tick);
+    while (pageviewSent && nextMilestone < MILESTONES.length &&
+           visibleMs >= MILESTONES[nextMilestone] * 1000) {
+      sendEngaged(MILESTONES[nextMilestone++]);
     }
+    if (nextMilestone === MILESTONES.length) clearInterval(tick);
   }
 
   function onVisibility() {
