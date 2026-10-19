@@ -142,252 +142,28 @@ THE SOFTWARE.
   
 
   
-  <!-- Bio: same grid layout as Services – heading left, intro right (2 columns on mobile too) -->
+  <!-- Bio: short intro, then artist-CV lists rendered from js/cv-data.js -->
   <r-grid columns="8" columns-s="2" class="services-intro-grid">
-    <r-cell span="1-4" span-s="1" data-aos="fade-up" data-aos-duration="2000">
+    <r-cell span="1-4" span-s="1">
       <h1 class="xlarge" style="margin-bottom: 0;">Bio</h1>
     </r-cell>
-    <r-cell span="5-8" span-s="2" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: flex-end;">
+    <r-cell span="5-8" span-s="2" style="display: flex; flex-direction: column; justify-content: flex-end;">
       <p class="services-intro-text" style="margin-bottom: 1.2rem;">A long-running curiosity about people, things, and systems (how affordances emerge, how trends travel, how making shapes thinking) is what drew me into design.</p>
-      <p class="services-intro-text" style="margin-bottom: 0;">Over the past five years I've worked across fintech, social apps, legal technology, and digital governance — consistently drawn to where design intersects with accountability, trust, and democratic participation.
-        <br><br>
-
-        I have published research in community governance systems and AI-mediated design, and apply generative AI as a design tool to model behaviour, surface patterns, and identify product opportunities.</p>
+      <p class="services-intro-text" style="margin-bottom: 1.2rem;">Over the past six years I've worked across financial, social apps, legal technology, and digital governance — consistently drawn to where design intersects with accountability, trust, and democratic participation.</p>
+      <p class="services-intro-text" style="margin-bottom: 0;">I have published research in community governance systems and AI-mediated design, and apply generative AI as a design tool to model behaviour, surface patterns, and identify product opportunities.</p>
     </r-cell>
   </r-grid>
 
-  <br><br>
+  <div id="cv" class="cv"></div>
 
-<!-- CV Section -->
-<r-grid columns="8" columns-s="1">
-  <r-cell span="1-8" span-s="row">
-    <div class="accordion-header" onclick="toggleAccordion()" style="cursor: pointer; padding: 1rem 0;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <h2 class="xlarge" style="margin: 0;">Experience</h2>
-        <span class="accordion-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">☼</span>
-      </div>
-      <div style="height: 1px; background: rgba(201, 198, 207, 0.3); margin-top: 1rem;"></div>
-    </div>
-  </r-cell>
-  
-  <r-cell span="1-8" span-s="row">
-    <div class="accordion-content" style="display: none; overflow: hidden; transition: all 0.3s ease;">
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Product Design Lead</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Reliabl</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2026 - Present</span>
-        </div>
-      </div>
+  <r-grid columns="8" columns-s="1" class="cv-section">
+    <r-cell span="1-2" span-s="row"><h2 class="cv-label">Interests</h2></r-cell>
+    <r-cell span="3-8" span-s="row">
+      <p class="cv-prose">Systemic design, semiotics, biological self-organization, morphological computation, and distributed cognition — and how these might inform more adaptive, responsive design. Always open to collaborating with researchers and practitioners with similar interests.</p>
+    </r-cell>
+  </r-grid>
 
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Design & Product Marketing Specialist</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Davidhorn</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2024 - 2026</span>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Member</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Oficina de Investigación Documental — Atlas de la Desaparición</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2023 - Present</span>
-        </div>
-      </div>
-
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Independent Designer</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Featured clients: Metagov, University of Washington & Hacks/Hackers, Medialab-Matadero Madrid.</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2023 - Present</span>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Product Designer</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Juni</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2022</span>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Research & Studio Teaching Assistant</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Malmö University</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2021</span>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">UX Designer</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Lips.Social</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2019 - 2021</span>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Artist-in-Residency Assistant</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Bite AiR</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2017 - 2018</span>
-        </div>
-      </div>
-    </div>
-  </r-cell>
-</r-grid>
-
-<!-- Education & Certifications Section -->
-<r-grid columns="8" columns-s="1">
-  <r-cell span="1-8" span-s="row">
-    <div class="accordion-header" onclick="toggleEducation()" style="cursor: pointer; padding: 1rem 0;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <h2 class="xlarge" style="margin: 0;">Education & Certifications</h2>
-        <span class="education-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">☼</span>
-      </div>
-      <div style="height: 1px; background: rgba(201, 198, 207, 0.3); margin-top: 1rem;"></div>
-    </div>
-  </r-cell>
-
-  <r-cell span="1-8" span-s="row">
-    <div class="education-content" style="display: none; overflow: hidden; transition: all 0.3s ease;">
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Applied AI Ethics & Governance</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Turing College — Certification. Fairness, EU AI Act readiness, and governance by design.</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2026</span>
-        </div>
-      </div>
-
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Interaction Design</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Malmö University — BSc</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2021</span>
-        </div>
-      </div>
-    </div>
-  </r-cell>
-</r-grid>
-
-<!-- Publications Section -->
-<r-grid columns="8" columns-s="1">
-  <r-cell span="1-8" span-s="row">
-    <div class="accordion-header" onclick="togglePublications()" style="cursor: pointer; padding: 1rem 0;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <h2 class="xlarge" style="margin: 0;">Publications</h2>
-        <span class="publications-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">☼</span>
-      </div>
-      <div style="height: 1px; background: rgba(201, 198, 207, 0.3); margin-top: 1rem;"></div>
-    </div>
-  </r-cell>
-  
-  <r-cell span="1-8" span-s="row">
-    <div class="publications-content" style="display: none; overflow: hidden; transition: all 0.3s ease;">
-
-
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Pika: Empowering non-programmers to author executable governance policies in online communities</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Wang, L., Rukanskaite, J., Suzuki, R., Nathan, L., & Zhu, H. (2024). Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems.</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2024</span>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">The entoptic field camera as metaphor-driven research-through-design with AI technologies</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Benjamin, J. J., Biggs, H., Berger, A., Rukanskaite, J., Heidt, M. B., Merrill, N., ... & Lindley, J. (2023). Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, 1-19.</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2023</span>
-        </div>
-      </div>
-      
-      <div style="margin-bottom: var(--space-lg);" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; padding-right: 2rem;">
-          <div style="flex: 1;">
-            <div style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;">Tuning into uncertainty: A material exploration of object detection through play</div>
-            <div style="font-size: 0.9rem; color: var(--color-text-secondary);">Rukanskaitė, J. (2021). Thesis, Malmö University.</div>
-          </div>
-          <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201, 198, 207, 0.3); z-index: -1; margin: 0 1rem;"></div>
-          <span style="font-size: 1.2rem; font-weight: 300; color: var(--color-text-secondary); margin-left: 1rem;">2021</span>
-        </div>
-      </div>
-    </div>
-  </r-cell>
-
-  <r-cell span="1-8" span-s="row">
-    <div class="accordion-header" onclick="toggleApproach()" style="cursor: pointer; padding: 1rem 0;">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <h2 class="xlarge" style="margin: 0;">Approach</h2>
-        <span class="approach-icon" style="font-size: 1.5rem; transition: transform 0.3s ease;">☼</span>
-      </div>
-      <div class="divider-thin" style="margin-top: 1rem;"></div>
-    </div>
-  </r-cell>
-  
-  <r-cell span="1-8" span-s="row">
-    <div class="approach-content" style="display: none; overflow: hidden; transition: all 0.3s ease;">
-      <r-grid columns="8" columns-s="1">
-        <r-cell span="2-4" span-s="row" data-aos="fade-up" data-aos-duration="1000">
-          <h3>
-            <div class="text-grey-label" style="font-size: 0.9rem; margin-bottom: 1rem;"></div>
-            I bridge interaction design methods and systems thinking to create meaningful, evolving designs. Drawing on industry and HCI research experience, I translate complex insights into practical applications.
-          </h3>
-          <h4>
-            My personal interests include biological self-organization, morphological computation, and distributed cognition - I am investigating how these principles might eventually inform more adaptive and responsive design approaches. I'm always looking for collaboration opportunities with researchers and practitioners with similar interests.
-            
-            <br><br>
-             
-          </h4>
-        </r-cell>
-        
-        <r-cell span="5-8" span-s="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-          <div style="width: 100%; height: 400px; background: url('img/globe.png') no-repeat center center; background-size: contain; opacity: 0.7; animation: spin 30s linear infinite;"></div>
-        </r-cell>
-      </r-grid>
-    </div>
-  </r-cell>
-</r-grid>
-
-</br></br></br></br>
+  <br><br><br>
 
  <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
@@ -587,80 +363,6 @@ THE SOFTWARE.
       location.href = "#work";
     }
 
-    function toggleAccordion() {
-      const content = document.querySelector('.accordion-content');
-      const icon = document.querySelector('.accordion-icon');
-      
-      if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
-        icon.textContent = '−';
-        icon.style.transform = 'rotate(180deg)';
-        
-        // Track accordion expand event
-        if (typeof umami !== 'undefined') {
-          umami.track('Experience_accordion_opened');
-        }
-      } else {
-        content.style.display = 'none';
-        icon.textContent = '☼';
-        icon.style.transform = 'rotate(0deg)';
-      }
-    }
-
-    function toggleEducation() {
-      const content = document.querySelector('.education-content');
-      const icon = document.querySelector('.education-icon');
-      if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
-        icon.textContent = '−';
-        icon.style.transform = 'rotate(180deg)';
-        if (typeof umami !== 'undefined') umami.track('Education_accordion_opened');
-      } else {
-        content.style.display = 'none';
-        icon.textContent = '☼';
-        icon.style.transform = 'rotate(0deg)';
-      }
-    }
-
-    function togglePublications() {
-      const content = document.querySelector('.publications-content');
-      const icon = document.querySelector('.publications-icon');
-      
-      if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
-        icon.textContent = '−';
-        icon.style.transform = 'rotate(180deg)';
-        
-        // Track accordion expand event
-        if (typeof umami !== 'undefined') {
-          umami.track('Publications_accordion_opened');
-        }
-      } else {
-        content.style.display = 'none';
-        icon.textContent = '☼';
-        icon.style.transform = 'rotate(0deg)';
-      }
-    }
-
-    function toggleApproach() {
-      const content = document.querySelector('.approach-content');
-      const icon = document.querySelector('.approach-icon');
-      
-      if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
-        icon.textContent = '−';
-        icon.style.transform = 'rotate(180deg)';
-        
-        // Track accordion expand event
-        if (typeof umami !== 'undefined') {
-          umami.track('Approach_accordion_opened');
-        }
-      } else {
-        content.style.display = 'none';
-        icon.textContent = '☼';
-        icon.style.transform = 'rotate(0deg)';
-      }
-    }
   </script>
 
 
@@ -727,6 +429,8 @@ THE SOFTWARE.
   </script>
 
   <!-- Footer Include Script -->
+<script src="js/cv-data.js"></script>
+<script src="js/cv-render.js"></script>
 <script src="js/nav-menu-include.js"></script>
 <script src="js/footer-include.js"></script>
 

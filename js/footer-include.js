@@ -38,6 +38,11 @@ function loadFooter() {
 
         <!-- Right: attribution -->
         <r-cell class="footer-right-cell" span="6-7" span-s="2" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left;">
+          <a href="https://cal.com/julija/30min" class="footer-cal-link"
+             data-cal-link="julija/30min" data-cal-namespace="30min" data-cal-config='{"layout":"column_view","theme":"light"}'
+             onclick="if(typeof umami !== 'undefined') umami.track('Coffee_chat_button_clicked', {page: 'footer'});">
+            ☕ Book a coffee chat →
+          </a>
           <p style="color: #555; font-size: 0.95rem; font-weight: 500; line-height: 1.6; text-align: left; margin: 0; padding-top: 12px; border-top: 1px solid #ccc;">
             site developed by Julija Rukanskaitė, based on software by Rasmus Andersson, 2019<br>
             <span style="display: block; margin-top: 0.6em; padding-top: 0.6em; border-top: 1px solid #ccc;">Studio Julija Rukanskaite · Org.no: 932 773 511 MVA 🇳🇴</span>
